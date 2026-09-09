@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review"
+  short_description: "Scope-aware reviews with evidence and clear limits"
+  default_prompt: "Use $review to review the current artifact, select relevant lenses, and report supported findings and coverage limits."

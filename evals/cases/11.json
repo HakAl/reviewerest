@@ -1,0 +1,25 @@
+{
+  "case_id": "11",
+  "request": "Security only: review this complete access path. Ignore naming and formatting. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "endpoint.py",
+      "revision": "fixture-v1",
+      "text": "def read_invoice(user, invoice_id, db):\n    invoice = db.get_invoice(invoice_id)\n    return invoice.amount, invoice.customer_email\n"
+    },
+    {
+      "source": "context.md",
+      "revision": "fixture-v1",
+      "text": "All signed-in customers can call this handler with any invoice_id. No middleware performs object authorization."
+    }
+  ]
+}

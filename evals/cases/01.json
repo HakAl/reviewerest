@@ -1,0 +1,20 @@
+{
+  "case_id": "01",
+  "request": "Review this README for wording only. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "README.md",
+      "revision": "fixture-v1",
+      "text": "# Setup\nInstall the package. Run the server. The dashboard displays the the current status.\n"
+    }
+  ]
+}

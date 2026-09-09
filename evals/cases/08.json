@@ -1,0 +1,25 @@
+{
+  "case_id": "08",
+  "request": "Review the correctness of this pure function against its specification. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "square.py",
+      "revision": "fixture-v1",
+      "text": "def square(n: int) -> int:\n    return n * n\n"
+    },
+    {
+      "source": "spec.md",
+      "revision": "fixture-v1",
+      "text": "For any Python integer n, return n squared. No performance constraint or input coercion is required."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "12",
+  "request": "Continue the review with the corrected scope: review only the clarity of the customer-facing message. The previous security review is no longer requested. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {
+    "prior_scope": "Security review of account migration. No findings have been verified."
+  },
+  "artifacts": [
+    {
+      "source": "message.md",
+      "revision": "fixture-v1",
+      "text": "The migration will eventually complete soon, unless completion is pending, at which point it is incomplete. Contact support if needed."
+    }
+  ]
+}

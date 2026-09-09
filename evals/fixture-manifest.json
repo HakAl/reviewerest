@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "files": {
+    "evals/cases/20.json": "c4c1d100cc9384d53393c2a610b25c784a6cf41f704593af44b10fba3f675427",
+    "evals/cases/16.json": "b9a733ccb248250026dafeba5412b674b34cf81ec1393f56b7bb306f297b5731",
+    "evals/cases/01.json": "4c4f11c92860ae146b22834a17b2593ead78c8fddb0058c26b7350120c138164",
+    "evals/cases/17.json": "bdf586447ac7996d42b9ce8f1ceffe6f02e74662fc109e38825c49191beeaedb",
+    "evals/cases/21.json": "e9c63aefe4ec257ae28cd87ae1ceb8c55d09399517f037af654be52864b034c4",
+    "evals/cases/10.json": "1c5696bb1997d1a0b1f2afbca6e193ad7fbcd01f1eb225dbea1aa4a60dc437af",
+    "evals/cases/06.json": "c3699a708437de544ca53e126a20f0d199a02af5e9e22ff97f2e68243218224f",
+    "evals/cases/26.json": "6b9755f8cdd6eeb333d1c7805f302bb7e7a935be6a1049b07c90084abd471688",
+    "evals/cases/07.json": "46e2bce8384cca06754eca8f62435377d2d94947538c4e303151d5c7c0c68b88",
+    "evals/cases/11.json": "f49ccbb7c37416121f36d754f7b51a07b61992396a37711252cf8f73de976edf",
+    "evals/cases/04.json": "9310c229de05bb019c63207ba2e9ed712fee93365cf28ba77d3c6d69f95995b2",
+    "evals/cases/12.json": "88932a68a29d4fe959bd99d24bae7987d0395037a48d2eb5c17a411d86d0672b",
+    "evals/cases/24.json": "4c6a11202059e0240f7a368347a9349e1dd54fd8ac9d4d19865cbd3bc4e2041d",
+    "evals/cases/08.json": "d8f4521cde7b6e73bff5f60d9dea15167bb92ddc73673e22d8a33f8178690f50",
+    "evals/cases/09.json": "648bc4690a9fe03e3031aee14bc6165f2a9d838ca4b3de4e36befce00a56cfb5",
+    "evals/cases/25.json": "9050a17ba145294c08797fa14c4a2542d113e03b2d5d3177c69bbc4168933233",
+    "evals/cases/13.json": "f62f1117feb7b7d99f99a543e09ef0f35e1c7614e8dc985f5e29aaf8b5bd81ce",
+    "evals/cases/05.json": "be9824ae99333f62fa3815edb3c473b21135267b0085aaf820109d720e15e351",
+    "evals/cases/22.json": "31b7e04a9e319a1c01dc8ce5515e8e01a5ce92c528fb79811da17510acc56b04",
+    "evals/cases/18.json": "4f2abd005acd30708704c3fdf772b66fb3b2665b0d431ba48ce0f61cf42c0c44",
+    "evals/cases/02.json": "766797d6f898e321b66424f9c784eb3539e62b92fc292a9cd7764f2bab2bd807",
+    "evals/cases/14.json": "5ed4760da06b24cd04d4370acab56f11423805c08f8958fd3006005ca7c0aec1",
+    "evals/cases/15.json": "755213c68b388498dfddbbefa6ae1d6774c9f8569e5eef747e0213af0dc8d413",
+    "evals/cases/03.json": "28490db7308d4c8b5407c1b3e8719b4ee3266e30597f8954b1e41d46969ba2fa",
+    "evals/cases/19.json": "caea936dc63a61708bb31485d05bf973e37d676647ee67feb422bf34a83d23a7",
+    "evals/cases/23.json": "b92cf5a7ed1f326489760d547f48539bf8c0ab7283c32bb2796e690b188e3888",
+    "evals/expectations.json": "09ee21a61f0e894782be9881d0034f9609b1e6abe3bfdf3e618a41fd2639a191"
+  },
+  "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
+}

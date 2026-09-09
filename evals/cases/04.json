@@ -1,0 +1,20 @@
+{
+  "case_id": "04",
+  "request": "Quickly review the visible checkout screenshot for usability. Only the supplied visible-state description is available. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "visible-state.txt",
+      "revision": "fixture-v1",
+      "text": "Synthetic screenshot transcription, not an interactive page: title Checkout. Address fields. Button label Continue. Beneath the button: By continuing you authorize an immediate non-refundable charge of $129. No previous or cancel control is visible."
+    }
+  ]
+}

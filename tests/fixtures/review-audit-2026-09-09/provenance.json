@@ -1,0 +1,7 @@
+{
+  "description": "Synthetic structural counterexamples retained from the development audit. Local audit paths and private run metadata are omitted from this public provenance summary. Probe contents are unchanged.",
+  "files": {
+    "empty.json": "ac9019955716384e088c6eaca9a6eceae083aadea542b1eef7def33dae3da71b",
+    "failpass.json": "a6f875321003db11e1e5e8a3462f866c711e9d6075eae108a648c90d4a9beeed"
+  }
+}

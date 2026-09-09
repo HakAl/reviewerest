@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "status": "complete",
+  "scope": "Reviewed everything thoroughly",
+  "target": {"artifact": "some/path", "revision": null, "base": null, "assumptions": []},
+  "lenses": [],
+  "evidence": [],
+  "checks": [],
+  "candidates": [],
+  "findings": [],
+  "limits": [],
+  "missing_input": null,
+  "candidates_for_scope": [],
+  "handoff": null
+}

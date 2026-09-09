@@ -1,0 +1,131 @@
+{
+  "version": 2,
+  "status": "complete",
+  "scope": "Static comparison of the fictional upload plan against its terminal-outcome contract.",
+  "provenance": {
+    "skill_version": "1.1.0",
+    "skill_revision": null,
+    "run_id": null,
+    "reviewer": {
+      "model": null,
+      "family": null
+    },
+    "generator": {
+      "model": null,
+      "family": null
+    }
+  },
+  "no_review_reason": null,
+  "target": {
+    "artifact": "examples/plan.md",
+    "revision": "fictional-v1",
+    "base": null,
+    "assumptions": [
+      "The supplied contract defines all upload outcomes."
+    ]
+  },
+  "lenses": [
+    {
+      "id": "correctness",
+      "selection": "selected",
+      "reason": "Compare the state mapping against the contract.",
+      "coverage": "checked",
+      "depth": "core",
+      "reference_reads": [],
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ]
+    },
+    {
+      "id": "ux",
+      "selection": "selected",
+      "reason": "Compare terminal feedback and the offered next action.",
+      "coverage": "checked",
+      "depth": "core",
+      "reference_reads": [],
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "source": "examples/contract.md",
+      "location": "lines 3-5",
+      "revision": "fictional-v1",
+      "kind": "source",
+      "observation": "Cancellation is terminal and requires Canceled with Upload again."
+    },
+    {
+      "id": "e2",
+      "source": "examples/plan.md",
+      "location": "line 5",
+      "revision": "fictional-v1",
+      "kind": "source",
+      "observation": "Every outcome except success and error maps to Uploading with Cancel."
+    }
+  ],
+  "checks": [
+    {
+      "id": "k1",
+      "method": "compare",
+      "criterion": "Canceled must map to Canceled with Upload again.",
+      "status": "fail",
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "finding_ids": [
+        "f1"
+      ],
+      "limitation": "Author-written illustrative comparison; no running UI was tested."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "c1",
+      "disposition": "reported",
+      "finding_id": "f1",
+      "reason": "Cancellation falls through to the running state."
+    },
+    {
+      "id": "c2",
+      "disposition": "merged",
+      "finding_id": "f1",
+      "reason": "Offering Cancel again is a consequence of the same missing state mapping."
+    }
+  ],
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "major",
+      "title": "Canceled uploads remain labeled Uploading",
+      "locations": [
+        "examples/plan.md:5"
+      ],
+      "trigger": "An upload reaches the canceled outcome.",
+      "consequence": "The proposed mapping shows ongoing work and offers Cancel again, contrary to the terminal-state contract.",
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "lenses": [
+        "correctness",
+        "ux"
+      ],
+      "basis": "inferred",
+      "uncertainty": "Only the proposed mapping is inspected; implemented behavior is unknown.",
+      "recommendation": "Add a canceled row with an Upload again action."
+    }
+  ],
+  "limits": [
+    "Fictional, author-written example, not a captured model review.",
+    "No implementation, keyboard operation, timing, or user comprehension was tested."
+  ],
+  "missing_input": null,
+  "candidates_for_scope": [],
+  "handoff": null
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "22",
+  "request": "Review my changes using these local observations. No more specific scope has been given. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {
+    "git": {
+      "head": "h2",
+      "dirty": true,
+      "staged": false,
+      "unstaged": true,
+      "untracked": [
+        "new.txt"
+      ],
+      "branch_base": "h0"
+    },
+    "untracked_files": {
+      "new.txt": "Notes for current local edit."
+    }
+  },
+  "artifacts": [
+    {
+      "source": "unstaged.diff",
+      "revision": "fixture-v1",
+      "text": "- attempts = 1\n+ attempts = 2\n"
+    },
+    {
+      "source": "committed.diff",
+      "revision": "fixture-v1",
+      "text": "- old_api()\n+ new_api()\n"
+    }
+  ]
+}

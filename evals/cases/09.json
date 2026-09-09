@@ -1,0 +1,30 @@
+{
+  "case_id": "09",
+  "request": "Review this launch packet for readiness. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "migration.sql",
+      "revision": "fixture-v1",
+      "text": "ALTER TABLE customers DROP COLUMN contact_email;\n"
+    },
+    {
+      "source": "launch.md",
+      "revision": "fixture-v1",
+      "text": "Launch tomorrow after deleting the contact_email column. Support will email each customer after launch using customers.contact_email. No alternative address source exists."
+    },
+    {
+      "source": "message.md",
+      "revision": "fixture-v1",
+      "text": "Subject: Service update\nYour account has moved to the new service. Please contact support with questions."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "14",
+  "request": "Review the correctness of this change. The author supplied a test result. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "calc.py",
+      "revision": "fixture-v1",
+      "text": "def total(prices):\n    return sum(prices) + 1\n"
+    },
+    {
+      "source": "spec.md",
+      "revision": "fixture-v1",
+      "text": "total(prices) returns exactly the sum of prices, including zero for an empty list."
+    },
+    {
+      "source": "test-log.txt",
+      "revision": "fixture-v1",
+      "text": "Author-provided log: all tests passed on revision fixture-v0. Current revision is fixture-v1."
+    }
+  ]
+}

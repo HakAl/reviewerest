@@ -1,0 +1,20 @@
+{
+  "case_id": "06",
+  "request": "Review this strategy memo for an executive decision. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "memo.md",
+      "revision": "fixture-v1",
+      "text": "We should invest $2m in Region B next quarter. Revenue will grow 40% because the market is large. Source: internal forecast, not attached. The investment requires cancellation of two existing contracts; cancellation fees are not included. Decision requested: approve today."
+    }
+  ]
+}

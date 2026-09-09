@@ -1,0 +1,33 @@
+{
+  "case_id": "21",
+  "request": "Review the branch against the explicitly requested target origin/release. This is noninteractive; the git observations are authoritative for this fixture. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {
+    "git": {
+      "head": "h2",
+      "dirty": false,
+      "refs": {
+        "origin/main": "m1"
+      },
+      "missing_refs": [
+        "origin/release"
+      ],
+      "head_parent": "h1"
+    },
+    "available_tools": "No git or network operations in this fixture."
+  },
+  "artifacts": [
+    {
+      "source": "source.py",
+      "revision": "fixture-v1",
+      "text": "value = 1\n"
+    }
+  ]
+}

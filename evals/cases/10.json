@@ -1,0 +1,40 @@
+{
+  "case_id": "10",
+  "request": "Review this branch. Use the trusted local git observations; no git execution is available in this fixture. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {
+    "git": {
+      "head": "h2",
+      "branch": "feature",
+      "dirty": false,
+      "remote_default": "origin/release",
+      "refs": {
+        "origin/release": "r2",
+        "origin/main": "m2"
+      },
+      "merge_bases": {
+        "origin/release": [
+          "b1"
+        ],
+        "origin/main": [
+          "b0"
+        ]
+      }
+    },
+    "constraints": "Both bases are plausible; recorded remote default selects origin/release."
+  },
+  "artifacts": [
+    {
+      "source": "change.diff",
+      "revision": "fixture-v1",
+      "text": "+ timeout = 5\n"
+    }
+  ]
+}
