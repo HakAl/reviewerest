@@ -33,6 +33,8 @@ def inspect_run(root, policy_path):
         raise ValueError("Schedule differs from the complete policy denominator.")
     if runner.snapshot(root / "candidate") != manifest["candidate_files"]:
         raise ValueError("Candidate snapshot changed.")
+    if runner.digest(Path(validator.__file__).read_bytes()) != manifest["candidate_files"]["scripts/validate_record.py"]:
+        raise ValueError("Current validator differs from the evaluated package; use the matching checkout.")
     if set(manifest["runner_files"]) != {"run_claude.py", "run_repeated.py"}:
         raise ValueError("Both frozen runner sources are required.")
     for name, digest in manifest["runner_files"].items():
@@ -76,7 +78,7 @@ def inspect_run(root, policy_path):
             if inv["before"] != expected or inv["after"] != expected:
                 raise ValueError("Inputs differ from the frozen packet and candidate or changed during review.")
             model = init.get("model")
-            if not isinstance(model, str) or not model or init["claude_code_version"] not in manifest["cli_version"]:
+            if not isinstance(model, str) or not model or init["claude_code_version"] != manifest["cli_version"].split()[0]:
                 raise ValueError("Missing model identity or CLI drift.")
             try:
                 record = runner.extract_record(final["result"])
@@ -170,8 +172,14 @@ def main():
     try:
         policy, digest, observed = inspect_run(args.run, args.policy)
         result = decide(policy, digest, observed, read(args.assessments), read(args.calibration) if args.calibration else None)
+        result["policy_sha256"] = digest
+        result["assessments_sha256"] = runner.digest(args.assessments.read_bytes())
+        result["calibration_sha256"] = runner.digest(args.calibration.read_bytes()) if args.calibration else None
+        result["observations"] = observed
     except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
         result = {"decision": "inconclusive", "error": str(exc), "substantive_truth_verified": False}
+    result["gate_sha256"] = runner.digest(Path(__file__).read_bytes())
+    result["validator_sha256"] = runner.digest(Path(validator.__file__).read_bytes())
     print(json.dumps(result, indent=2))
     return {"pass": 0, "fail": 3, "inconclusive": 4}[result["decision"]]
 

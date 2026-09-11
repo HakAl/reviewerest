@@ -1,5 +1,13 @@
 # Evaluation status
 
+The [repeated behavioral gate pilot](../evals/repeated-v1/README.md) freezes two
+authority cases, five conditions and three attempts per case. Its
+[first six-trial run](../evals/repeated-v1/baseline-01.md) passes those conditions
+in the builder's assessment, but the release decision stays inconclusive without
+independent calibration. It retains citation errors outside the frozen conditions.
+Offline tests cover the gate's failure handling; behavioral reliability comparable
+to a conventional unit-test suite has not been established.
+
 Skill 1.2.0 adds separate evidence support for defect, consequence and correction
 claims. The [six-case claim-evidence suite](../evals/claim-evidence-v1/README.md)
 tests validity versus authority, contract gaps versus executed failures, and

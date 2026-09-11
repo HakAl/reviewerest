@@ -73,6 +73,8 @@
     "evals/fixture-manifest.json",
     "evals/package-manifest.json",
     "evals/repeated-v1/README.md",
+    "evals/repeated-v1/assessment-01.json",
+    "evals/repeated-v1/baseline-01.md",
     "evals/repeated-v1/policy.json",
     "evals/repeated_gate.py",
     "evals/review-quality-v1/README.md",

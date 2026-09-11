@@ -133,6 +133,14 @@ for event in events: print(json.dumps(event))
             _, _, observed = gate.inspect_run(root / "out", root / "policy.json")
             self.assertEqual(observed["r01-47"]["status"], "unavailable")
             self.assertEqual(observed["r02-47"]["status"], "eligible")
+            # A different version string that happens to be a prefix is still drift.
+            cap = root / "out/r02-47/capture.json"
+            data = gate.read(cap)
+            data["stdout"] = data["stdout"].replace('"claude_code_version": "2.1.268"', '"claude_code_version": "2.1.26"')
+            data["stdout_sha256"] = repeat.runner.digest(data["stdout"].encode())
+            cap.write_bytes(gate.encoded(data))
+            _, _, observed = gate.inspect_run(root / "out", root / "policy.json")
+            self.assertEqual(observed["r02-47"]["status"], "unavailable")
 
     def test_over_budget_plan_never_invokes_cli_or_creates_output(self):
         with tempfile.TemporaryDirectory() as temp:

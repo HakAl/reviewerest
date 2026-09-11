@@ -64,6 +64,7 @@ This verifies a clean committed snapshot before pushing that exact commit.
 CI runs the same gate. See the [publishing workflow](docs/publishing.md).
 
 - [Evaluation results and limits](docs/evaluations.md)
+- [Repeated behavioral gate experiment](evals/repeated-v1/README.md)
 - [Agent working instructions](AGENTS.md)
 
 ## License

@@ -5,6 +5,10 @@ This first milestone measures variation on two existing authority fixtures with
 three fresh sessions each. It does not establish unit-test-like reliability.
 The skill is unchanged at 1.2.0.
 
+The [first six-trial pilot](baseline-01.md) passed the five targeted conditions
+in the builder's assessment. Its release decision remained inconclusive because
+independent calibration is missing; citation errors are retained separately.
+
 [policy.json](policy.json) pins the original case bytes, five semantic conditions,
 three repetitions, and the failure threshold. Case order alternates by round.
 All six scheduled attempts remain in the denominator. No best-of selection,
@@ -62,6 +66,8 @@ python3 evals/repeated_gate.py .scratch/repeated-01 --policy evals/repeated-v1/p
 
 The helper checks captured output, exact skill loading, source preservation,
 provided provenance, model consistency, report structure and assessment links.
+Use a checkout whose validator matches the evaluated package. The result records
+policy, assessment, gate and validator hashes, plus per-trial eligibility details.
 Missing trials and ineligible host runs stay inconclusive. Captured malformed
 reports count as structural failures. A confirmed failure is not outvoted by
 passing repeats. It returns exit 0 for pass, 3 for fail, and 4 for inconclusive.

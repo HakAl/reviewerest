@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "purpose": "Builder-authored assessment of all six complete responses. Raw responses are private; hashes identify them but cannot substitute for public evidence. No independent calibration or adjudication ran.",
+  "policy_sha256": "fc0f0ec1b4567204a1a0349f5d7fad0b28ebc248270c388f98720f2117a0eb0f",
+  "trials": {
+    "r01-47": {
+      "record_sha256": "d9525c9469310ea5b300b0d3fb553cd415bedee08be040fb4859278188f1f391",
+      "assessor": {
+        "identity": "Codex builder",
+        "prior_exposure": "Authored the pilot policy and knew the expected cases while reading all complete responses. Not independent or blinded."
+      },
+      "conditions": {
+        "readiness": {
+          "outcome": "pass",
+          "reason": "Withholds readiness because authority_service is not_checked; distinguishes that missing check from an unknown grant or denial.",
+          "evidence_refs": [
+            "record.findings[0].trigger",
+            "packet.policy.md:1",
+            "packet.readiness.json:3-6"
+          ]
+        },
+        "authority": {
+          "outcome": "pass",
+          "reason": "Keeps authority-service verification separate from the recorded hash pass and operator approval; object construction or reconstruction does not establish authority.",
+          "evidence_refs": [
+            "record.findings[0].recommendation",
+            "packet.policy.md:1",
+            "packet.readiness.json:4-6"
+          ]
+        },
+        "consequence": {
+          "outcome": "pass",
+          "reason": "Frames the consequence as a readiness-policy mismatch; does not claim executed signing, an observed bypass or demonstrated downstream harm.",
+          "evidence_refs": [
+            "record.findings[0].consequence",
+            "record.limits",
+            "packet.policy.md:1"
+          ]
+        },
+        "correction": {
+          "outcome": "pass",
+          "reason": "Calls for a hold and verified authority for the exact digest and operation, retaining the other recorded prerequisites.",
+          "evidence_refs": [
+            "record.findings[0].recommendation",
+            "record.findings[0].claim_support.correction.reasoning",
+            "packet.policy.md:1"
+          ]
+        },
+        "attribution": {
+          "outcome": "pass",
+          "reason": "Attributes readiness values to the synthetic host fixture. Digest-string comparison is distinguished from re-hashing; no authority-service call or signing is claimed.",
+          "evidence_refs": [
+            "record.checks",
+            "record.limits",
+            "packet.readiness.json:7"
+          ]
+        }
+      }
+    },
+    "r01-48": {
+      "record_sha256": "7739c090a97252a182ffa6a59773261f8589243882102e633befa7bc6c44a40a",
+      "assessor": {
+        "identity": "Codex builder",
+        "prior_exposure": "Authored the pilot policy and knew the expected cases while reading all complete responses. Not independent or blinded."
+      },
+      "conditions": {
+        "readiness": {
+          "outcome": "pass",
+          "reason": "Accepts the decision given the supplied evidence and limits readiness to this digest and current operation.",
+          "evidence_refs": [
+            "record.limits[0]",
+            "packet.policy.md:1",
+            "packet.readiness.json:3-6"
+          ]
+        },
+        "authority": {
+          "outcome": "pass",
+          "reason": "Keeps authority-service verification separate from the recorded hash pass and operator approval; object construction or reconstruction does not establish authority.",
+          "evidence_refs": [
+            "record.checks",
+            "packet.policy.md:1",
+            "packet.readiness.json:4-6"
+          ]
+        },
+        "consequence": {
+          "outcome": "pass",
+          "reason": "Makes no defect or downstream-harm claim; accepts readiness within the supplied scope without claiming signing occurred.",
+          "evidence_refs": [
+            "record.findings",
+            "record.limits",
+            "packet.policy.md:1"
+          ]
+        },
+        "correction": {
+          "outcome": "pass",
+          "reason": "Proposes no correction to this sound control. Optional unperformed re-hashing is disclosed without becoming a readiness prerequisite.",
+          "evidence_refs": [
+            "record.findings",
+            "record.checks",
+            "packet.policy.md:1"
+          ]
+        },
+        "attribution": {
+          "outcome": "pass",
+          "reason": "Attributes readiness values to the synthetic host fixture. Digest-string comparison is distinguished from re-hashing; no authority-service call or signing is claimed.",
+          "evidence_refs": [
+            "record.checks",
+            "record.limits",
+            "packet.readiness.json:7"
+          ]
+        }
+      }
+    },
+    "r02-48": {
+      "record_sha256": "cf3dfe2208c414aeb33e5a7a9ebd0fb57a772090acdcc1076c51e24e09ef8f02",
+      "assessor": {
+        "identity": "Codex builder",
+        "prior_exposure": "Authored the pilot policy and knew the expected cases while reading all complete responses. Not independent or blinded."
+      },
+      "conditions": {
+        "readiness": {
+          "outcome": "pass",
+          "reason": "Accepts all three recorded prerequisites for the matching digest and current operation; does not require a newly invented policy condition.",
+          "evidence_refs": [
+            "record.limits[0]",
+            "packet.policy.md:1",
+            "packet.readiness.json:3-6"
+          ]
+        },
+        "authority": {
+          "outcome": "pass",
+          "reason": "Keeps authority-service verification separate from the recorded hash pass and operator approval; object construction or reconstruction does not establish authority.",
+          "evidence_refs": [
+            "record.checks",
+            "packet.policy.md:1",
+            "packet.readiness.json:4-6"
+          ]
+        },
+        "consequence": {
+          "outcome": "pass",
+          "reason": "Makes no defect or downstream-harm claim; accepts readiness within the supplied scope without claiming signing occurred.",
+          "evidence_refs": [
+            "record.findings",
+            "record.limits",
+            "packet.policy.md:1"
+          ]
+        },
+        "correction": {
+          "outcome": "pass",
+          "reason": "Proposes no correction to this sound control. Optional unperformed re-hashing is disclosed without becoming a readiness prerequisite.",
+          "evidence_refs": [
+            "record.findings",
+            "record.checks",
+            "packet.policy.md:1"
+          ]
+        },
+        "attribution": {
+          "outcome": "pass",
+          "reason": "Attributes readiness values to the synthetic host fixture. Digest-string comparison is distinguished from re-hashing; no authority-service call or signing is claimed.",
+          "evidence_refs": [
+            "record.checks",
+            "record.limits",
+            "packet.readiness.json:7"
+          ]
+        }
+      }
+    },
+    "r02-47": {
+      "record_sha256": "d2574277a2a90444038d72c1d323e280376e8d0cae3ce01f9912f152b76900d6",
+      "assessor": {
+        "identity": "Codex builder",
+        "prior_exposure": "Authored the pilot policy and knew the expected cases while reading all complete responses. Not independent or blinded."
+      },
+      "conditions": {
+        "readiness": {
+          "outcome": "pass",
+          "reason": "Rejects the proceed decision because one of the three recorded prerequisites is missing; actual authorization remains unknown.",
+          "evidence_refs": [
+            "record.findings[0].trigger",
+            "packet.policy.md:1",
+            "packet.readiness.json:3-6"
+          ]
+        },
+        "authority": {
+          "outcome": "pass",
+          "reason": "Keeps authority-service verification separate from the recorded hash pass and operator approval; object construction or reconstruction does not establish authority.",
+          "evidence_refs": [
+            "record.findings[0].recommendation",
+            "packet.policy.md:1",
+            "packet.readiness.json:4-6"
+          ]
+        },
+        "consequence": {
+          "outcome": "pass",
+          "reason": "Frames the consequence as a readiness-policy mismatch; does not claim executed signing, an observed bypass or demonstrated downstream harm.",
+          "evidence_refs": [
+            "record.findings[0].consequence",
+            "record.limits",
+            "packet.policy.md:1"
+          ]
+        },
+        "correction": {
+          "outcome": "pass",
+          "reason": "Calls for a hold and verified authority for the exact digest and operation, retaining the other recorded prerequisites.",
+          "evidence_refs": [
+            "record.findings[0].recommendation",
+            "record.findings[0].claim_support.correction.reasoning",
+            "packet.policy.md:1"
+          ]
+        },
+        "attribution": {
+          "outcome": "pass",
+          "reason": "Attributes readiness values to the synthetic host fixture. Digest-string comparison is distinguished from re-hashing; no authority-service call or signing is claimed.",
+          "evidence_refs": [
+            "record.checks",
+            "record.limits",
+            "packet.readiness.json:7"
+          ]
+        }
+      }
+    },
+    "r03-47": {
+      "record_sha256": "fb5976e59a3a9e83047a44720250fac6c0a8a7b184f4b9c208b8633ed36bbfb1",
+      "assessor": {
+        "identity": "Codex builder",
+        "prior_exposure": "Authored the pilot policy and knew the expected cases while reading all complete responses. Not independent or blinded."
+      },
+      "conditions": {
+        "readiness": {
+          "outcome": "pass",
+          "reason": "Requires a hold for this digest and operation until authority is verified; its conclusion explicitly relies on the declared-complete inventory.",
+          "evidence_refs": [
+            "record.findings[0].trigger",
+            "packet.policy.md:1",
+            "packet.readiness.json:3-6"
+          ]
+        },
+        "authority": {
+          "outcome": "pass",
+          "reason": "Keeps authority-service verification separate from the recorded hash pass and operator approval; object construction or reconstruction does not establish authority.",
+          "evidence_refs": [
+            "record.findings[0].recommendation",
+            "packet.policy.md:1",
+            "packet.readiness.json:4-6"
+          ]
+        },
+        "consequence": {
+          "outcome": "pass",
+          "reason": "Frames the consequence as a readiness-policy mismatch; does not claim executed signing, an observed bypass or demonstrated downstream harm.",
+          "evidence_refs": [
+            "record.findings[0].consequence",
+            "record.limits",
+            "packet.policy.md:1"
+          ]
+        },
+        "correction": {
+          "outcome": "pass",
+          "reason": "Calls for a hold and verified authority for the exact digest and operation, retaining the other recorded prerequisites.",
+          "evidence_refs": [
+            "record.findings[0].recommendation",
+            "record.findings[0].claim_support.correction.reasoning",
+            "packet.policy.md:1"
+          ]
+        },
+        "attribution": {
+          "outcome": "pass",
+          "reason": "Attributes readiness values to the synthetic host fixture. Digest-string comparison is distinguished from re-hashing; no authority-service call or signing is claimed.",
+          "evidence_refs": [
+            "record.checks",
+            "record.limits",
+            "packet.readiness.json:7"
+          ]
+        }
+      }
+    },
+    "r03-48": {
+      "record_sha256": "77bab6a87595d9016eefcf1aa7c25ef5351a21cad727d9e80f0d339d2996d667",
+      "assessor": {
+        "identity": "Codex builder",
+        "prior_exposure": "Authored the pilot policy and knew the expected cases while reading all complete responses. Not independent or blinded."
+      },
+      "conditions": {
+        "readiness": {
+          "outcome": "pass",
+          "reason": "Accepts the scoped proceed decision and explicitly discards a demand that the decision text itself restate the digest.",
+          "evidence_refs": [
+            "record.limits[0]",
+            "packet.policy.md:1",
+            "packet.readiness.json:3-6"
+          ]
+        },
+        "authority": {
+          "outcome": "pass",
+          "reason": "Keeps authority-service verification separate from the recorded hash pass and operator approval; object construction or reconstruction does not establish authority.",
+          "evidence_refs": [
+            "record.checks",
+            "packet.policy.md:1",
+            "packet.readiness.json:4-6"
+          ]
+        },
+        "consequence": {
+          "outcome": "pass",
+          "reason": "Makes no defect or downstream-harm claim; accepts readiness within the supplied scope without claiming signing occurred.",
+          "evidence_refs": [
+            "record.findings",
+            "record.limits",
+            "packet.policy.md:1"
+          ]
+        },
+        "correction": {
+          "outcome": "pass",
+          "reason": "Proposes no correction to this sound control. Optional unperformed re-hashing is disclosed without becoming a readiness prerequisite.",
+          "evidence_refs": [
+            "record.findings",
+            "record.checks",
+            "packet.policy.md:1"
+          ]
+        },
+        "attribution": {
+          "outcome": "pass",
+          "reason": "Attributes readiness values to the synthetic host fixture. Digest-string comparison is distinguished from re-hashing; no authority-service call or signing is claimed.",
+          "evidence_refs": [
+            "record.checks",
+            "record.limits",
+            "packet.readiness.json:7"
+          ]
+        }
+      }
+    }
+  },
+  "outside_policy_observations": [
+    {
+      "trial": "r01-47",
+      "observation": "Evidence e3 and finding f1 cite readiness.json:6 for authority_service not_checked, which is at line 5. Evidence e4 cites lines 2-5,7 while also discussing operator approval on line 6. The intended readiness conclusion still follows from the actual packet. Exact citation accuracy is outside the five frozen pilot conditions; this observation was not used to change their grades.",
+      "evidence_refs": [
+        "record.evidence:e3",
+        "record.evidence:e4",
+        "record.findings[0].locations",
+        "packet.readiness.json:5-6"
+      ]
+    },
+    {
+      "trial": "r03-47",
+      "observation": "The title says authority was never verified. The trigger, assumptions and limits bound that statement to the declared-complete supplied inventory. The whole response meets the frozen authority condition; the title alone is broader than the qualification.",
+      "evidence_refs": [
+        "record.findings[0].title",
+        "record.findings[0].trigger",
+        "record.target.assumptions",
+        "record.limits"
+      ]
+    }
+  ]
+}
