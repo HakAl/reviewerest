@@ -1,9 +1,9 @@
 {
-  "version": 2,
+  "version": 3,
   "status": "complete",
   "scope": "Static comparison of the fictional upload plan against its terminal-outcome contract.",
   "provenance": {
-    "skill_version": "1.1.0",
+    "skill_version": "1.2.0",
     "skill_revision": null,
     "run_id": null,
     "reviewer": {
@@ -118,7 +118,46 @@
       ],
       "basis": "inferred",
       "uncertainty": "Only the proposed mapping is inspected; implemented behavior is unknown.",
-      "recommendation": "Add a canceled row with an Upload again action."
+      "recommendation": "Add a canceled row with an Upload again action.",
+      "claim_support": {
+        "defect": {
+          "level": "inspected",
+          "evidence_ids": [
+            "e1",
+            "e2"
+          ],
+          "check_ids": [
+            "k1"
+          ],
+          "reasoning": "The canceled outcome is absent from the proposed terminal-state mapping.",
+          "assumptions": [],
+          "next_check": null
+        },
+        "consequence": {
+          "level": "inspected",
+          "evidence_ids": [
+            "e1",
+            "e2"
+          ],
+          "check_ids": [
+            "k1"
+          ],
+          "reasoning": "Applying the stated fallback to canceled yields Uploading with Cancel; this concerns the plan, not an observed UI.",
+          "assumptions": [],
+          "next_check": null
+        },
+        "correction": {
+          "level": "inspected",
+          "evidence_ids": [
+            "e1",
+            "e2"
+          ],
+          "check_ids": [],
+          "reasoning": "An explicit canceled row supplies Canceled and Upload again while preserving the other outcome rows.",
+          "assumptions": [],
+          "next_check": null
+        }
+      }
     }
   ],
   "limits": [

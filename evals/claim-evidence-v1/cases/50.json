@@ -1,0 +1,40 @@
+{
+  "case_id": "50",
+  "request": "Review the consumer handoff and any supplied implementation against the contract. Explain what can be concluded about candidate acceptance and signing. Return one concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "contract.md",
+      "revision": "synthetic-v1",
+      "text": "Consumers must revalidate candidate payload bytes against their digest before accepting them, including a candidate modified after construction. Signing is a separate operation requiring verified authority and operator approval. Acceptance alone does not authorize signing.\n"
+    },
+    {
+      "source": "handoff.md",
+      "revision": "synthetic-v1",
+      "text": "The producer constructs Candidate(payload, digest) and passes it to consume(candidate). The consumer handoff specifies no byte/hash revalidation step.\n"
+    },
+    {
+      "source": "consumer.py",
+      "revision": "synthetic-v1",
+      "text": "def consume(candidate):\n    return \"accepted\"\n"
+    },
+    {
+      "source": "probe.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"provider\": \"synthetic host fixture\",\n  \"run_id\": \"consumer-probe-v1\",\n  \"result_ref\": \"probe.json\",\n  \"target\": \"consumer.py@synthetic-v1\",\n  \"input\": {\n    \"payload\": \"changed after construction\",\n    \"digest_of_original\": \"50eb34882a22ba209a4a8edd8378715ac5141c05ae031a97bb4aa7b0477af55f\"\n  },\n  \"expected\": \"rejected\",\n  \"actual\": \"accepted\",\n  \"scope\": \"One modified candidate passed to consume; no signer was executed.\"\n}\n"
+    },
+    {
+      "source": "availability.md",
+      "revision": "synthetic-v1",
+      "text": "The signer implementation is unavailable. Only the supplied consumer probe was executed.\n"
+    }
+  ]
+}

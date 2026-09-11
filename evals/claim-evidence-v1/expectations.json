@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "suite": "claim-evidence-v1",
+  "status": "Frozen author-written development criteria; no count or severity labels.",
+  "cases": [
+    {
+      "case_id": "47",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "performance"
+      ]
+    },
+    {
+      "case_id": "48",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "performance"
+      ]
+    },
+    {
+      "case_id": "49",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "performance"
+      ]
+    },
+    {
+      "case_id": "50",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "performance"
+      ]
+    },
+    {
+      "case_id": "51",
+      "required_lenses": [
+        "feasibility"
+      ],
+      "forbidden_lenses": [
+        "performance"
+      ]
+    },
+    {
+      "case_id": "52",
+      "required_lenses": [
+        "feasibility"
+      ],
+      "forbidden_lenses": [
+        "performance"
+      ]
+    }
+  ]
+}

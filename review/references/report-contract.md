@@ -1,4 +1,4 @@
-# Structured review record, version 2
+# Structured review record, version 3
 
 Read only for requested machine-readable output or evaluation. Return JSON as response data; the host owns persistence. For JSON-only requests, return one bare JSON object, with scope and limitations inside its fields and no preface or code fences. This is a reporting contract, not evidence that the host enforces read-only access or that conclusions are correct.
 
@@ -6,12 +6,12 @@ Use this shape and populate it from the actual review. The empty example is a sh
 
 ```json
 {
-  "version": 2,
+  "version": 3,
   "status": "complete",
   "scope": "One-line review boundary and purpose",
   "target": {"artifact": "path or source ID", "revision": null, "base": null, "assumptions": []},
   "provenance": {
-    "skill_version": "1.1.0",
+    "skill_version": "1.2.0",
     "skill_revision": null,
     "run_id": null,
     "reviewer": {"model": null, "family": null},
@@ -41,15 +41,61 @@ Use this shape and populate it from the actual review. The empty example is a sh
   - For `method: "model"`, include `assessor: {"model": null, "family": null}`, replacing null only with known identities.
   - For `method: "host_execution"`, include `execution: {"run_id": null, "result_ref": null}`. Use the supplied run ID and result location when available; otherwise keep null and explain missing provenance in `limitation`. A requested command stays `not_run` until invocation/results are supplied. Do not invent independent judges or execution evidence.
 - `candidates`: objects with `id`, `disposition` (`reported`, `merged`, `discarded`), `finding_id` (null only if discarded), and `reason`. Every reported/merged candidate maps to exactly one final finding. A discarded candidate needs a scope/evidence reason.
-- `findings`: objects with unique `id`, `severity` (`blocker`, `major`, `minor`), `title`, `locations`, `trigger`, `consequence`, `evidence_ids`, `lenses`, `basis` (`observed`, `inferred`), `uncertainty`, and `recommendation`. Lens IDs refer to selected lenses. Group by root cause, sorted by impact, never by lens. Preserve independent defects sharing a location.
+- `findings`: objects with unique `id`, `severity` (`blocker`, `major`, `minor`), `title`, `locations`, `trigger`, `consequence`, `evidence_ids`, `lenses`, `basis` (`observed`, `inferred`), `uncertainty`, `recommendation`, and `claim_support` (below). Lens IDs refer to selected lenses. Group by root cause, sorted by impact, never by lens. Preserve independent defects sharing a location.
 - `limits`: specific missing evidence, omitted coverage, unverifiable host enforcement, or remaining assumptions. Missing proof is not itself a defect finding.
 - `missing_input` and `candidates_for_scope`: populate for needs-scope. Never issue an interactive prompt in an unattended run.
 - `handoff`: null for review-only; for review-and-fix use `{ "phase": "edit", "authorized_by": "user request", "finding_ids": [], "suggested_diff": null, "applied": false }`. This record never claims edits occurred inside review. The orchestrator validates proposed edits against user intent before execution and reports its editing results separately.
+
+## Claim support
+
+Every finding includes `claim_support` with exactly these three roles: `defect`
+(support for title and triggering discrepancy), `consequence` (support for the
+consequence text), and `correction` (support for the recommendation). Each has:
+
+```json
+{
+  "level": "inspected",
+  "evidence_ids": ["e1", "e2"],
+  "check_ids": ["k1"],
+  "reasoning": "The required canceled state falls through to the running row in the supplied plan.",
+  "assumptions": [],
+  "next_check": null
+}
+```
+
+- `demonstrated`: the particular claim was exercised by an actual execution
+  result. Link a performed `host_execution` check (pass or fail) and matching
+  `kind: "execution"` evidence. State the exercised inputs and bounds. Supplied
+  results must be attributed to their provider; do not claim to have run them.
+- `inspected`: a complete source-level comparison or derivation supports the
+  stated claim without execution. Link evidence and explain the argument.
+  Reading a requirement does not demonstrate implementation compliance.
+- `conditional`: evidence supports a concrete path if a named, unverified
+  assumption holds. List it in `assumptions` and give a concrete `next_check`.
+  Keep the corresponding claim text conditional too.
+- `unresolved`: explain the missing evidence in `reasoning` and supply a
+  `next_check`. Evidence/check links may be empty. This is allowed for a
+  finding's consequence or correction, not its defect: wholly unresolved
+  concerns belong in limits or questions. Do not state unestablished harm or
+  promise an effective fix in the corresponding text.
+
+All roles require `reasoning`, `assumptions` (possibly empty), `evidence_ids`,
+`check_ids` (possibly empty), and `next_check` (null only for demonstrated or
+inspected support). A static correction can be inspected if its argument covers
+both the defect and preserved requirements; execution is not mandatory. A
+runtime test of a defect does not establish its downstream harm or its fix.
+These are evidence categories, not confidence probabilities or severity levels.
+
+The helper checks required fields and links. A fabricated result or invalid
+inference may still satisfy that structure. Source authenticity, relevance,
+assumption completeness and whether the prose actually respects the declared
+support level need substantive assessment. Never treat a successful validation
+receipt as proof that a claim is demonstrated.
 
 The ordinary prose report follows the same evidence and scope rules without serializing this bookkeeping. Semantic support, correct lens selection, and legitimate deduplication need substantive assessment; field presence does not prove them.
 
 The host can check an existing record with `python3 <skill-dir>/scripts/validate_record.py <record.json>` or supply JSON on stdin with `-`. Exit 0 means structurally consistent, 3 means invalid, and 2 is usage error. The helper writes only its receipt to stdout. It cannot verify source truth or actual tool execution from a self-reported record.
 
-Version 2 adds completion consistency, comparison criteria, failed-check disposition, and provenance. The validator defaults to version 2. Use `--allow-legacy` only to read archived version 1 records with their historical structural checks; its receipt explicitly says `legacy_structure_only`. That mode does not establish the new coverage guarantees. Preserve original records rather than filling unknown history retrospectively.
+Version 3 adds separate support for each finding's defect, consequence and correction. The validator defaults to version 3. Use `--allow-legacy` only to read archived version 1 or 2 records with their historical checks; the receipt says `legacy_structure_only`. Version 2 retains its coverage/provenance checks but has no per-claim support requirement. Preserve historical records without inventing missing support retrospectively.
 
 Development evidence is in the source repository at `tests/test_review_records.py`, `tests/fixtures/review-audit-2026-09-09/`, and `evals/`. These are outside the portable skill package and are not runtime dependencies.

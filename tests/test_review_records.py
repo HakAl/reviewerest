@@ -14,9 +14,9 @@ spec.loader.exec_module(validator)
 
 
 def supported_record():
-    return {
-        "version": 2, "status": "complete", "scope": "Review arithmetic against the supplied integer contract.",
-        "provenance": {"skill_version": "1.1.0", "skill_revision": None, "run_id": None,
+    record = {
+        "version": 3, "status": "complete", "scope": "Review arithmetic against the supplied integer contract.",
+        "provenance": {"skill_version": "1.2.0", "skill_revision": None, "run_id": None,
                        "reviewer": {"model": None, "family": None}, "generator": {"model": None, "family": None}},
         "no_review_reason": None,
         "target": {"artifact": "calc.py", "revision": "fixture-v1", "base": None, "assumptions": []},
@@ -34,6 +34,14 @@ def supported_record():
     }
 
 
+    record["findings"][0]["claim_support"] = {
+        role: {"level": "inspected", "evidence_ids": ["e1"], "check_ids": ["k1"],
+               "reasoning": "For n=3, n+2 gives 5 instead of 6; returning 2*n meets the integer contract.",
+               "assumptions": [], "next_check": None}
+        for role in ("defect", "consequence", "correction")}
+    return record
+
+
 class RecordTests(unittest.TestCase):
     def test_audit_probes_rejected_for_coverage_not_just_version(self):
         directory = Path(__file__).parent / "fixtures/review-audit-2026-09-09"
@@ -41,7 +49,7 @@ class RecordTests(unittest.TestCase):
             record = json.loads((directory / (name + ".json")).read_text())
             self.assertTrue(validator.validate(record))
             self.assertEqual(validator.validate(record, allow_legacy=True), [])
-            record.update(version=2, provenance=supported_record()["provenance"], no_review_reason=None)
+            record.update(version=3, provenance=supported_record()["provenance"], no_review_reason=None)
             if record["checks"]:
                 record["checks"][0].update(criterion="Compare the token safely.", finding_ids=[], disposition_reason="No supported defect established.")
             paths = {error["path"] for error in validator.validate(record)}

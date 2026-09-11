@@ -46,7 +46,7 @@ def assess(records, expectations, *, allow_legacy=False):
         results.append({
             "case_id": case_id,
             "record_version": report.get("version") if isinstance(report, dict) else None,
-            "legacy_validation": allow_legacy and isinstance(report, dict) and report.get("version") == 1,
+            "legacy_validation": allow_legacy and isinstance(report, dict) and report.get("version") in (1, 2),
             "schema_errors": schema_errors,
             "missing_required_lenses": sorted(set(expected["required_lenses"]) - selected),
             "forbidden_lenses_selected": sorted(set(expected["forbidden_lenses"]) & selected),
@@ -62,7 +62,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("results", nargs="+", help="JSON arrays of case_id/review objects")
     parser.add_argument("--cases", help="Explicit planned subset, comma-separated (default: all cases)")
-    parser.add_argument("--allow-legacy", action="store_true", help="Use historical structural checks for version 1 records")
+    parser.add_argument("--allow-legacy", action="store_true", help="Use historical checks for version 1 or 2 records")
     parser.add_argument("--expectations", type=Path, default=ROOT / "evals/expectations.json",
                         help="Frozen scoring expectations; kept out of reviewer inputs")
     args = parser.parse_args()

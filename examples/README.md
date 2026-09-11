@@ -29,5 +29,5 @@ provides Retry after a failure.
 and user comprehension remain untested. This finding concerns the supplied
 state mapping, not every aspect of the upload feature.
 
-A matching [structured record](review.json) passes the version 2 validator.
+A matching [structured record](review.json) passes the version 3 validator.
 That validates the record's structure, not the truth of an actual model review.

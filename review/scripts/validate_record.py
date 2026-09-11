@@ -27,8 +27,8 @@ def validate(record, *, allow_legacy=False):
     if not isinstance(record, dict):
         return [{"path": "$", "message": "Record must be an object."}]
     version = record.get("version")
-    require(type(version) is int and (version == 2 or (allow_legacy and version == 1)),
-            "version", "Expected version 2; version 1 requires explicit legacy mode.")
+    require(type(version) is int and (version == 3 or (allow_legacy and version in (1, 2))),
+            "version", "Expected version 3; versions 1 and 2 require explicit legacy mode.")
     require(record.get("status") in ("complete", "partial", "needs_scope",), "status", "Invalid status.")
     require(text(record.get("scope")), "scope", "Scope must be a nonempty string.")
     target = record.get("target")
@@ -131,6 +131,43 @@ def validate(record, *, allow_legacy=False):
         refs(finding.get("evidence_ids"), indexes["evidence"], path + ".evidence_ids", True)
         refs(finding.get("lenses"), selected, path + ".lenses", True)
 
+        if version == 3:
+            support = finding.get("claim_support")
+            require(isinstance(support, dict), path + ".claim_support", "Separate defect, consequence and correction support required.")
+            if not isinstance(support, dict):
+                continue
+            for role in ("defect", "consequence", "correction"):
+                claim = support.get(role)
+                cp = path + ".claim_support." + role
+                require(isinstance(claim, dict), cp, "Claim support object required.")
+                if not isinstance(claim, dict):
+                    continue
+                level = claim.get("level")
+                require(level in ("demonstrated", "inspected", "conditional", "unresolved"), cp + ".level", "Invalid support level.")
+                require(role != "defect" or level != "unresolved", cp, "An unresolved concern cannot be a defect finding.")
+                ev_ids = refs(claim.get("evidence_ids"), indexes["evidence"], cp + ".evidence_ids", level != "unresolved")
+                check_ids = refs(claim.get("check_ids"), indexes["checks"], cp + ".check_ids")
+                require(text(claim.get("reasoning")), cp + ".reasoning", "Explain how evidence supports this claim, or what is missing.")
+                assumptions = claim.get("assumptions")
+                require(isinstance(assumptions, list) and all(text(a) for a in assumptions), cp + ".assumptions", "Expected explicit assumptions as strings.")
+                if level == "conditional":
+                    require(isinstance(assumptions, list) and bool(assumptions), cp + ".assumptions", "Conditional support needs an unverified assumption.")
+                require("next_check" in claim and (claim["next_check"] is None or text(claim["next_check"])), cp + ".next_check", "Use a concrete next check or explicit null.")
+                if level in ("conditional", "unresolved"):
+                    require(text(claim.get("next_check")), cp + ".next_check", "Name the check or evidence needed to resolve uncertainty.")
+                if level == "demonstrated":
+                    # Checks and evidence are still self-reported: this validates links only.
+                    execution_checks = [indexes["checks"][c] for c in check_ids
+                                        if text(c) and c in indexes["checks"]
+                                        and indexes["checks"][c].get("method") == "host_execution"
+                                        and indexes["checks"][c].get("status") in ("pass", "fail")]
+                    execution_evidence = [e for e in ev_ids if text(e) and e in indexes["evidence"]
+                                          and indexes["evidence"][e].get("kind") == "execution"]
+                    require(any(isinstance(c.get("evidence_ids"), list) and
+                                any(e in c["evidence_ids"] for e in execution_evidence)
+                                for c in execution_checks), cp,
+                            "Demonstrated support needs a performed host check linked to the claim's execution evidence.")
+
     require(isinstance(record.get("limits"), list), "limits", "Expected limits array.")
     if record.get("status") in ("partial", "needs_scope",):
         require(bool(record.get("limits")), "limits", "Incomplete coverage requires explicit limits.")
@@ -146,7 +183,7 @@ def validate(record, *, allow_legacy=False):
             require(handoff.get("phase") == "edit" and handoff.get("applied") is False, "handoff", "Review may request editing but cannot claim applied edits.")
             require(text(handoff.get("authorized_by")), "handoff.authorized_by", "Authorization source required.")
             refs(handoff.get("finding_ids"), indexes["findings"], "handoff.finding_ids")
-    if version == 2:
+    if type(version) is int and version in (2, 3):
         # These are consistency conditions, not a semantic approval gate.
         limits = record.get("limits")
         require(isinstance(limits, list) and all(text(item) for item in limits),
@@ -211,7 +248,7 @@ def validate(record, *, allow_legacy=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("record", help="JSON file or - for stdin")
-    parser.add_argument("--allow-legacy", action="store_true", help="Accept version 1 with its historical structural checks only")
+    parser.add_argument("--allow-legacy", action="store_true", help="Accept versions 1 and 2 with their historical checks only")
     args = parser.parse_args()
     try:
         raw = sys.stdin.read() if args.record == "-" else Path(args.record).read_text(encoding="utf-8")
@@ -220,9 +257,9 @@ def main():
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         errors = [{"path": "$", "message": f"Record unavailable or invalid JSON: {type(exc).__name__}."}]
         record = None
-    legacy = isinstance(record, dict) and type(record.get("version")) is int and record["version"] == 1
+    legacy = isinstance(record, dict) and type(record.get("version")) is int and record["version"] in (1, 2)
     print(json.dumps({"valid": not errors, "errors": errors,
-                      "validation_scope": "legacy_structure_only" if legacy and args.allow_legacy else "current_structure_and_coverage",
+                      "validation_scope": "legacy_structure_only" if legacy and args.allow_legacy else "current_structure_coverage_and_claim_links",
                       "substantive_truth_verified": False}, indent=2))
     return 3 if errors else 0
 

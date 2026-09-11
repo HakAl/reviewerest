@@ -54,7 +54,15 @@
     "evals/review-quality-v1/cases/46.json": "b1c5b33310ba6b819273959f683dc431072ac0180bdbf5a4a7ba7f005f6fce86",
     "evals/review-quality-v1/expectations.json": "9087631e0c57df9f2590df645824cafdc55f7bec99ec8d1740be23b90c452476",
     "evals/review-quality-v1/matcher-oracle.json": "196b55099f8507255ff657e11d49a1285d1a8d050bb98fcf819f3c8055b8005c",
-    "evals/review-quality-v1/rubric.json": "90cf42a89e23c0d2721f9569a6730b5604ed837b4fe5340433714c6d4918446e"
+    "evals/review-quality-v1/rubric.json": "90cf42a89e23c0d2721f9569a6730b5604ed837b4fe5340433714c6d4918446e",
+    "evals/claim-evidence-v1/cases/47.json": "602987996117260354f4eab2952cd8ec630efeeb8e804a0596adf22793d218a9",
+    "evals/claim-evidence-v1/cases/48.json": "390527e77aa8045f73ecdaf92df47966356ceb52d86bfe69b0a42807d667582f",
+    "evals/claim-evidence-v1/cases/49.json": "60bbee8c96aa0472ac952fa2fe7fea053bc9c6da0c77d354cf6d5409a7cf6950",
+    "evals/claim-evidence-v1/cases/50.json": "b5bb71f72a6b73057d0e36aeaaa7ccffc8f97a6d859e58c6447b06c2f6cc88ab",
+    "evals/claim-evidence-v1/cases/51.json": "90a8539bf5fb3ca1bc23597e20ec7b535eb6dfa76a58e610eb4b92a3e2681705",
+    "evals/claim-evidence-v1/cases/52.json": "87cc705adfc71292b6c2c1ce31f66cf45a7fcf02ad41823d36adfad4ffd895b0",
+    "evals/claim-evidence-v1/expectations.json": "01d86e3d7cd489f65c277db86f00c0dbee7ec7f0d25328cf8af474f950c8a3d4",
+    "evals/claim-evidence-v1/rubric.json": "d404bb069c2ed8a5162d67445b2d2b6e34cb6d94564877f7eddddc30a92616b3"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }

@@ -1,0 +1,30 @@
+{
+  "case_id": "49",
+  "request": "Review the consumer handoff and any supplied implementation against the contract. Explain what can be concluded about candidate acceptance and signing. Return one concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "contract.md",
+      "revision": "synthetic-v1",
+      "text": "Consumers must revalidate candidate payload bytes against their digest before accepting them, including a candidate modified after construction. Signing is a separate operation requiring verified authority and operator approval. Acceptance alone does not authorize signing.\n"
+    },
+    {
+      "source": "handoff.md",
+      "revision": "synthetic-v1",
+      "text": "The producer constructs Candidate(payload, digest) and passes it to consume(candidate). The consumer handoff specifies no byte/hash revalidation step.\n"
+    },
+    {
+      "source": "availability.md",
+      "revision": "synthetic-v1",
+      "text": "The consumer and signer implementations are unavailable. No execution results were supplied.\n"
+    }
+  ]
+}

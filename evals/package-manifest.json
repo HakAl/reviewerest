@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "skill_version": "1.1.0",
-  "report_version": 2,
+  "skill_version": "1.2.0",
+  "report_version": 3,
   "files": {
-    "review/SKILL.md": "4878025012900eb1dd6cb86f3502b3922ee88e852f75c3334f90278426ddeebd",
+    "review/SKILL.md": "3a0be83ff1cfeee9452d8c84df76ff4f4dd9257b27ad09e186cf1a0143a7a9bb",
     "review/agents/openai.yaml": "4c593a16e82c506538c2946202a3ecce3a47daeb752ec17bbc402bd6a5118d33",
     "review/references/interaction-evidence.md": "141779219f481c51012432be6bfe148a6e7def8198dba913e9e5f42a22d6fdaf",
     "review/references/migrations.md": "b0f5cd7b273dc773ed3be9cf47e170b456f0ea97c87d03d11493fdc08675d1cc",
-    "review/references/report-contract.md": "57532d18770104e34787122d5c909a67dbce75db65f7bf5d3c843570c5bf8f2f",
+    "review/references/report-contract.md": "5e37d1f501092699ca24857a711275ecc379d5e5e5e932b1f4932c799616c1b2",
     "review/references/security-boundaries.md": "b28364e9fa34bf2d579c16183945670df34bc9d068aa2d5494ea5343031420f4",
     "review/scripts/frame_artifact.py": "b9d78c461b8b068f00d6759e94b09c4312926d01c8f54616419b0ea1174891a5",
     "review/scripts/resolve_base.py": "bcd8ed3da9fc490483d4f3bc72aeb6235b44ee581f13b8a373da91303933d0df",
-    "review/scripts/validate_record.py": "c02792c063fc6222e1adf3006ea05fb1f56526696c317d274da6ba4718cefafc",
+    "review/scripts/validate_record.py": "781447bcb3f8fb8821c8d0115006a1e63ea362d316c8d56e9f5541fab8cd06d4",
     "review/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "review/NOTICE": "d627d8423cd290f85c8613af9475d3ecbbc38044c3d30129b4a2613dafe21fdb"
   },
