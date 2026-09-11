@@ -62,7 +62,8 @@
     "evals/claim-evidence-v1/cases/51.json": "90a8539bf5fb3ca1bc23597e20ec7b535eb6dfa76a58e610eb4b92a3e2681705",
     "evals/claim-evidence-v1/cases/52.json": "87cc705adfc71292b6c2c1ce31f66cf45a7fcf02ad41823d36adfad4ffd895b0",
     "evals/claim-evidence-v1/expectations.json": "01d86e3d7cd489f65c277db86f00c0dbee7ec7f0d25328cf8af474f950c8a3d4",
-    "evals/claim-evidence-v1/rubric.json": "d404bb069c2ed8a5162d67445b2d2b6e34cb6d94564877f7eddddc30a92616b3"
+    "evals/claim-evidence-v1/rubric.json": "d404bb069c2ed8a5162d67445b2d2b6e34cb6d94564877f7eddddc30a92616b3",
+    "evals/repeated-v1/policy.json": "fc0f0ec1b4567204a1a0349f5d7fad0b28ebc248270c388f98720f2117a0eb0f"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }
