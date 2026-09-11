@@ -1,0 +1,35 @@
+{
+  "case_id": "41",
+  "request": "Review evidence and correctness of the draft finding against the supplied implementation and complete corpus measurement. Keep observations about frequency bounded to this corpus. No broader literature or network claims are in scope. Return a concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "filter.py",
+      "revision": "synthetic-v1",
+      "text": "def anchor_match(title):\n    return \"llm\" in title.casefold()\n"
+    },
+    {
+      "source": "finding.md",
+      "revision": "synthetic-v1",
+      "text": "The substring matcher accepts Bellman as an LLM anchor. This false-positive trigger occurs frequently in the inspected corpus: at least half of its titles contain Bellman. The filter should exclude that word.\n"
+    },
+    {
+      "source": "corpus.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"titles\": [\n    \"LLM planning\",\n    \"LLMs in practice\",\n    \"Graph search\",\n    \"Policy learning\"\n  ]\n}\n"
+    },
+    {
+      "source": "measurement.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"scope\": \"Every title in supplied corpus.json, case-insensitive Bellman substring count.\",\n  \"total_titles\": 4,\n  \"matching_titles\": 0,\n  \"measurement_kind\": \"host-provided synthetic fixture observation\"\n}\n"
+    }
+  ]
+}

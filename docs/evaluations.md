@@ -15,6 +15,11 @@ checks but retains a substantive failure: deriving impossible Git recovery from
 current untracked status. Ownership and cumulative-clause controls pass the
 targeted builder assessment, with residual wording caveats recorded.
 
+An [eight-case review quality suite](../evals/review-quality-v1/README.md) adds
+executable correction checks, bounded corpus-frequency claims, exact citation
+resolution versus semantic support, and conflicting retry contracts. Its
+fictional packets include a valid control for each changed evidence condition.
+
 The [first paired baseline](../evals/calibration-v1/baseline-01.md) distinguishes
 the three targeted evidence/scope changes, in the builder's assessment. Three
 frozen severity checks fail and expose ambiguity in the author's labels. Those

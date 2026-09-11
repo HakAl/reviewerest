@@ -1,0 +1,30 @@
+{
+  "case_id": "45",
+  "request": "Review correctness and reliability of retry.py against both supplied project contracts. Neither contract has declared precedence over the other. Limit findings to retry-status selection and the eventual abort behavior. Return a concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "PROJECT.md",
+      "revision": "synthetic-v1",
+      "text": "Retry every response with status 500 through 599 up to the configured retry budget. Once the budget is exhausted, abort without emitting partial output.\n"
+    },
+    {
+      "source": "MAINTAINING.md",
+      "revision": "synthetic-v1",
+      "text": "Retry only status 503 up to the configured retry budget. Abort on other error statuses. Once the budget is exhausted, abort without emitting partial output.\n"
+    },
+    {
+      "source": "retry.py",
+      "revision": "synthetic-v1",
+      "text": "def next_action(status, attempt, budget):\n    if status == 503 and attempt < budget:\n        return \"retry\"\n    return \"abort_without_partial_output\"\n"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "function": "matches(text)",
+  "checks": [
+    {
+      "text": "LLM",
+      "expected": true
+    },
+    {
+      "text": "LLMs",
+      "expected": true
+    },
+    {
+      "text": "llms,",
+      "expected": true
+    },
+    {
+      "text": "(LLM)",
+      "expected": true
+    },
+    {
+      "text": "LLMs: a survey",
+      "expected": true
+    },
+    {
+      "text": "a llm-based method",
+      "expected": true
+    },
+    {
+      "text": "Bellman equation",
+      "expected": false
+    },
+    {
+      "text": "XLLM",
+      "expected": false
+    },
+    {
+      "text": "LLMish",
+      "expected": false
+    },
+    {
+      "text": "LLM2",
+      "expected": false
+    },
+    {
+      "text": "small models",
+      "expected": false
+    },
+    {
+      "text": "",
+      "expected": false
+    }
+  ],
+  "limits": "Bounded token examples; not a universal language or Unicode specification."
+}

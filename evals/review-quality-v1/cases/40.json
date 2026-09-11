@@ -1,0 +1,30 @@
+{
+  "case_id": "40",
+  "request": "Review correctness of proposed.py as a replacement for original.py against the token contract. Focus on whether the proposed fix removes false matches while preserving required matches. If it needs changes, include a complete corrected Python module in a proposed_replacement string field in the record; otherwise set that field to null. Do not execute code. Return a concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "contract.md",
+      "revision": "synthetic-v1",
+      "text": "The function matches(text) returns a bool. It must accept a whole token LLM or LLMs, case-insensitively, including next to punctuation. Reject occurrences inside larger words such as Bellman, XLLM and LLMish. No other acronyms or morphological forms are required.\n"
+    },
+    {
+      "source": "original.py",
+      "revision": "synthetic-v1",
+      "text": "def matches(text):\n    return \"llm\" in text.casefold()\n"
+    },
+    {
+      "source": "proposed.py",
+      "revision": "synthetic-v1",
+      "text": "import re\n\ndef matches(text):\n    return re.search('\\\\bllms?\\\\b', text, re.IGNORECASE) is not None\n"
+    }
+  ]
+}

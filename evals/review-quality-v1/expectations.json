@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "suite": "review-quality-v1",
+  "status": "author-frozen before first model run; human calibration pending",
+  "severity_policy": "Diagnostic only.",
+  "cases": [
+    {
+      "case_id": "39",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "semantic_expectation": "Proposed boundary regex drops required plural LLMs; provide a replacement preserving singular/plural and rejecting Bellman."
+    },
+    {
+      "case_id": "40",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 0
+      },
+      "semantic_expectation": "Proposed regex satisfies the supplied token contract. No invented regression; proposed_replacement null."
+    },
+    {
+      "case_id": "41",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 2
+      },
+      "semantic_expectation": "Keep the possible Bellman false match, reject the at-least-half frequency claim for this zero-match corpus; do not claim the code defect is impossible."
+    },
+    {
+      "case_id": "42",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 0
+      },
+      "semantic_expectation": "Three of four titles meet the stated frequency threshold. Accept the bounded claim, without generalizing to other corpora."
+    },
+    {
+      "case_id": "43",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 2
+      },
+      "semantic_expectation": "The cited line and quote exist but do not support the future-date rejection claim; the excerpt explicitly leaves it unspecified."
+    },
+    {
+      "case_id": "44",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 1
+      },
+      "semantic_expectation": "The future-date requirement is supported by line 4, but the cited line 3 is irrelevant. Correct the citation without rejecting the supported requirement or claiming runtime observation."
+    },
+    {
+      "case_id": "45",
+      "required_lenses": [
+        "correctness",
+        "reliability"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 2
+      },
+      "semantic_expectation": "Name the conflict between broad server-error retries and 503-only retries. Code conforms to one and conflicts with the other; do not pick authority or report eventual abort itself as wrong."
+    },
+    {
+      "case_id": "46",
+      "required_lenses": [
+        "correctness",
+        "reliability"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "semantic_expectation": "Both contracts agree on 500-599; code omits supported retries such as 502/504. Keep final fail-closed abort as required behavior."
+    }
+  ]
+}

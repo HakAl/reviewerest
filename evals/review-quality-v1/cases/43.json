@@ -1,0 +1,25 @@
+{
+  "case_id": "43",
+  "request": "Review the evidence supporting the protocol claim in finding.md using only the supplied fictional CatalogSync v1 excerpt. Check both the cited location and what its text supports. For every evidence item, use location in the form lines START-END and include a quote field containing an exact contiguous excerpt from those lines. Do not fetch external sources or assert a server observation. Return a concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "finding.md",
+      "revision": "synthetic-v1",
+      "text": "CatalogSync v1 requires servers to reject a future until date with badArgument. Evidence: protocol.txt:3, \"Unknown parameters return badArgument.\"\n"
+    },
+    {
+      "source": "protocol.txt",
+      "revision": "synthetic-v1",
+      "text": "CatalogSync v1 excerpt.\nWindow dates are expressed in UTC; until is inclusive.\nUnknown parameters return badArgument.\nThis excerpt does not specify the treatment of future until dates.\n"
+    }
+  ]
+}

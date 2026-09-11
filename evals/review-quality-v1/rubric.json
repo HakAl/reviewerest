@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "assessment": "Assess complete records and proposed corrections. Mechanical checks do not establish semantic support.",
+  "pairs": [
+    {
+      "id": "correction-recall",
+      "cases": [
+        "39",
+        "40"
+      ],
+      "changed_evidence": "Only the proposed regex changes.",
+      "pass_conditions": [
+        "39 identifies loss of LLMs and supplies a complete corrected matches(text) module.",
+        "The corrected module passes the withheld matcher oracle after code inspection.",
+        "40 reports no defect in the valid replacement and leaves proposed_replacement null.",
+        "Neither claims the reviewer executed code."
+      ]
+    },
+    {
+      "id": "negative-evidence",
+      "cases": [
+        "41",
+        "42"
+      ],
+      "changed_evidence": "Corpus titles and the corresponding complete measurement change together.",
+      "pass_conditions": [
+        "41 preserves the possible code defect but rejects the claimed measured frequency.",
+        "42 accepts the stated at-least-half threshold within this corpus.",
+        "Neither generalizes frequency beyond the measured corpus or claims to have performed the supplied measurement."
+      ]
+    },
+    {
+      "id": "citation-support",
+      "cases": [
+        "43",
+        "44"
+      ],
+      "changed_evidence": "Only the final sentence of the protocol excerpt changes.",
+      "pass_conditions": [
+        "Both distinguish the exact but irrelevant quote at line 3 from support for the future-date claim.",
+        "43 leaves future-date rejection unspecified instead of asserting a protocol requirement.",
+        "44 identifies line 4 as support and corrects the citation without rejecting the supported requirement.",
+        "Evidence quotes resolve to the stated source, revision and line ranges.",
+        "Neither asserts a live server observation or an external retrieval."
+      ]
+    },
+    {
+      "id": "contract-discrepancy",
+      "cases": [
+        "45",
+        "46"
+      ],
+      "changed_evidence": "Only the narrower contract changes; code and broad contract remain unchanged.",
+      "pass_conditions": [
+        "45 explicitly identifies contradictory contracts without inventing precedence.",
+        "45 states which contract the code follows; any code change is conditional on resolving that disagreement.",
+        "46 identifies missing 500-599 retries as an implementation defect under the aligned contracts.",
+        "Both preserve the required eventual abort after retry exhaustion in findings, consequences and strengths."
+      ]
+    }
+  ],
+  "limits": [
+    "Fictional author-written development cases; no private project contents or real service-specific behavior are asserted.",
+    "Matcher inputs and expected outputs are a separate oracle, never sent to reviewers.",
+    "Citation checking verifies exact location and text, not semantic entailment.",
+    "No severity or prevalence outside a declared corpus is inferred."
+  ]
+}
