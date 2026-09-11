@@ -1,0 +1,123 @@
+{
+  "status": "incomplete",
+  "planned": 12,
+  "matches": 9,
+  "matrix": {
+    "pass": {
+      "pass": 4,
+      "fail": 0,
+      "inconclusive": 0,
+      "missing": 0,
+      "invalid": 1
+    },
+    "fail": {
+      "pass": 0,
+      "fail": 4,
+      "inconclusive": 0,
+      "missing": 0,
+      "invalid": 1
+    },
+    "inconclusive": {
+      "pass": 1,
+      "fail": 0,
+      "inconclusive": 1,
+      "missing": 0,
+      "invalid": 0
+    }
+  },
+  "results": [
+    {
+      "packet_id": "p73",
+      "expected": "fail",
+      "observed": "fail",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p18",
+      "expected": "pass",
+      "observed": "pass",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p64",
+      "expected": "pass",
+      "observed": "pass",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p29",
+      "expected": "fail",
+      "observed": "fail",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p85",
+      "expected": "inconclusive",
+      "observed": "inconclusive",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p42",
+      "expected": "pass",
+      "observed": "invalid",
+      "matches_author_label": false,
+      "error": "Citation does not resolve to exact supplied text."
+    },
+    {
+      "packet_id": "p96",
+      "expected": "fail",
+      "observed": "fail",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p31",
+      "expected": "inconclusive",
+      "observed": "pass",
+      "matches_author_label": false,
+      "error": null
+    },
+    {
+      "packet_id": "p57",
+      "expected": "fail",
+      "observed": "invalid",
+      "matches_author_label": false,
+      "error": "Citation does not resolve to exact supplied text."
+    },
+    {
+      "packet_id": "p06",
+      "expected": "pass",
+      "observed": "pass",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p48",
+      "expected": "pass",
+      "observed": "pass",
+      "matches_author_label": true,
+      "error": null
+    },
+    {
+      "packet_id": "p22",
+      "expected": "fail",
+      "observed": "fail",
+      "matches_author_label": true,
+      "error": null
+    }
+  ],
+  "false_alarms_against_labels": 0,
+  "missed_defects_against_labels": 0,
+  "unresolved_known_defects": 0,
+  "substantive_truth_verified": false,
+  "limits": [
+    "Agreement is with frozen author labels, not independently established ground truth.",
+    "Exact quote resolution checks location, not whether the quote supports the judgment.",
+    "One judgment per short review does not measure grader repeatability or full-review quality."
+  ]
+}

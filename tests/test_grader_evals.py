@@ -31,6 +31,13 @@ def answers():
 
 
 class GraderEvalTests(unittest.TestCase):
+    def test_published_scores_reproduce_without_raw_captures(self):
+        actual = grader.score(SUITE, grader.read(SUITE / "answers-01.json"))
+        self.assertEqual(actual, grader.read(SUITE / "score-01.json"))
+        receipt = grader.read(SUITE / "receipt-01.json")
+        self.assertEqual(receipt["answers_sha256"], grader.host.digest((SUITE / "answers-01.json").read_bytes()))
+        self.assertEqual(receipt["score_sha256"], grader.host.digest((SUITE / "score-01.json").read_bytes()))
+
     def test_labels_cover_supported_bad_and_ambiguous_controls(self):
         result = grader.score(SUITE, answers())
         self.assertEqual(result["planned"], 12)

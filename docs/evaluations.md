@@ -1,5 +1,13 @@
 # Evaluation status
 
+The [semantic assessor challenge](../evals/grader-v1/README.md) tests whether a
+fresh different-family assessor can reject planted review defects with expected
+answers withheld. Its [first run](../evals/grader-v1/baseline-01.md) has nine
+admissible label matches, two citation failures and one label disagreement across
+twelve packets. Public answers allow offline scoring and inspection of every
+judgment. Author labels remain uncalibrated; the original release gate stays
+inconclusive.
+
 The [repeated behavioral gate pilot](../evals/repeated-v1/README.md) freezes two
 authority cases, five conditions and three attempts per case. Its
 [first six-trial run](../evals/repeated-v1/baseline-01.md) passes those conditions

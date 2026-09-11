@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "kind": "Edited host receipt summary; not a complete or authenticated raw transcript.",
+  "frozen_commit": "6766284b2c82f8aa135cc7f21ba179639ce44ec3",
+  "protocol_sha256": "edf90ca570a14073e416091feee6a7e79b40fac005dbf09911d572955ccf6edb",
+  "suite_manifest_sha256": "71557e10c0d6fe4a7594d6022474d31013f5af9969e7cbe0a97d6b7f150c28a2",
+  "runner_sha256": "aa67b4623f667c0fb6db315850da6115a9eeca763c888b8a2e2074550c980755",
+  "transport_sha256": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+  "answers_sha256": "932613b03ba915b0809d0a9f287de2b991ab19831d89f36466459a6b1221a1ea",
+  "score_sha256": "00a6929fd1cd257d3e6787d0ec57fac03b570f1b1a9acf5b9315cfe333f20b7f",
+  "assessor": {
+    "model": "claude-opus-5[1m]",
+    "cli_version": "2.1.269 (Claude Code)",
+    "prior_exposure": "Fresh session per packet; expected labels, builder grades, authorship and other packets withheld.",
+    "selection_rationale": "Claude is a different model family from the Codex fixture author and available for this bounded pilot. Prior grading competence is unestablished; this experiment measures it."
+  },
+  "planned": 12,
+  "completed": 12,
+  "cost_estimate_usd": 0.6424845,
+  "quotes": {
+    "checked": 41,
+    "invalid": [
+      {
+        "packet_id": "p42",
+        "citation_index": 2,
+        "source": "readiness.json",
+        "claimed_line": 6
+      },
+      {
+        "packet_id": "p57",
+        "citation_index": 2,
+        "source": "readiness.json",
+        "claimed_line": 6
+      }
+    ]
+  },
+  "score_exit_code": 4,
+  "trials": [
+    {
+      "packet_id": "p73",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:46:27.075857+00:00",
+      "elapsed_seconds": 9.036,
+      "record_error": null,
+      "capture_sha256": "f5c73f050fc90fe2949498753fece3bd229dc275dbfa63de44939036b5a73b13",
+      "prompt_sha256": "3b962a4b0283de4ca76cd0562eda782e6cc38dca6146f0207a09311a743975f9"
+    },
+    {
+      "packet_id": "p18",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:46:36.112277+00:00",
+      "elapsed_seconds": 14.48,
+      "record_error": null,
+      "capture_sha256": "5b2383c4e967c3b33af469b95c28b85f081ad6f7a3fd44ad2079bee4d9cd5675",
+      "prompt_sha256": "c1adbf06a7d068783850268c314a63a1d36b6b8298c0c755b05ebd1e3160d373"
+    },
+    {
+      "packet_id": "p64",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:46:50.592886+00:00",
+      "elapsed_seconds": 9.125,
+      "record_error": null,
+      "capture_sha256": "e3d108f2e92cecac6b5990c778f2cafdcb6cad57ca5541c6f8039a1945ccde10",
+      "prompt_sha256": "a5dd9ed40ebece96551e5f5186bc8c811f0701441ce494d9856479c57fab9354"
+    },
+    {
+      "packet_id": "p29",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:46:59.719656+00:00",
+      "elapsed_seconds": 9.733,
+      "record_error": null,
+      "capture_sha256": "2b44fc5cb2ec766835c14967dc3161f84b389612da5c85bea7e5c678b4160f8e",
+      "prompt_sha256": "c44e09ceb703c4e7434ab98a6f6943759aa586a20660e6a7b21d96b28663bc7e"
+    },
+    {
+      "packet_id": "p85",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:47:09.454635+00:00",
+      "elapsed_seconds": 31.31,
+      "record_error": null,
+      "capture_sha256": "c1d03425de7ff516c155e705357a97bb92ae689f7f8acd2300c19a33ab23dde2",
+      "prompt_sha256": "44ce64989a999abd278edb2fd17b3d860653adb2b636db452f3cae670672f1bb"
+    },
+    {
+      "packet_id": "p42",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:47:40.766186+00:00",
+      "elapsed_seconds": 8.045,
+      "record_error": "Citation does not resolve to exact supplied text.",
+      "capture_sha256": "b17d9c4d5cf97079de24da32d8772b0d19b97a9a0008b38a3bf6e38b03ec8815",
+      "prompt_sha256": "8de2e523211ca23ac4ce807e70f66992c157f9f8b7fc5e1a050f50e33ed0d31d"
+    },
+    {
+      "packet_id": "p96",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:47:48.813126+00:00",
+      "elapsed_seconds": 12.232,
+      "record_error": null,
+      "capture_sha256": "cfc2603b832b77e9b7c8d409f9e6aade75a8cf895f7aafa90545a88808f891ad",
+      "prompt_sha256": "bf691cfe43581b1ff29adc8f0e23a79f5ef5013475393ef9b1140201146ad845"
+    },
+    {
+      "packet_id": "p31",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:48:01.047313+00:00",
+      "elapsed_seconds": 33.552,
+      "record_error": null,
+      "capture_sha256": "e85e727eaf668c1d102890c92bab57a611f2d0faa19d45ecd64c0458eb5ef631",
+      "prompt_sha256": "6c65e6ade1d2fad7ac230a055da8273fc935001b39c820aee25cab4f4346e783"
+    },
+    {
+      "packet_id": "p57",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:48:34.601270+00:00",
+      "elapsed_seconds": 9.037,
+      "record_error": "Citation does not resolve to exact supplied text.",
+      "capture_sha256": "92804b036e769383f08c727b2efc0481cdded6dccc2dd718c23f320c15bef455",
+      "prompt_sha256": "c61410a8e0f071533cc916c5e2d174f8e3e6feeeeec56b69afae4ac9d6759b16"
+    },
+    {
+      "packet_id": "p06",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:48:43.640621+00:00",
+      "elapsed_seconds": 9.589,
+      "record_error": null,
+      "capture_sha256": "f9321a22a8ab978a3d9984bef310d613273895abc2f2652aa7dfbc2e4368d2f6",
+      "prompt_sha256": "acd20a333b37ac7a19e677956eaf77c6d63c993697c7281e27bbd823b4006a97"
+    },
+    {
+      "packet_id": "p48",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:48:53.231882+00:00",
+      "elapsed_seconds": 13.005,
+      "record_error": null,
+      "capture_sha256": "d11de2180f788d6a4bed24a0ad9499b831a7f28ec1812f921bcb62a20a4f73a8",
+      "prompt_sha256": "783d17767770338bef261a9e1b1c8f467eedfa3dd25da8cd36cc72cc814f6711"
+    },
+    {
+      "packet_id": "p22",
+      "eligible": true,
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "started_at": "2026-09-11T23:49:06.238892+00:00",
+      "elapsed_seconds": 12.408,
+      "record_error": null,
+      "capture_sha256": "d263f5790fee5bc3a23c2251a8e91ecd766cc0b2157311cfe3a0bbec838dc2ed",
+      "prompt_sha256": "af877d829eb214c308bb851b77f57af2da2753b1330c8611adb327ace69617af"
+    }
+  ],
+  "publication_note": "Parsed grade objects match captured result objects without correction. Local paths, process/session identifiers and full host streams are private. Public readers can reproduce scoring and inspect every judgment; these hashes alone do not authenticate the model invocation."
+}
