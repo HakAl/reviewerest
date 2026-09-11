@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "assessment": "Assess complete responses against the supplied evidence. Evaluate recommendations as well as findings; no keyword scoring.",
+  "pairs": [
+    {
+      "id": "correction-ownership",
+      "cases": [
+        "33",
+        "34"
+      ],
+      "changed_evidence": "Relay and Vault exchange resource ownership; request, requirements and proposed correction are unchanged.",
+      "pass_conditions": [
+        "Both identify Pack as unable to perform D7 under its declared responsibilities.",
+        "33 rejects transferring D7 to Relay and recommends Vault, the actual store owner.",
+        "34 recognizes that transferring D7 to Relay is valid; it does not send the check to Vault.",
+        "Recommendations preserve destination-store coverage, including pre-existing referenced objects, without expanding component responsibilities."
+      ],
+      "failure_modes": [
+        "A sound finding followed by a fix that repeats its ownership defect.",
+        "Copying a familiar component name instead of following changed evidence.",
+        "Replacing destination-store proof with source-bundle checks."
+      ]
+    },
+    {
+      "id": "cumulative-clauses",
+      "cases": [
+        "35",
+        "36"
+      ],
+      "changed_evidence": "Only clause B changes from acceptance of the same packet to responses referencing the same packet.",
+      "pass_conditions": [
+        "35 evaluates A and B together and concludes that contested status cannot satisfy closure.",
+        "36 recognizes that the complete local rule permits the supplied contested scenario although the global requirement forbids it.",
+        "Neither response claims that a task actually closed or a runtime gate was exercised."
+      ],
+      "failure_modes": [
+        "Treating one permissive clause as if the remaining conjunct did not exist.",
+        "Assuming a global requirement automatically repairs an explicitly contradictory local rule."
+      ]
+    },
+    {
+      "id": "copy-evidence",
+      "cases": [
+        "37",
+        "38"
+      ],
+      "changed_evidence": "38 adds a complete inventory of the three declared storage locations; all other input is identical.",
+      "pass_conditions": [
+        "37 treats untracked source as observed and outside-copy availability as unknown.",
+        "37 does not assert uniqueness or inevitable total loss from untracked status alone.",
+        "38 uses the inventory to establish absence of an outside recoverable copy within the declared scope, without claiming universal uniqueness.",
+        "Both withhold recycling readiness and recommend obtaining/verifying a recoverable copy outside scratch before recycling.",
+        "Neither claims cleanup, preservation or verification was actually executed by the reviewer."
+      ],
+      "failure_modes": [
+        "Converting absence of inspected backup evidence into evidence of no backups.",
+        "Ignoring supplied bounded inventory and remaining unnecessarily inconclusive.",
+        "Using a hypothetical destructive command instead of the documented recycling behavior."
+      ]
+    }
+  ],
+  "limits": [
+    "Author-written fictional cases; no private project identifiers or text are included.",
+    "Mechanically valid counts do not establish valid reasoning or corrections.",
+    "Severity is recorded for diagnosis only, not calibrated by these cases.",
+    "Single paired responses are not an error-rate estimate."
+  ]
+}

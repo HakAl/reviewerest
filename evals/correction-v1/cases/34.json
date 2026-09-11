@@ -1,0 +1,30 @@
+{
+  "case_id": "34",
+  "request": "Review correctness and design of this check allocation and proposed correction. Suggest the smallest valid correction within the declared component responsibilities. This is a draft-plan revision, not execution authorization. Return a concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "requirements.md",
+      "revision": "synthetic-v1",
+      "text": "Check D7 must read all referenced objects already in the destination store and compare their content hashes with the incoming bundle. It must run in the component that owns destination-store access. A source-bundle-only comparison does not establish D7. Component responsibilities are fixed for this revision.\n"
+    },
+    {
+      "source": "plan.md",
+      "revision": "synthetic-v1",
+      "text": "Current allocation: Pack performs D7 before handing off the bundle. Proposed correction: move D7 from Pack to Relay.\n"
+    },
+    {
+      "source": "ownership.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"Pack\": [\n    \"source_bundle\"\n  ],\n  \"Relay\": [\n    \"destination_store\"\n  ],\n  \"Vault\": [\n    \"transfer_queue\"\n  ]\n}\n"
+    }
+  ]
+}

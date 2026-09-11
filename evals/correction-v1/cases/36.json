@@ -1,0 +1,30 @@
+{
+  "case_id": "36",
+  "request": "Review correctness of the local task-closure rule against the unanimity requirement. Evaluate the supplied owner responses under the whole local rule. Review the proposed rule, not a running implementation. Return a concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "requirements.md",
+      "revision": "synthetic-v1",
+      "text": "Closing the task must require every owner to accept the same exact packet version. A contested response is not acceptance. The local rule in criteria.md is the complete proposed closure mechanism being reviewed for conformance.\n"
+    },
+    {
+      "source": "criteria.md",
+      "revision": "synthetic-v1",
+      "text": "The task closes exactly when all clauses below are true. Clauses are cumulative.\nA. Every owner has a recorded response, either accepted or contested.\nB. Every recorded response refers to the same exact packet version, whether accepted or contested.\n"
+    },
+    {
+      "source": "responses.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"Moss\": {\n    \"status\": \"accepted\",\n    \"packet\": \"v3\"\n  },\n  \"Reed\": {\n    \"status\": \"contested\",\n    \"packet\": \"v3\"\n  }\n}\n"
+    }
+  ]
+}

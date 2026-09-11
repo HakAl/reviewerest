@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "suite": "correction-v1",
+  "status": "author-frozen before first model run; human calibration pending",
+  "severity_policy": "Diagnostic only. No severity choices are mechanically enforced in this suite.",
+  "cases": [
+    {
+      "case_id": "33",
+      "required_lenses": [
+        "correctness",
+        "design"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 2
+      },
+      "semantic_expectation": "Pack lacks destination-store access; proposed Relay fix also lacks it. Recommend Vault without expanding component scope."
+    },
+    {
+      "case_id": "34",
+      "required_lenses": [
+        "correctness",
+        "design"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "semantic_expectation": "Pack lacks destination-store access; Relay owns it in this variant, so the proposed transfer is valid. Do not recommend Vault by name alone."
+    },
+    {
+      "case_id": "35",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 0
+      },
+      "semantic_expectation": "Clause A permits recording a contested response but clause B blocks closure. No bypass finding. No runtime-execution claim."
+    },
+    {
+      "case_id": "36",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "semantic_expectation": "Both local clauses pass on the supplied contested response, while global unanimity fails. Report the proposed rule permitting invalid closure, not an observed runtime closure."
+    },
+    {
+      "case_id": "37",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 1
+      },
+      "semantic_expectation": "Readiness is unestablished until an outside copy is verified. Existing copies in archive/backup are unknown. Do not assert only-copy status or inevitable total loss."
+    },
+    {
+      "case_id": "38",
+      "required_lenses": [
+        "evidence"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "semantic_expectation": "The complete scoped inventory establishes no outside recoverable copy in the declared locations. Block recycling until a copy outside scratch is preserved and verified; qualify uniqueness to that scope."
+    }
+  ]
+}
