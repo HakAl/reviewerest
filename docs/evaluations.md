@@ -19,6 +19,10 @@ An [eight-case review quality suite](../evals/review-quality-v1/README.md) adds
 executable correction checks, bounded corpus-frequency claims, exact citation
 resolution versus semantic support, and conflicting retry contracts. Its
 fictional packets include a valid control for each changed evidence condition.
+Its [first baseline](../evals/review-quality-v1/baseline-01.md) passes the twelve
+matcher checks and ten quote-location checks but retains two finding-count
+failures. Targeted builder assessments and remaining scope ambiguities are
+reported separately from those mechanical results.
 
 The [first paired baseline](../evals/calibration-v1/baseline-01.md) distinguishes
 the three targeted evidence/scope changes, in the builder's assessment. Three

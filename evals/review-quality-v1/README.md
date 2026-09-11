@@ -5,6 +5,10 @@ The skill stays unchanged for the first baseline. Inputs, expectations and the
 separate matcher oracle are frozen before running. No private project text is
 included.
 
+The [first baseline](baseline-01.md) retains two failed finding-count checks,
+alongside passing targeted builder assessments, twelve executed matcher checks
+and ten resolved quote annotations.
+
 | Pair | Cases | Controlled change | Expected distinction |
 | --- | --- | --- | --- |
 | Correction recall | 39, 40 | Proposed regex gains optional plural suffix | Reject a fix that loses required plurals; accept the valid replacement |
