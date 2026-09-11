@@ -1,5 +1,16 @@
 # Evaluation status
 
+Skill 1.2.0 adds separate evidence support for defect, consequence and correction
+claims. The [six-case claim-evidence suite](../evals/claim-evidence-v1/README.md)
+tests validity versus authority, contract gaps versus executed failures, and
+historical versus current capability. Its assessment protocol grades the actual
+claims separately from their self-reported support levels. Report version 3
+checks those links structurally; it does not establish their truth.
+The [first candidate run](../evals/claim-evidence-v1/baseline-01.md) passes all six
+record checks, retains two routing failures, and publishes a selected claim
+ledger with one overstated obligation and one inconclusive correction claim.
+This is a builder-assessed candidate run, not measured improvement over 1.1.0.
+
 This is an experimental skill with deterministic helpers and a small development
 suite. The public repository includes reproducible tests and 26 frozen synthetic
 case packets with author-written routing expectations, plus a separate
@@ -86,7 +97,9 @@ The runner freezes the candidate and its own source, withholds labels and prior
 answers, verifies exact namespaced skill loading, and saves all attempts without
 repair. Read the host receipts before accepting a review. The output contains
 local metadata and belongs in ignored storage unless separately reviewed for
-publication. Recheck old version 1 records only with explicit `--allow-legacy`.
+publication. Recheck archived version 1 or 2 records only with explicit
+`--allow-legacy`; their original checks remain available without inventing the
+new claim-support fields.
 
 Before making stronger quality claims, use unseen human-calibrated cases,
 an independent assessor, and a matched comparison with the skill disabled.

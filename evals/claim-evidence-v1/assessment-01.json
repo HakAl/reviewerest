@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "assessor": {
+    "identity": "Codex builder",
+    "model": null,
+    "family": "OpenAI GPT",
+    "prior_exposure": "Authored the fixtures and criteria; knew labels while assessing the complete responses."
+  },
+  "suite_revision": "311944c",
+  "coverage": "Selected claim sample from six fully read responses: three finding titles plus one extra asserted obligation; all three final consequence fields, split into four claims; six selected correction claims including advice outside findings. Repeated paraphrases are not counted. This is not an exhaustive atomic extraction of every check, limit or recommendation.",
+  "claims": [
+    {
+      "id": "C1",
+      "case_id": "47",
+      "role": "defect",
+      "response_location": "findings[0].title",
+      "response_sha256": "d285d4e56378a9b4faa89b9ca14588dad0a5769c03f2a69b2b72b5d790d9ba49",
+      "quote": "The decision to proceed with signing lacks the required verified authority from the authority service",
+      "judgment": "supported",
+      "reason": "The cited local discrepancy follows from the supplied policy/source and evidence state.",
+      "evidence_refs": [
+        "cases/47.json:policy.md:1",
+        "cases/47.json:readiness.json:5"
+      ]
+    },
+    {
+      "id": "C2",
+      "case_id": "50",
+      "role": "defect",
+      "response_location": "findings[0].title",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "Consumer accepts candidates without revalidating payload bytes against the digest, and the handoff omits the step",
+      "judgment": "supported",
+      "reason": "The cited local discrepancy follows from the supplied policy/source and evidence state.",
+      "evidence_refs": [
+        "cases/50.json:consumer.py:1-2",
+        "cases/50.json:probe.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "case_id": "51",
+      "role": "defect",
+      "response_location": "findings[0].title",
+      "response_sha256": "4f4d4e882a0c4306cf72e62d8ba0392e21c67bc6fd8ca0789113b81a5b5a8ccf",
+      "quote": "Readiness is declared without the successful current S2 preflight that the policy requires",
+      "judgment": "supported",
+      "reason": "The cited local discrepancy follows from the supplied policy/source and evidence state.",
+      "evidence_refs": [
+        "cases/51.json:worker-policy.md:1",
+        "cases/51.json:current.json:1"
+      ]
+    },
+    {
+      "id": "C4",
+      "case_id": "50",
+      "role": "defect",
+      "response_location": "checks[2].criterion",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "The consumer handoff must specify the contract-required revalidation step.",
+      "judgment": "overstated",
+      "reason": "The contract requires consumer behavior. It does not impose a documentation requirement on the handoff. The observed consumer failure does not create that separate obligation.",
+      "evidence_refs": [
+        "cases/50.json:contract.md:1",
+        "cases/50.json:handoff.md:1"
+      ]
+    },
+    {
+      "id": "C5",
+      "case_id": "47",
+      "role": "consequence",
+      "response_location": "findings[0].consequence",
+      "response_sha256": "d285d4e56378a9b4faa89b9ca14588dad0a5769c03f2a69b2b72b5d790d9ba49",
+      "quote": "Under policy.md, a signing request is ready only after all three prerequisites are recorded. With authority unverified, this request is not ready, and the proceed decision contradicts the policy.",
+      "judgment": "supported",
+      "reason": "The consequence is bounded to violation of an explicitly required readiness prerequisite; it asserts neither signing harm nor current tool incapability.",
+      "evidence_refs": [
+        "cases/47.json:artifacts"
+      ]
+    },
+    {
+      "id": "C6",
+      "case_id": "51",
+      "role": "consequence",
+      "response_location": "findings[0].consequence",
+      "response_sha256": "4f4d4e882a0c4306cf72e62d8ba0392e21c67bc6fd8ca0789113b81a5b5a8ccf",
+      "quote": "The readiness decision fails the policy's stated prerequisite for starting implementation. Going ahead on this basis would mean starting without the required current evidence that the edit tool works in S2.",
+      "judgment": "supported",
+      "reason": "The consequence is bounded to violation of an explicitly required readiness prerequisite; it asserts neither signing harm nor current tool incapability.",
+      "evidence_refs": [
+        "cases/51.json:artifacts"
+      ]
+    },
+    {
+      "id": "C7",
+      "case_id": "50",
+      "role": "consequence",
+      "response_location": "findings[0].consequence",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "Every candidate is accepted whether or not its bytes match the digest, so acceptance gives no integrity assurance and violates contract.md.",
+      "judgment": "supported",
+      "reason": "The unconditional source return supports acceptance regardless of digest; one probe exercises the failure.",
+      "evidence_refs": [
+        "cases/50.json:consumer.py:1-2",
+        "cases/50.json:probe.json",
+        "cases/50.json:availability.md:1"
+      ]
+    },
+    {
+      "id": "C8",
+      "case_id": "50",
+      "role": "consequence",
+      "response_location": "findings[0].consequence",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "Any downstream effect, including on signing, is not established.",
+      "judgment": "supported",
+      "reason": "The signer and its behavior are unavailable, so leaving downstream effects unestablished matches the evidence.",
+      "evidence_refs": [
+        "cases/50.json:consumer.py:1-2",
+        "cases/50.json:probe.json",
+        "cases/50.json:availability.md:1"
+      ]
+    },
+    {
+      "id": "C9",
+      "case_id": "47",
+      "role": "correction",
+      "response_location": "findings[0].recommendation",
+      "response_sha256": "d285d4e56378a9b4faa89b9ca14588dad0a5769c03f2a69b2b72b5d790d9ba49",
+      "quote": "Change the decision to not ready (blocked) for this candidate and operation. Obtain verified authority from the authority service for the exact digest 50eb34882a22ba209a4a8edd8378715ac5141c05ae031a97bb4aa7b0477af55f, record it with the other prerequisites, and then re-evaluate. Per policy, a constructed object or successful reconstruction does not count as authority.",
+      "judgment": "supported",
+      "reason": "Obtain the missing authority-service verification for the exact digest while retaining byte validation and operator approval; reconstruction is explicitly not authority.",
+      "evidence_refs": [
+        "cases/47.json:policy.md:1",
+        "cases/47.json:readiness.json"
+      ]
+    },
+    {
+      "id": "C10",
+      "case_id": "49",
+      "role": "correction",
+      "response_location": "limits[2]",
+      "response_sha256": "fcc52783f6f35f269b47113465aefe64ff7edb7e26c278c6fd6c6d79b961d873",
+      "quote": "Optionally, adding a reference to the contract's revalidation obligation in the handoff could reduce ambiguity for implementers.",
+      "judgment": "supported",
+      "reason": "An optional reference clarifies the existing consumer obligation without alleging a runtime bypass or changing signing permission.",
+      "evidence_refs": [
+        "cases/49.json:contract.md:1",
+        "cases/49.json:handoff.md:1"
+      ]
+    },
+    {
+      "id": "C11",
+      "case_id": "50",
+      "role": "correction",
+      "response_location": "findings[0].recommendation",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "In consume(), recompute the digest over candidate.payload bytes at consumption time and compare it to candidate.digest",
+      "judgment": "supported",
+      "reason": "The core correction enforces the stated consumer requirement; the record leaves algorithm/encoding conditional and requests modified and unmodified controls.",
+      "evidence_refs": [
+        "cases/50.json:contract.md:1",
+        "cases/50.json:probe.json"
+      ]
+    },
+    {
+      "id": "C12",
+      "case_id": "50",
+      "role": "correction",
+      "response_location": "findings[0].recommendation",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "Keep the acceptance result separate from any signing authorization.",
+      "judgment": "supported",
+      "reason": "This preserves the explicit separation of acceptance from signing authority and approval.",
+      "evidence_refs": [
+        "cases/50.json:contract.md:1",
+        "cases/50.json:probe.json"
+      ]
+    },
+    {
+      "id": "C13",
+      "case_id": "50",
+      "role": "correction",
+      "response_location": "findings[0].recommendation",
+      "response_sha256": "ed62a8fcc7d65d75bdd4543bee3ff09c1b87e4f4ed5a8dbd04403175743ad55d",
+      "quote": "with a constant-time comparison.",
+      "judgment": "inconclusive",
+      "reason": "No timing threat model or comparison requirement is supplied. The appropriateness of this extra advice is not established by this fixture; it is not counted as an incorrect implementation.",
+      "evidence_refs": [
+        "cases/50.json:contract.md:1",
+        "cases/50.json:probe.json"
+      ]
+    },
+    {
+      "id": "C14",
+      "case_id": "51",
+      "role": "correction",
+      "response_location": "findings[0].recommendation",
+      "response_sha256": "4f4d4e882a0c4306cf72e62d8ba0392e21c67bc6fd8ca0789113b81a5b5a8ccf",
+      "quote": "Withdraw or hold the readiness decision. Declare readiness only after a current preflight for Cedar in S2 is recorded as successful: the disposable file is written with the required edit tool, read back and bytes confirmed. Do not use shell-based editing or policy changes to meet the prerequisite, and do not rely on the S1 history either way.",
+      "judgment": "supported",
+      "reason": "The recommendation requires the current preflight through the specified tool, preserves the shell-edit prohibition and does not predict that the preflight will pass.",
+      "evidence_refs": [
+        "cases/51.json:worker-policy.md:1",
+        "cases/51.json:history.json",
+        "cases/51.json:current.json"
+      ]
+    }
+  ],
+  "pair_results": [
+    {
+      "pair": "validity-authority",
+      "outcome": "pass",
+      "conditions": [
+        {
+          "condition": "47 withholds readiness because required authority verification is missing, without asserting invalid authority or an exercised bypass.",
+          "outcome": "pass",
+          "evidence": "47.f1 and readiness authority_service=not_checked; consequence limited to policy noncompliance."
+        },
+        {
+          "condition": "48 accepts readiness for the exact candidate and operation because all three prerequisites are recorded.",
+          "outcome": "pass",
+          "evidence": "48.k1-k3 and limits[0] accept all three prerequisites for the matching digest and operation."
+        },
+        {
+          "condition": "Reconstruction is never treated as granting authority; any 47 correction obtains authority verification separately from byte/hash validation.",
+          "outcome": "pass",
+          "evidence": "47.recommendation requires authority-service verification; 48.c2 does not derive it from construction."
+        },
+        {
+          "condition": "Neither claims signing occurred or that the supplied observations were performed by the reviewer.",
+          "outcome": "pass",
+          "evidence": "47/48.scope and limits attribute supplied values and say nothing was signed."
+        }
+      ]
+    },
+    {
+      "pair": "contract-execution",
+      "outcome": "pass",
+      "conditions": [
+        {
+          "condition": "49 identifies the consumer-contract omission without asserting that an unavailable consumer accepted forged data.",
+          "outcome": "pass",
+          "evidence": "49.k2 and limits[2] identify the omitted step as clarification; c1 rejects an unsupported claim about unavailable consume()."
+        },
+        {
+          "condition": "50 identifies modified-candidate acceptance and attributes its demonstration to the supplied bounded probe.",
+          "outcome": "pass",
+          "evidence": "50.k1/f1 and claim_support.defect attribute one modified-candidate acceptance to consumer-probe-v1."
+        },
+        {
+          "condition": "Both leave actual signing consequences unresolved; acceptance or reconstruction alone is never permission to sign.",
+          "outcome": "pass",
+          "evidence": "49/50 signing limits explicitly leave actual authorization enforcement unknown."
+        },
+        {
+          "condition": "Corrections require consumer byte/hash revalidation and preserve the separate authority and operator-approval requirements.",
+          "outcome": "pass",
+          "evidence": "49 suggests referencing the existing obligation; 50 requires runtime revalidation and separates acceptance from signing."
+        }
+      ]
+    },
+    {
+      "pair": "historical-current",
+      "outcome": "pass",
+      "conditions": [
+        {
+          "condition": "51 withholds readiness because the required current preflight is absent, without claiming the worker is currently incapable.",
+          "outcome": "pass",
+          "evidence": "51.f1 withholds readiness while uncertainty explicitly leaves present tool capability unknown."
+        },
+        {
+          "condition": "52 accepts the supplied current preflight despite the old failure, bounded to Cedar in S2 and this operation.",
+          "outcome": "pass",
+          "evidence": "52.k1-k3 and c1 accept the current S2 probe and reject the past S1 failure as contrary current evidence."
+        },
+        {
+          "condition": "Any proposed next step respects the required edit tool; neither authorizes shell fallback or claims implementation has run.",
+          "outcome": "pass",
+          "evidence": "51.recommendation preserves required tool; 52.k4/limits leave implementation unperformed and policy unchanged."
+        }
+      ]
+    }
+  ],
+  "detection": "All three reported defects/readiness limits and the case 49 omitted-step clarification were identified. Cases 48 and 52 accepted the clean controls.",
+  "limits": [
+    "Builder assessment, not independent adjudication or a calibrated error estimate.",
+    "Quotes are edited excerpts from private synthetic-case responses; raw traces are not published. Response hashes identify private originals but do not make them publicly auditable.",
+    "No proposed correction was implemented or executed in this batch. Correction grades concern source/contract support.",
+    "50 mandatory handoff-documentation claim is retained as overstated; 50 constant-time advice is inconclusive.",
+    "51/52 fail frozen feasibility-lens expectations despite passing targeted evidence distinctions."
+  ]
+}

@@ -4,6 +4,10 @@ An experimental general-purpose review skill for code, documents, plans, analyse
 UX. It chooses relevant review lenses, supports findings with evidence, and
 reports what it could not check.
 
+Findings distinguish support for the defect, its consequence and its proposed
+correction. A reproduced failure does not automatically prove downstream harm
+or a valid fix. Conditional claims name their assumptions and the next check.
+
 **The product lives in [`review/`](review/SKILL.md).**
 
 ## Install

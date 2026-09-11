@@ -5,6 +5,10 @@ the available evidence changes. The candidate introduces skill 1.2.0 and report
 version 3. Freeze the cases and [rubric](rubric.json) before running; retain
 failures without relabeling or repairing responses.
 
+The [first candidate run](baseline-01.md) passes all six version 3 record checks
+but retains two routing failures. Its edited [claim ledger](assessment-01.json)
+includes an overstated obligation and inconclusive correction advice.
+
 | Pair | Cases | Changed evidence | Required distinction |
 | --- | --- | --- | --- |
 | Validity and authority | 47, 48 | Separate authority verification absent or recorded | Matching bytes cannot establish signing permission |
@@ -64,6 +68,12 @@ response's error rate. These small author-written cases and builder judgments
 do not establish calibrated confidence, independent ground truth or population
 accuracy. Independent assessors can disagree about claim boundaries; retain
 their disagreements instead of averaging them into certainty.
+
+For an assessor-authored ledger in the shape of [assessment-01.json](assessment-01.json),
+`python3 evals/score_claims.py <ledger.json>` reproduces counts and denominators.
+It requires attribution and coverage descriptions but does not verify source
+quotes, extraction completeness or judgments. Empty denominators yield null
+rates; inconclusive counts remain visible alongside adjudicated counts.
 
 Archived version 1 or 2 responses require `--allow-legacy`; their missing claim
 support fields must not be filled retrospectively. New candidate runs use version
