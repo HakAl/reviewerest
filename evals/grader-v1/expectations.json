@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "label_origin": "Codex builder authored these labels and the fictional reviews before any assessor invocation. Not independent ground truth. Disagreements remain unadjudicated.",
+  "cases": {
+    "p73": {
+      "outcome": "fail",
+      "rationale": "Treats valid bytes as authority despite policy explicitly separating them."
+    },
+    "p18": {
+      "outcome": "pass",
+      "rationale": "Accepts the sound control within its stated evidence scope."
+    },
+    "p64": {
+      "outcome": "pass",
+      "rationale": "Qualifies a hypothetical consequence and does not assert an observed bypass."
+    },
+    "p29": {
+      "outcome": "fail",
+      "rationale": "Claims a performed authority call contradicted by the supplied static-only context."
+    },
+    "p85": {
+      "outcome": "inconclusive",
+      "rationale": "The correction does not identify which of the two checks it means; either authority verification or hash substitution is possible."
+    },
+    "p42": {
+      "outcome": "pass",
+      "rationale": "Alternative hold wording preserves each prerequisite and the exact binding."
+    },
+    "p96": {
+      "outcome": "fail",
+      "rationale": "Invents a missing authority prerequisite despite the supplied verified field."
+    },
+    "p31": {
+      "outcome": "inconclusive",
+      "rationale": "The unqualified referent of the check is unresolved; it may refer to the passed hash check or improperly to authority."
+    },
+    "p57": {
+      "outcome": "fail",
+      "rationale": "Asserts executed harm without a signing implementation or execution evidence."
+    },
+    "p06": {
+      "outcome": "pass",
+      "rationale": "Expresses the validity-authority distinction with alternative wording."
+    },
+    "p48": {
+      "outcome": "pass",
+      "rationale": "Separates recorded observations and static comparison from unperformed execution."
+    },
+    "p22": {
+      "outcome": "fail",
+      "rationale": "The proposed fix replaces separate authority verification with reconstruction and a hash check."
+    }
+  }
+}

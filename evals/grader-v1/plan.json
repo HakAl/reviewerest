@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "packet_ids": [
+    "p73",
+    "p18",
+    "p64",
+    "p29",
+    "p85",
+    "p42",
+    "p96",
+    "p31",
+    "p57",
+    "p06",
+    "p48",
+    "p22"
+  ],
+  "automatic_retries": false,
+  "selection": "Fixed interleaved order before model execution; one fresh session per packet. All planned packets remain in the denominator."
+}

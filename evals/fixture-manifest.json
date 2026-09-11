@@ -63,7 +63,23 @@
     "evals/claim-evidence-v1/cases/52.json": "87cc705adfc71292b6c2c1ce31f66cf45a7fcf02ad41823d36adfad4ffd895b0",
     "evals/claim-evidence-v1/expectations.json": "01d86e3d7cd489f65c277db86f00c0dbee7ec7f0d25328cf8af474f950c8a3d4",
     "evals/claim-evidence-v1/rubric.json": "d404bb069c2ed8a5162d67445b2d2b6e34cb6d94564877f7eddddc30a92616b3",
-    "evals/repeated-v1/policy.json": "fc0f0ec1b4567204a1a0349f5d7fad0b28ebc248270c388f98720f2117a0eb0f"
+    "evals/repeated-v1/policy.json": "fc0f0ec1b4567204a1a0349f5d7fad0b28ebc248270c388f98720f2117a0eb0f",
+    "evals/grader-v1/expectations.json": "948ac6778a11d311d284303f6e0c98ed7b77de1d9615d851a61c906694ef59ac",
+    "evals/grader-v1/plan.json": "920ea6f7ac1da32b4f93bddbb6dbc958b25d80cfdd38d133ddeed6992ae59233",
+    "evals/grader-v1/manifest.json": "71557e10c0d6fe4a7594d6022474d31013f5af9969e7cbe0a97d6b7f150c28a2",
+    "evals/grader-v1/protocol.json": "edf90ca570a14073e416091feee6a7e79b40fac005dbf09911d572955ccf6edb",
+    "evals/grader-v1/packets/p57.json": "2d78687b225df6830bfb8e5680c26ccc9a9980e914867b368207cf0a8e149023",
+    "evals/grader-v1/packets/p85.json": "4993f840fdcf218ab6d420885210ce26510ee28457ad58c36994d59168314723",
+    "evals/grader-v1/packets/p31.json": "a4331fe8a6c6bb99312f3d992191cd9c6baead5b54918429cb3aa84037a4fc9c",
+    "evals/grader-v1/packets/p06.json": "0bf3b55bb275ed29702708b91cb5163d4c3cfa7435fef071f39e189bc41d50d4",
+    "evals/grader-v1/packets/p29.json": "cbd46001be4dc404d7ce0c8b9f63ca6e058889bbe9681fadad54e179c3b67474",
+    "evals/grader-v1/packets/p48.json": "66c7d2d92c5bd3fe6553b4784932fb7b51bcc4137c78333ef00fe03d9b5950aa",
+    "evals/grader-v1/packets/p64.json": "643140739aadd969f554d51971f820ebc3beb4b978d184731deb971e82b16562",
+    "evals/grader-v1/packets/p73.json": "09df044a2ca24e49baed1ea657774401bbb857e4a8ff7979b5d6c31564f82f1f",
+    "evals/grader-v1/packets/p42.json": "f59ff53bf19a7b54f745ef29a742c5a1b6beedf928a4785deed2e173a694a469",
+    "evals/grader-v1/packets/p96.json": "ec179478e69b729bec5bc7a4edbb06a31e4a19375bdc60d2a3fc8bfd3dc897e4",
+    "evals/grader-v1/packets/p22.json": "d955c6dd6fff008c11aa3e3928adc9cddd1cb6b89a38902ee7f16d875546dc23",
+    "evals/grader-v1/packets/p18.json": "ca817cdab7b20e15de874e42027347ba80835160663d65f29a47223ee5b28e63"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }
