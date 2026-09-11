@@ -1,7 +1,10 @@
 """Check controlled differences and evidence oracles for fictional evals."""
 
 import json
+import os
 from pathlib import Path
+import subprocess
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1] / "evals/correction-v1"
@@ -12,6 +15,26 @@ def packet(case):
 
 
 class CorrectionEvalTests(unittest.TestCase):
+    def test_current_untracked_status_does_not_rule_out_git_recovery(self):
+        # Added during baseline adjudication; frozen packets and labels are unchanged.
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            env = dict(os.environ, GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1",
+                       GIT_AUTHOR_NAME="Fixture", GIT_COMMITTER_NAME="Fixture",
+                       GIT_AUTHOR_EMAIL="fixture@example.invalid", GIT_COMMITTER_EMAIL="fixture@example.invalid")
+            def git(*args):
+                return subprocess.check_output(["git", "-C", str(root), *args], env=env, stderr=subprocess.PIPE)
+            git("init", "-b", "main")
+            original = b"recoverable fictional harness\n"
+            (root / "harness.py").write_bytes(original)
+            git("add", "harness.py")
+            git("commit", "-m", "Retain original fixture")
+            revision = git("rev-parse", "HEAD").decode().strip()
+            git("rm", "--cached", "harness.py")
+            git("commit", "-m", "Stop tracking fixture")
+            self.assertEqual(git("status", "--porcelain").decode().strip(), "?? harness.py")
+            self.assertEqual(git("show", revision + ":harness.py"), original)
+
     def test_ownership_swap_changes_valid_destination_not_original_defect(self):
         first, second = packet("33"), packet("34")
         self.assertEqual(first["request"], second["request"])

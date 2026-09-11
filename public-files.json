@@ -48,6 +48,7 @@
     "evals/cases/26.json",
     "evals/check_results.py",
     "evals/correction-v1/README.md",
+    "evals/correction-v1/baseline-01.md",
     "evals/correction-v1/cases/33.json",
     "evals/correction-v1/cases/34.json",
     "evals/correction-v1/cases/35.json",

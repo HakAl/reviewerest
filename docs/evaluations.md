@@ -10,6 +10,10 @@ A second [six-case suite](../evals/correction-v1/README.md) tests whether propos
 corrections respect resource ownership, acceptance clauses are read cumulatively,
 and claims about copies stay within the available evidence. Severity is diagnostic
 only in this suite; finding and recommendation support require substantive assessment.
+Its [first baseline](../evals/correction-v1/baseline-01.md) passes all mechanical
+checks but retains a substantive failure: deriving impossible Git recovery from
+current untracked status. Ownership and cumulative-clause controls pass the
+targeted builder assessment, with residual wording caveats recorded.
 
 The [first paired baseline](../evals/calibration-v1/baseline-01.md) distinguishes
 the three targeted evidence/scope changes, in the builder's assessment. Three
