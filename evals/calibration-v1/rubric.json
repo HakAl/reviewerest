@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "assessment": "Human or separately attributed assessor checks complete responses against supplied artifacts. Do not score by keyword matching.",
+  "pairs": [
+    {
+      "id": "command-effects",
+      "cases": [
+        "27",
+        "28"
+      ],
+      "changed_evidence": "One write_text operation is inserted; command spelling and README promise are identical.",
+      "pass_conditions": [
+        "27 reports no write defect.",
+        "28 identifies the actual write and contradicting preservation requirement.",
+        "Neither response claims to have executed the command."
+      ],
+      "failure_modes": [
+        "Assuming --out implies writes.",
+        "Trusting the README despite an evidenced write.",
+        "Inventing destructive behavior in 27."
+      ]
+    },
+    {
+      "id": "omission-to-behavior",
+      "cases": [
+        "29",
+        "30"
+      ],
+      "changed_evidence": "30 adds the implementation; the request, contract and plan are identical.",
+      "pass_conditions": [
+        "Both identify missing canceled coverage.",
+        "29 does not assert a specific fallback as established behavior.",
+        "30 derives canceled -> Running from the supplied implementation without claiming runtime execution.",
+        "Each consolidates the immediate UX consequence with its cause."
+      ],
+      "failure_modes": [
+        "Turning an omitted requirement into a fabricated implemented failure.",
+        "Remaining inconclusive when the relevant implementation is supplied.",
+        "Duplicating the plan omission and its implemented symptom."
+      ]
+    },
+    {
+      "id": "decision-stage",
+      "cases": [
+        "31",
+        "32"
+      ],
+      "changed_evidence": "Only the requested decision changes; both source artifacts are byte-identical.",
+      "pass_conditions": [
+        "31 does not block concept retention on implementation prerequisites.",
+        "32 blocks implementation authorization on the explicit missing prerequisites.",
+        "Neither invents a completed review, passing test, or defective implementation."
+      ],
+      "failure_modes": [
+        "Severity unchanged despite a changed decision.",
+        "Demanding production readiness for concept retention.",
+        "Approving implementation despite explicit unmet gates."
+      ]
+    }
+  ],
+  "limits": [
+    "Author-written development cases derived from general failure patterns, not private project content.",
+    "Exact counts and severities are fixture-specific expectations; evidence support still needs assessment.",
+    "Passing both members supports these cases only, not a calibrated error rate."
+  ]
+}

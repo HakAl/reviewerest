@@ -33,6 +33,16 @@ def assess(records, expectations, *, allow_legacy=False):
         selected = {lens["id"] for lens in lenses if isinstance(lens, dict)
                     and isinstance(lens.get("id"), str) and lens.get("selection") == "selected"}
         expected = expectations[case_id]
+        findings = report.get("findings", []) if isinstance(report, dict) else []
+        findings = findings if isinstance(findings, list) else []
+        contract_errors = []
+        bounds = expected.get("finding_count")
+        if bounds and not bounds["min"] <= len(findings) <= bounds["max"]:
+            contract_errors.append("Finding count outside declared fixture bounds.")
+        if "allowed_severities" in expected and any(
+                not isinstance(f, dict) or f.get("severity") not in expected["allowed_severities"]
+                for f in findings):
+            contract_errors.append("Finding severity outside declared fixture choices.")
         results.append({
             "case_id": case_id,
             "record_version": report.get("version") if isinstance(report, dict) else None,
@@ -40,7 +50,8 @@ def assess(records, expectations, *, allow_legacy=False):
             "schema_errors": schema_errors,
             "missing_required_lenses": sorted(set(expected["required_lenses"]) - selected),
             "forbidden_lenses_selected": sorted(set(expected["forbidden_lenses"]) & selected),
-            "finding_count": len(report.get("findings", [])) if isinstance(report, dict) else None,
+            "finding_count": len(findings),
+            "fixture_contract_errors": contract_errors,
             "semantic_assessment": "not performed by this checker",
         })
     return {"cases_checked": len(seen), "missing_cases": sorted(set(expectations) - seen),
@@ -52,8 +63,10 @@ def main():
     parser.add_argument("results", nargs="+", help="JSON arrays of case_id/review objects")
     parser.add_argument("--cases", help="Explicit planned subset, comma-separated (default: all cases)")
     parser.add_argument("--allow-legacy", action="store_true", help="Use historical structural checks for version 1 records")
+    parser.add_argument("--expectations", type=Path, default=ROOT / "evals/expectations.json",
+                        help="Frozen scoring expectations; kept out of reviewer inputs")
     args = parser.parse_args()
-    expected = json.loads((ROOT / "evals/expectations.json").read_text())
+    expected = json.loads(args.expectations.read_text())
     records = []
     for path in args.results:
         records.extend(json.loads(Path(path).read_text()))
@@ -67,7 +80,8 @@ def main():
     result["planned_cases"] = sorted(expectations)
     print(json.dumps(result, indent=2))
     bad = result["missing_cases"] or any(r.get("error") or r.get("schema_errors") or
-          r.get("missing_required_lenses") or r.get("forbidden_lenses_selected") for r in result["results"])
+          r.get("missing_required_lenses") or r.get("forbidden_lenses_selected") or
+          r.get("fixture_contract_errors") for r in result["results"])
     return 3 if bad else 0
 
 

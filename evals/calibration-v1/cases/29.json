@@ -1,0 +1,25 @@
+{
+  "case_id": "29",
+  "request": "Review correctness and UX of the supplied upload status design against the contract, using any supplied implementation evidence. Limit findings to state mapping and its immediate feedback. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "contract.md",
+      "revision": "synthetic-v1",
+      "text": "Upload outcomes are running, success, failed, and canceled. Show Running, Done, Failed, and Canceled respectively. All four outcomes must have a specified display label.\n"
+    },
+    {
+      "source": "plan.md",
+      "revision": "synthetic-v1",
+      "text": "Display mapping:\n- running: Running\n- success: Done\n- failed: Failed\n"
+    }
+  ]
+}

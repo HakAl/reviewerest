@@ -1,0 +1,25 @@
+{
+  "case_id": "31",
+  "request": "Review feasibility of retaining this concept for later specification under the supplied decision policy. The current decision is concept retention. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "decision-policy.md",
+      "revision": "synthetic-v1",
+      "text": "Retaining a concept for later specification requires a named user task and a plausible approach. It does not authorize implementation. Authorizing implementation additionally requires an assigned maintainer, an accepted design-review ticket, and a passing prototype unit check. Those prerequisites may be completed after concept retention.\n"
+    },
+    {
+      "source": "proposal.md",
+      "revision": "synthetic-v1",
+      "text": "User task: a librarian needs to filter a local book list by title. Approach: filter the existing in-memory title list with a case-insensitive substring comparison, then display the matches. Maintainer: catalog team. No design-review ticket exists and the prototype unit check has not run.\n"
+    }
+  ]
+}

@@ -27,7 +27,15 @@
     "evals/cases/03.json": "28490db7308d4c8b5407c1b3e8719b4ee3266e30597f8954b1e41d46969ba2fa",
     "evals/cases/19.json": "caea936dc63a61708bb31485d05bf973e37d676647ee67feb422bf34a83d23a7",
     "evals/cases/23.json": "b92cf5a7ed1f326489760d547f48539bf8c0ab7283c32bb2796e690b188e3888",
-    "evals/expectations.json": "09ee21a61f0e894782be9881d0034f9609b1e6abe3bfdf3e618a41fd2639a191"
+    "evals/expectations.json": "09ee21a61f0e894782be9881d0034f9609b1e6abe3bfdf3e618a41fd2639a191",
+    "evals/calibration-v1/cases/27.json": "295ea9da1b413cbc7095bdae5fe9f1f627645578e8d40fb152e0f1f34c0df518",
+    "evals/calibration-v1/cases/28.json": "df44c67a2fa1d11e03484eafc7aef25c8c11e8ee13ee3b8dce0ca7916f761a72",
+    "evals/calibration-v1/cases/29.json": "8d9c8a0809b33b4f27923b3e43e2da858708abeed82d8f508abd07b4ee34e223",
+    "evals/calibration-v1/cases/30.json": "aa247f4e01d4894a49e7b14c582a21f9ddeeeb6e5223581c440cc6405f9d1824",
+    "evals/calibration-v1/cases/31.json": "9a71847ba52f2ca1bc943a546ca150b3da06ce39db99980d4beb0a0e8d9fa9a8",
+    "evals/calibration-v1/cases/32.json": "a1e9faca64c9cb4e5e6c242ae70d966fe974c667e201a457641cccba8ae6ffb9",
+    "evals/calibration-v1/expectations.json": "bf78f6a07a20b6c922fd9bef2de533eceb118748908f8284c39489a6b43ca0c2",
+    "evals/calibration-v1/rubric.json": "06362790d56140b2a78b5af1963cee6fef208867a48453068226ef7841610d99"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }

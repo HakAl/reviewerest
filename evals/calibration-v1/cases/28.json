@@ -1,0 +1,25 @@
+{
+  "case_id": "28",
+  "request": "Review correctness of the documented verification command, limited to whether it preserves the fixture files. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "README.md",
+      "revision": "synthetic-v1",
+      "text": "Run `python verify.py --out fixtures`. Verification must preserve all fixture bytes, including when a mismatch is detected. The command checks existing files and never regenerates them.\n"
+    },
+    {
+      "source": "verify.py",
+      "revision": "synthetic-v1",
+      "text": "import argparse\nfrom pathlib import Path\n\n\ndef check(out):\n    actual = (out / \"expected.txt\").read_text()\n    expected = \"stable\\n\"\n    (out / \"expected.txt\").write_text(expected)\n    return actual == expected\n\n\nif __name__ == \"__main__\":\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--out\", type=Path, required=True)\n    args = parser.parse_args()\n    raise SystemExit(0 if check(args.out) else 1)\n"
+    }
+  ]
+}

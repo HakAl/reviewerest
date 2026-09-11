@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "suite": "calibration-v1",
+  "status": "author-frozen before first model run; human calibration pending",
+  "cases": [
+    {
+      "case_id": "27",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 0
+      },
+      "allowed_severities": [],
+      "semantic_expectation": "No fixture-write finding. Inspect the code rather than inferring mutation from --out. No execution claim."
+    },
+    {
+      "case_id": "28",
+      "required_lenses": [
+        "correctness"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "allowed_severities": [
+        "major"
+      ],
+      "semantic_expectation": "Report write_text destroying the mismatched fixture even though the README promises preservation. Cite the write and a mismatching starting value. No execution claim."
+    },
+    {
+      "case_id": "29",
+      "required_lenses": [
+        "correctness",
+        "ux"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "allowed_severities": [
+        "major"
+      ],
+      "semantic_expectation": "Report omitted canceled mapping. Keep any wrong fallback hypothetical: neither implementation nor runtime evidence was supplied."
+    },
+    {
+      "case_id": "30",
+      "required_lenses": [
+        "correctness",
+        "ux"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 1
+      },
+      "allowed_severities": [
+        "major"
+      ],
+      "semantic_expectation": "Report canceled mapped to Running, supported by view.py; consolidate plan omission and immediate feedback under one cause. Static evidence supports this result but not a claim of executed UI."
+    },
+    {
+      "case_id": "31",
+      "required_lenses": [
+        "feasibility"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 0,
+        "max": 0
+      },
+      "allowed_severities": [],
+      "semantic_expectation": "Retain concept under this decision policy. Missing review ticket/unit result are future implementation prerequisites, not current blockers. No claim that those prerequisites passed."
+    },
+    {
+      "case_id": "32",
+      "required_lenses": [
+        "feasibility"
+      ],
+      "forbidden_lenses": [
+        "security",
+        "performance"
+      ],
+      "finding_count": {
+        "min": 1,
+        "max": 2
+      },
+      "allowed_severities": [
+        "blocker"
+      ],
+      "semantic_expectation": "Implementation authorization is blocked by explicit missing prerequisites. One readiness finding or two separate prerequisite findings is acceptable. Missing evidence is not proof of bad implementation."
+    }
+  ]
+}

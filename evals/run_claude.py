@@ -196,6 +196,8 @@ def positive(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cases", nargs="+", required=True)
+    parser.add_argument("--case-dir", type=Path, default=ROOT / "evals/cases",
+                        help="Directory containing case packets only; never reads labels")
     parser.add_argument("--output", type=Path, required=True, help="New directory; never overwritten")
     parser.add_argument("--budget-per-case", type=positive, default=1.0)
     parser.add_argument("--timeout", type=positive, default=240)
@@ -203,7 +205,10 @@ def main():
     args = parser.parse_args()
     if len(set(args.cases)) != len(args.cases) or any(not re.fullmatch(r"\d{2}", c) for c in args.cases):
         parser.error("Case IDs must be unique two-digit numbers")
-    packets = [json.loads((ROOT / "evals/cases" / (c + ".json")).read_text()) for c in args.cases]
+    raw_packets = {c: (args.case_dir / (c + ".json")).read_bytes() for c in args.cases}
+    packets = [json.loads(raw_packets[c]) for c in args.cases]
+    if any(p.get("case_id") != c for c, p in zip(args.cases, packets)):
+        parser.error("Each packet case_id must match its requested file name")
     cli = shutil.which(args.cli)
     if cli is None:
         parser.error("Claude CLI not found")
@@ -221,8 +226,7 @@ def main():
                 "candidate_files": snapshot(candidate),
                 "candidate_identity": "Commit anchors the repository baseline; saved candidate/ files pin the evaluated working-tree package.",
                 "runner_sha256": digest(Path(__file__).read_bytes()),
-                "fixture_files": {c: digest((ROOT / "evals/cases" / (c + ".json")).read_bytes())
-                                  for c in args.cases},
+                "fixture_files": {c: digest(raw_packets[c]) for c in args.cases},
                 "budget_per_case_usd": args.budget_per_case,
                 "timeout_per_case_seconds": args.timeout,
                 "model_selection": "CLI default; actual identity recorded in each trace",

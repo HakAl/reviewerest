@@ -2,7 +2,8 @@
 
 This is an experimental skill with deterministic helpers and a small development
 suite. The public repository includes reproducible tests and 26 frozen synthetic
-case packets with author-written routing expectations. Those labels are not
+case packets with author-written routing expectations, plus a separate
+[six-case calibration suite](../evals/calibration-v1/README.md). Those labels are not
 independent ground truth.
 
 ## Development observations
