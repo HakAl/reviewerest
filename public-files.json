@@ -11,6 +11,7 @@
     "docs/evaluations.md",
     "docs/publishing.md",
     "evals/calibration-v1/README.md",
+    "evals/calibration-v1/baseline-01.md",
     "evals/calibration-v1/cases/27.json",
     "evals/calibration-v1/cases/28.json",
     "evals/calibration-v1/cases/29.json",

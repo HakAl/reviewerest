@@ -6,6 +6,11 @@ case packets with author-written routing expectations, plus a separate
 [six-case calibration suite](../evals/calibration-v1/README.md). Those labels are not
 independent ground truth.
 
+The [first paired baseline](../evals/calibration-v1/baseline-01.md) distinguishes
+the three targeted evidence/scope changes, in the builder's assessment. Three
+frozen severity checks fail and expose ambiguity in the author's labels. Those
+failures are retained separately from the offline CI gate.
+
 ## Development observations
 
 The development process included a user-supplied Gemini design critique, a
