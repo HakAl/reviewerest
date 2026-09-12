@@ -146,12 +146,17 @@ def compare(suite, answers):
             "substantive_truth_verified": False, "limits": design["limits"]}
 
 
-def run(suite, output, cli):
-    manifest, protocol, packets, design = inputs(suite)
+def run(suite, output, cli, *, load_inputs=None, additional_sources=()):
+    manifest, protocol, packets, design = (load_inputs or inputs)(suite)
     version = subprocess.check_output([cli, "--version"], text=True, timeout=15).strip()
     output.mkdir(parents=True, exist_ok=False)
     shutil.copytree(suite, output / "suite")
     hashes = source_hashes()
+    for path in additional_sources:
+        path = Path(path)
+        if path.name in hashes:
+            raise ValueError("Additional runner source name is already present.")
+        hashes[path.name] = grader.host.digest(path.read_bytes())
     for name in hashes:
         shutil.copyfile(ROOT / "evals" / name, output / name)
     answers = {"version": 1, "input_manifest_sha256": grader.host.digest((suite / "manifest.json").read_bytes()),

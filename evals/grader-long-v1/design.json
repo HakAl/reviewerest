@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "planned_assessments": 24,
+  "schedule": [
+    {
+      "id": "t01",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p61"
+    },
+    {
+      "id": "t02",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p61"
+    },
+    {
+      "id": "t03",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p26"
+    },
+    {
+      "id": "t04",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p26"
+    },
+    {
+      "id": "t05",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p83"
+    },
+    {
+      "id": "t06",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p83"
+    },
+    {
+      "id": "t07",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p94"
+    },
+    {
+      "id": "t08",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p94"
+    },
+    {
+      "id": "t09",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p26"
+    },
+    {
+      "id": "t10",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p26"
+    },
+    {
+      "id": "t11",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p83"
+    },
+    {
+      "id": "t12",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p83"
+    },
+    {
+      "id": "t13",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p94"
+    },
+    {
+      "id": "t14",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p94"
+    },
+    {
+      "id": "t15",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p61"
+    },
+    {
+      "id": "t16",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p61"
+    },
+    {
+      "id": "t17",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p83"
+    },
+    {
+      "id": "t18",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p83"
+    },
+    {
+      "id": "t19",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p94"
+    },
+    {
+      "id": "t20",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p94"
+    },
+    {
+      "id": "t21",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p61"
+    },
+    {
+      "id": "t22",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p61"
+    },
+    {
+      "id": "t23",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p26"
+    },
+    {
+      "id": "t24",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p26"
+    }
+  ],
+  "budget": {
+    "per_call_usd": 0.5,
+    "total_cap_usd": 12,
+    "timeout_seconds": 120
+  },
+  "limits": [
+    "Four new synthetic cases in one readiness domain; no claim of general review calibration or error rates.",
+    "New to these local assessor sessions, not established unseen in model training. No prior live trials on these packets.",
+    "Protocol v2 requires six exact single-line ledger facts. This is stricter than the historical range/optional-evidence contract; earlier scores are unchanged.",
+    "Both presentations use JSON-encoded source rows. Numeric prefixes are the only paired prompt change and add tokens.",
+    "Fixed interleaving reverses each packet's first presentation between rounds; not randomized or statistically independent samples.",
+    "Temperature and immutable provider version are not pinned. Recorded model and CLI identities must match.",
+    "Oracle facts and readiness labels are derived from explicit synthetic policy and packet bytes, using author-written code. This does not certify free-form reasoning."
+  ]
+}

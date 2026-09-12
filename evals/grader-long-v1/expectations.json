@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "cases": {
+    "p61": {
+      "outcome": "fail",
+      "ready": false,
+      "ledger_lines": 245,
+      "facts": {
+        "operation": {
+          "source": "readiness-ledger.json",
+          "line": 35,
+          "quote": "\"operation\": \"op-p61-17\""
+        },
+        "candidate_sha256": {
+          "source": "readiness-ledger.json",
+          "line": 36,
+          "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\""
+        },
+        "evidence_revision": {
+          "source": "readiness-ledger.json",
+          "line": 37,
+          "quote": "\"evidence_revision\": \"rev-03\""
+        },
+        "byte_hash_revalidation": {
+          "source": "readiness-ledger.json",
+          "line": 38,
+          "quote": "\"byte_hash_revalidation\": \"pass\""
+        },
+        "authority_service": {
+          "source": "readiness-ledger.json",
+          "line": 39,
+          "quote": "\"authority_service\": \"not_checked\""
+        },
+        "operator_approval": {
+          "source": "readiness-ledger.json",
+          "line": 40,
+          "quote": "\"operator_approval\": \"approved\""
+        }
+      }
+    },
+    "p26": {
+      "outcome": "pass",
+      "ready": true,
+      "ledger_lines": 245,
+      "facts": {
+        "operation": {
+          "source": "readiness-ledger.json",
+          "line": 125,
+          "quote": "\"operation\": \"op-p26-17\""
+        },
+        "candidate_sha256": {
+          "source": "readiness-ledger.json",
+          "line": 126,
+          "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\""
+        },
+        "evidence_revision": {
+          "source": "readiness-ledger.json",
+          "line": 127,
+          "quote": "\"evidence_revision\": \"rev-03\""
+        },
+        "byte_hash_revalidation": {
+          "source": "readiness-ledger.json",
+          "line": 128,
+          "quote": "\"byte_hash_revalidation\": \"pass\""
+        },
+        "authority_service": {
+          "source": "readiness-ledger.json",
+          "line": 129,
+          "quote": "\"authority_service\": \"verified\""
+        },
+        "operator_approval": {
+          "source": "readiness-ledger.json",
+          "line": 130,
+          "quote": "\"operator_approval\": \"approved\""
+        }
+      }
+    },
+    "p83": {
+      "outcome": "pass",
+      "ready": false,
+      "ledger_lines": 245,
+      "facts": {
+        "operation": {
+          "source": "readiness-ledger.json",
+          "line": 205,
+          "quote": "\"operation\": \"op-p83-17\""
+        },
+        "candidate_sha256": {
+          "source": "readiness-ledger.json",
+          "line": 206,
+          "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\""
+        },
+        "evidence_revision": {
+          "source": "readiness-ledger.json",
+          "line": 207,
+          "quote": "\"evidence_revision\": \"rev-03\""
+        },
+        "byte_hash_revalidation": {
+          "source": "readiness-ledger.json",
+          "line": 208,
+          "quote": "\"byte_hash_revalidation\": \"pass\""
+        },
+        "authority_service": {
+          "source": "readiness-ledger.json",
+          "line": 209,
+          "quote": "\"authority_service\": \"not_checked\""
+        },
+        "operator_approval": {
+          "source": "readiness-ledger.json",
+          "line": 210,
+          "quote": "\"operator_approval\": \"approved\""
+        }
+      }
+    },
+    "p94": {
+      "outcome": "fail",
+      "ready": true,
+      "ledger_lines": 245,
+      "facts": {
+        "operation": {
+          "source": "readiness-ledger.json",
+          "line": 85,
+          "quote": "\"operation\": \"op-p94-17\""
+        },
+        "candidate_sha256": {
+          "source": "readiness-ledger.json",
+          "line": 86,
+          "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\""
+        },
+        "evidence_revision": {
+          "source": "readiness-ledger.json",
+          "line": 87,
+          "quote": "\"evidence_revision\": \"rev-03\""
+        },
+        "byte_hash_revalidation": {
+          "source": "readiness-ledger.json",
+          "line": 88,
+          "quote": "\"byte_hash_revalidation\": \"pass\""
+        },
+        "authority_service": {
+          "source": "readiness-ledger.json",
+          "line": 89,
+          "quote": "\"authority_service\": \"verified\""
+        },
+        "operator_approval": {
+          "source": "readiness-ledger.json",
+          "line": 90,
+          "quote": "\"operator_approval\": \"approved\""
+        }
+      }
+    }
+  }
+}

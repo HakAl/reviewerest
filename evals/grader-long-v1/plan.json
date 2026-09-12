@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "packet_ids": [
+    "p61",
+    "p26",
+    "p83",
+    "p94"
+  ],
+  "automatic_retries": false
+}
