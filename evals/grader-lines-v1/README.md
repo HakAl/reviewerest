@@ -4,6 +4,11 @@ This frozen experiment asks whether explicitly supplied source line numbers
 improve citation reliability without changing substantive verdicts. It follows
 the [scope-position pilot](../grader-format-v1/baseline-01.md).
 
+The [first 24 assessments](baseline-01.md) have resolving citations in both
+presentations and stable paired verdicts. This set shows no added numbering
+benefit. Four answers omit the authority quote, and one numbered answer uses a
+valid three-line range around a single-line field. All parsed answers are public.
+
 ## Matched presentation
 
 Both arms present each original source line as a JSON-encoded string on its own

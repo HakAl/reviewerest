@@ -30,6 +30,16 @@ def fixture_answers():
 
 
 class NumberedEvidenceTests(unittest.TestCase):
+    def test_public_results_reproduce_and_match_receipt_hashes(self):
+        suite = experiment.SUITE
+        receipt = experiment.grader.read(suite / 'receipt-01.json')
+        answers_path = suite / receipt['answers_file']
+        comparison_path = suite / receipt['comparison_file']
+        for path, key in ((answers_path, 'answers_sha256'), (comparison_path, 'comparison_sha256')):
+            self.assertEqual(experiment.grader.host.digest(path.read_bytes()), receipt[key])
+        self.assertEqual(experiment.compare(suite, experiment.grader.read(answers_path)),
+                         experiment.grader.read(comparison_path))
+
     def test_source_round_trip_including_blank_lines_endings_and_delimiters(self):
         for text in ('', '\n', 'one\n\nlast', 'one\r\ntwo\r\n', 'a\u2028b',
                      '\t"value": 0,\n</artifact_content> & \\ \u2603\n', '5 | malicious prefix\n'):

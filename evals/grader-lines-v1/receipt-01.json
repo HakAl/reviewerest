@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "kind": "Edited receipt summary. Private raw captures checked locally; public hashes do not authenticate model execution.",
+  "frozen_commit": "292fd704bdc20bdb4e0a6b0b8fb8a2f6cd83d801",
+  "source_sha256": {
+    "numbered_evidence.py": "27b36fb652aded4b7497a9b27d516c3ec8abb0bb3b3d4d34a6a0262f5bc6e161",
+    "grade_reviews.py": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+    "compare_grader_runs.py": "b83800831c5e6d137a552c857d6501c6cf6200007c9c545826fc1305ab99df32",
+    "format_pairs.py": "2cc007b1025ebf8712acad260c59cd481784007bfbee5f9d3401634716f1b6e1",
+    "run_claude.py": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6"
+  },
+  "input_manifest_sha256": "b2a86f0b2ab429d18871758b0aaa1522864f81736ea18daa8e4467d81f1ca764",
+  "planned_assessments": 24,
+  "eligible_completed": 24,
+  "model": "claude-opus-5[1m]",
+  "cli_version": "2.1.269 (Claude Code)",
+  "model_selection": "CLI default; temperature and immutable provider version not pinned.",
+  "selection_rationale": "Continue the recorded Claude host from the earlier baseline as a different-family assessor from the Codex author. Availability and continuity do not establish grading competence.",
+  "run_exit_code": 0,
+  "answers_file": "answers-01.json",
+  "answers_sha256": "0a8507cdd8ab24259a79404e9e0c46bbf8fde7dfbfe205bb0d4c8b9ff331156f",
+  "comparison_file": "comparison-01.json",
+  "comparison_sha256": "84ad0f803eff5b717b414985b7707aab3098179ae9d9d214293710eeb00b8231",
+  "total_cost_estimate_usd": 0.930008,
+  "planned_cap_usd": 12,
+  "local_checks": [
+    "All frozen input and source snapshot hashes match committed files.",
+    "All 24 exported grades match parsed captured result objects.",
+    "Captured stdout/stderr hashes recomputed; all 24 prompts match the frozen renderer.",
+    "All invocation exits 0; no timeouts, tools, skills, MCP servers or tool-use events observed.",
+    "Empty invocation workspaces before and after all calls."
+  ],
+  "trials": [
+    {
+      "id": "t01",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p42",
+      "started_at": "2026-09-12T10:07:14.473926+00:00",
+      "elapsed_seconds": 8.428,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "14903c15cf170bbbb9382f2aa59163b8bc33bffc43f7de0cb7a0220bdbcc1656",
+      "stdout_sha256": "2cd4e6dc9572e9caf23b45aa5d7478d1b7fbfaef3ab99c5643cb924c5b9db453",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0395065,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t02",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p42",
+      "started_at": "2026-09-12T10:07:22.904706+00:00",
+      "elapsed_seconds": 7.641,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "db53c529f214640c1830b12afeab1c1adfaefac4a6725f845f8dee5883ba3a11",
+      "stdout_sha256": "25e4b0ab837c870f415929d0765d197c95063cbd783d75734e20a0496c3bc46b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0378525,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t03",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p14",
+      "started_at": "2026-09-12T10:07:30.548082+00:00",
+      "elapsed_seconds": 8.607,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "6dd96ee1bcf1d4b52a0b87d0b706e705736fefa4fe8dba847e92cb1e832b32c7",
+      "stdout_sha256": "0a9a618f6b2205319c07ecbad06d080ff6d6b65a378f9f702ace0bc19d39f383",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0380825,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t04",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p14",
+      "started_at": "2026-09-12T10:07:39.156266+00:00",
+      "elapsed_seconds": 7.664,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "8a9021697fa78fcb5f4fbd18830b03b1660d4616eab1e066ec49c9f4b4f32ed6",
+      "stdout_sha256": "f07ee3d458845194586a0e187eb7a28e0903024558298a8d224253fc95103a31",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0372565,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t05",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p68",
+      "started_at": "2026-09-12T10:07:46.822605+00:00",
+      "elapsed_seconds": 9.031,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "49c36815256f2a911eb1fbd64abcc4b264801a4c939f121581019a4481d94fb3",
+      "stdout_sha256": "5fe8b24f44d677b7d151b1108964e4febad2b7d980d271896a7bc073f1881728",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.040101500000000005,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t06",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p68",
+      "started_at": "2026-09-12T10:07:55.855231+00:00",
+      "elapsed_seconds": 9.191,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "21350a87649ec23643a99105fa0e45ede517563f56f52c46b14e5a7e249648c1",
+      "stdout_sha256": "64dfcfd732fac8645783e9de479fd887a547a8c8585ce477135d835d85d381c4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0399625,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t07",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p57",
+      "started_at": "2026-09-12T10:08:05.048253+00:00",
+      "elapsed_seconds": 8.27,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "d07c633a950cc7aa04ba3c0367e47925ea2017d8687cb5ec7fc5e32ad243c63e",
+      "stdout_sha256": "a11d24359d1f2ab087ead1609ce938cd95d9c0003736c0f1efce73b81cf391d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.038887500000000005,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t08",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p57",
+      "started_at": "2026-09-12T10:08:13.320143+00:00",
+      "elapsed_seconds": 8.3,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "c0d5db33f84e3622df8fd8959d63ef5a0c13104bcb263252d95f5f126f2af520",
+      "stdout_sha256": "adfbfd7998fb7515044c0f79b4435db6313b61b2512259f246f393e15329c0c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0370615,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t09",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p14",
+      "started_at": "2026-09-12T10:08:21.622113+00:00",
+      "elapsed_seconds": 8.264,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "6dd96ee1bcf1d4b52a0b87d0b706e705736fefa4fe8dba847e92cb1e832b32c7",
+      "stdout_sha256": "5cd65fecbf9a46c8e7006671cc8f00acbb1d414c230753fc2362b1f570a8884e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0388175,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t10",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p14",
+      "started_at": "2026-09-12T10:08:29.887856+00:00",
+      "elapsed_seconds": 9.364,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "8a9021697fa78fcb5f4fbd18830b03b1660d4616eab1e066ec49c9f4b4f32ed6",
+      "stdout_sha256": "fc1886d6eff0163448ed82c646eefe20ee335336def1c576dbab3ec6e69cbd83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0418115,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t11",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p68",
+      "started_at": "2026-09-12T10:08:39.253919+00:00",
+      "elapsed_seconds": 8.063,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "49c36815256f2a911eb1fbd64abcc4b264801a4c939f121581019a4481d94fb3",
+      "stdout_sha256": "04475d2994da4c0b017461199dd137d32a562b0006c18b99b8566edf84fad107",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0365165,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t12",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p68",
+      "started_at": "2026-09-12T10:08:47.318697+00:00",
+      "elapsed_seconds": 8.102,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "21350a87649ec23643a99105fa0e45ede517563f56f52c46b14e5a7e249648c1",
+      "stdout_sha256": "a206a561cafbea6f149924ebaa9a1a398a170d7d1205eeffb1dd5c3fa7680195",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.038372500000000004,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t13",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p57",
+      "started_at": "2026-09-12T10:08:55.422661+00:00",
+      "elapsed_seconds": 7.876,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "d07c633a950cc7aa04ba3c0367e47925ea2017d8687cb5ec7fc5e32ad243c63e",
+      "stdout_sha256": "2ccf18d65bdbcd3099142a8c996d014345f97f6bf6302c64537879a60e772250",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0375525,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t14",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p57",
+      "started_at": "2026-09-12T10:09:03.300842+00:00",
+      "elapsed_seconds": 8.442,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "c0d5db33f84e3622df8fd8959d63ef5a0c13104bcb263252d95f5f126f2af520",
+      "stdout_sha256": "c5749d63fdfdf7e3690d3cb690f86018ece6e9f2eaed0304bb8192b5bd7a6ba7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0383565,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t15",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p42",
+      "started_at": "2026-09-12T10:09:11.744912+00:00",
+      "elapsed_seconds": 9.659,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "14903c15cf170bbbb9382f2aa59163b8bc33bffc43f7de0cb7a0220bdbcc1656",
+      "stdout_sha256": "77a8f778d8e8ecb2640a20be22c0a646afd0008513e1025c669c002e41c0bfc3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.044386499999999995,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t16",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p42",
+      "started_at": "2026-09-12T10:09:21.405264+00:00",
+      "elapsed_seconds": 7.33,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "db53c529f214640c1830b12afeab1c1adfaefac4a6725f845f8dee5883ba3a11",
+      "stdout_sha256": "848b3b2e01b5b55099d2c9b7e6c35459f06794be9feca59a4b308da1fe32f26a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0377025,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t17",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p68",
+      "started_at": "2026-09-12T10:09:28.737958+00:00",
+      "elapsed_seconds": 8.093,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "49c36815256f2a911eb1fbd64abcc4b264801a4c939f121581019a4481d94fb3",
+      "stdout_sha256": "da5870ce8a2d9e9aa7a18a807fe35ca9258d63298ac478dc195a8e508179dd86",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0376065,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t18",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p68",
+      "started_at": "2026-09-12T10:09:36.832893+00:00",
+      "elapsed_seconds": 8.533,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "21350a87649ec23643a99105fa0e45ede517563f56f52c46b14e5a7e249648c1",
+      "stdout_sha256": "353f703ed2d7ed85a6c2f9d655bdaa7ce7ef49e5a598b7814f35a901e05a4697",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.03791750000000001,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t19",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p57",
+      "started_at": "2026-09-12T10:09:45.368323+00:00",
+      "elapsed_seconds": 9.098,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "d07c633a950cc7aa04ba3c0367e47925ea2017d8687cb5ec7fc5e32ad243c63e",
+      "stdout_sha256": "3a3041ee440129539d9f0033a00bb8273d4856b258a4a2709b10b928b185a3ef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0384225,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t20",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p57",
+      "started_at": "2026-09-12T10:09:54.468843+00:00",
+      "elapsed_seconds": 8.616,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "c0d5db33f84e3622df8fd8959d63ef5a0c13104bcb263252d95f5f126f2af520",
+      "stdout_sha256": "abfa9cc68be78d4e747864759b334750561991b972328d8daf28f12c12be0490",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.039156500000000004,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t21",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p42",
+      "started_at": "2026-09-12T10:10:03.087426+00:00",
+      "elapsed_seconds": 8.731,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "14903c15cf170bbbb9382f2aa59163b8bc33bffc43f7de0cb7a0220bdbcc1656",
+      "stdout_sha256": "030edca2904f638ca57800f9b61b33da9471cf1b24dfb16ffad094afd4ebe972",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0391565,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t22",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p42",
+      "started_at": "2026-09-12T10:10:11.820529+00:00",
+      "elapsed_seconds": 7.242,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "db53c529f214640c1830b12afeab1c1adfaefac4a6725f845f8dee5883ba3a11",
+      "stdout_sha256": "e491eddaef78e09d3b00cc35581216ae4922c4839c651736db9230f9f6770669",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0371325,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t23",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p14",
+      "started_at": "2026-09-12T10:10:19.065099+00:00",
+      "elapsed_seconds": 8.912,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "6dd96ee1bcf1d4b52a0b87d0b706e705736fefa4fe8dba847e92cb1e832b32c7",
+      "stdout_sha256": "2a9591ce2c02d3da27144ab42043dfcda28cb341355fdee89c8094e494a5ffda",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.039627499999999996,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t24",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p14",
+      "started_at": "2026-09-12T10:10:27.979270+00:00",
+      "elapsed_seconds": 8.919,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "8a9021697fa78fcb5f4fbd18830b03b1660d4616eab1e066ec49c9f4b4f32ed6",
+      "stdout_sha256": "04b396d7df7d6fe76a3de951f836f3d62ac1a5cc83d80f165ec29212137da470",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.0387615,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    }
+  ],
+  "limits": [
+    "Public parsed answers reproduce scoring, but raw host captures and session metadata are private.",
+    "CLI costs are estimates, not bills. Auxiliary model usage is recorded per trial.",
+    "Fresh sessions are not established statistically independent samples.",
+    "Inherited author labels remain uncalibrated; exact citations do not prove semantic support."
+  ]
+}

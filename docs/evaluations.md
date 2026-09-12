@@ -20,6 +20,16 @@ invalid citations; all four moved-layout answers have resolving citations, thoug
 one omits the authority quote. This small formatting comparison does not establish
 a wrapping mechanism or an error rate. Its public results reproduce offline.
 
+The [matched line-number experiment](../evals/grader-lines-v1/README.md) compares
+numbered and unnumbered source rows across the same two cases and field orders.
+It freezes 24 interleaved assessments and separates quote omission from correct
+location. Both presentations use the same new row layout, so the plain arm is
+a concurrent control rather than the historical escaped-packet prompt.
+Its [first run](../evals/grader-lines-v1/baseline-01.md) has resolving citations
+in all 24 answers and stable verdicts across all twelve presentation pairs.
+It demonstrates no added numbering benefit on this set. Four authority-quote
+omissions and one valid but broader citation range remain visible.
+
 The [repeated behavioral gate pilot](../evals/repeated-v1/README.md) freezes two
 authority cases, five conditions and three attempts per case. Its
 [first six-trial run](../evals/repeated-v1/baseline-01.md) passes those conditions
