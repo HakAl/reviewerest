@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "kind": "Edited receipt summary; private captures checked locally, not authenticated by public hashes alone.",
+  "scorer_sha256": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+  "comparison_sha256": "b83800831c5e6d137a552c857d6501c6cf6200007c9c545826fc1305ab99df32",
+  "planned_reruns": 2,
+  "completed_reruns": 2,
+  "runs": [
+    {
+      "run": "02",
+      "runner_sha256": "aa67b4623f667c0fb6db315850da6115a9eeca763c888b8a2e2074550c980755",
+      "transport_sha256": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+      "original_runner_used": true,
+      "all_prompts_byte_identical_to_01": true,
+      "same_input_manifest": true,
+      "planned": 12,
+      "eligible_completed": 12,
+      "assessor": {
+        "model": "claude-opus-5[1m]",
+        "cli_version": "2.1.269 (Claude Code)",
+        "prior_exposure": "Fresh session per packet; expected labels, builder grades, authorship and other packets withheld.",
+        "selection_rationale": "Claude is a different model family from the Codex fixture author and available for this bounded pilot. Prior grading competence is unestablished; this experiment measures it."
+      },
+      "cost_estimate_usd": 0.5869145,
+      "answers_sha256": "252f6dc8e4f7ba13a4add512f61b5ddb7500172cadaacef0c5098a29e44dc1c5",
+      "first_started_at": "2026-09-12T08:49:46.281795+00:00",
+      "citation_failures": []
+    },
+    {
+      "run": "03",
+      "runner_sha256": "aa67b4623f667c0fb6db315850da6115a9eeca763c888b8a2e2074550c980755",
+      "transport_sha256": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+      "original_runner_used": true,
+      "all_prompts_byte_identical_to_01": true,
+      "same_input_manifest": true,
+      "planned": 12,
+      "eligible_completed": 12,
+      "assessor": {
+        "model": "claude-opus-5[1m]",
+        "cli_version": "2.1.269 (Claude Code)",
+        "prior_exposure": "Fresh session per packet; expected labels, builder grades, authorship and other packets withheld.",
+        "selection_rationale": "Claude is a different model family from the Codex fixture author and available for this bounded pilot. Prior grading competence is unestablished; this experiment measures it."
+      },
+      "cost_estimate_usd": 0.572197,
+      "answers_sha256": "2a570cacdf9476a1f75c144273ddb0522ddf131f4b050b526d61d651069dfd6f",
+      "first_started_at": "2026-09-12T08:52:09.530194+00:00",
+      "citation_failures": [
+        {
+          "packet_id": "p57",
+          "citation_index": 2,
+          "source": "readiness.json",
+          "start_line": 6,
+          "end_line": 6,
+          "quote": "\"authority_service\": \"not_checked\""
+        },
+        {
+          "packet_id": "p48",
+          "citation_index": 3,
+          "source": "readiness.json",
+          "start_line": 8,
+          "end_line": 8,
+          "quote": "\"provider\": \"synthetic host fixture\""
+        },
+        {
+          "packet_id": "p22",
+          "citation_index": 2,
+          "source": "readiness.json",
+          "start_line": 6,
+          "end_line": 6,
+          "quote": "\"authority_service\": \"not_checked\""
+        }
+      ]
+    }
+  ],
+  "comparison_result_sha256": "36012dcdd8fce74249861506d5a5f6c22203c8a436725edfe81594a38ec9460c"
+}

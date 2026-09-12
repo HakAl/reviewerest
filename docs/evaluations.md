@@ -8,6 +8,11 @@ twelve packets. Public answers allow offline scoring and inspection of every
 judgment. Author labels remain uncalibrated; the original release gate stays
 inconclusive.
 
+[Two unchanged assessor reruns](../evals/grader-v1/repeats-01.md) keep eleven raw
+packet verdicts stable and expose a flip on p85. The authority-field miscount
+recurs on unchanged text. Score version 2 keeps raw outcomes separate from
+citation validity; all three public answer files support mechanical comparison.
+
 The [repeated behavioral gate pilot](../evals/repeated-v1/README.md) freezes two
 authority cases, five conditions and three attempts per case. Its
 [first six-trial run](../evals/repeated-v1/baseline-01.md) passes those conditions

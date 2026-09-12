@@ -12,7 +12,7 @@ Every fictional source, review, expected label and actual parsed grade is public
 No model account or private capture is needed to inspect the reasoning or run:
 
 ```sh
-python3 evals/grade_reviews.py score evals/grader-v1/answers-01.json
+python3 evals/grade_reviews.py score evals/grader-v1/answers-01.json --legacy-score
 ```
 
 Expected exit: 4. Compare with [score-01.json](score-01.json). The complete
@@ -26,7 +26,8 @@ private; public scoring reproducibility does not authenticate those invocations.
 Commit `6766284` froze the protocol, twelve packets, author-written labels, fixed
 order, runner and offline controls before the first invocation. The first trial
 started at 23:46:27 UTC on 2026-09-11. No protocol, label, packet or runner changed
-during or after this run.
+between that freeze and this run's original publication at ccaecb5. Later scorer
+extensions preserve the archived result through `--legacy-score`.
 
 The assessor was `claude-opus-5[1m]` on Claude Code 2.1.269, using the CLI default.
 Each packet had one fresh session, with tools and skills disabled, safe mode,

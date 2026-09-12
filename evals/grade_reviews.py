@@ -62,6 +62,13 @@ def validate_grade(packet, grade):
         raise ValueError("Grade belongs to another packet or criterion.")
     if grade["outcome"] not in OUTCOMES or not isinstance(grade["reason"], str) or not grade["reason"].strip():
         raise ValueError("Grade needs an outcome and substantive reason.")
+    validate_citations(packet, grade)
+
+
+def validate_citations(packet, grade):
+    """Check quotations independently of verdict and other grade fields."""
+    if not isinstance(grade, dict) or "citations" not in grade:
+        raise ValueError("Citations are unavailable.")
     sources = {a["source"]: a["text"].splitlines() for a in packet["artifacts"]}
     cited = set()
     if not isinstance(grade["citations"], list):
@@ -79,7 +86,7 @@ def validate_grade(packet, grade):
         raise ValueError("Cite the review and at least one evidence artifact.")
 
 
-def score(suite, answers):
+def score(suite, answers, legacy=False):
     manifest, protocol, packets = inputs(suite)
     labels_raw = (suite / "expectations.json").read_bytes()
     if host.digest(labels_raw) != manifest["files"]["expectations.json"]:
@@ -109,7 +116,7 @@ def score(suite, answers):
                         "matches_author_label": actual == expected, "error": error})
     incomplete = any(r["observed"] in ("missing", "invalid") for r in results)
     matches = sum(r["matches_author_label"] for r in results)
-    return {"status": "incomplete" if incomplete else "agreement" if matches == len(packets) else "disagreement",
+    result = {"status": "incomplete" if incomplete else "agreement" if matches == len(packets) else "disagreement",
             "planned": len(packets), "matches": matches, "matrix": matrix, "results": results,
             "false_alarms_against_labels": matrix["pass"]["fail"],
             "missed_defects_against_labels": matrix["fail"]["pass"],
@@ -118,6 +125,35 @@ def score(suite, answers):
             "limits": ["Agreement is with frozen author labels, not independently established ground truth.",
                        "Exact quote resolution checks location, not whether the quote supports the judgment.",
                        "One judgment per short review does not measure grader repeatability or full-review quality."]}
+    if legacy:
+        return result
+    raw_matrix = {e: {o: 0 for o in (*OUTCOMES, "missing", "invalid")} for e in OUTCOMES}
+    for row in results:
+        ident = row["packet_id"]
+        grade = grades.get(ident)
+        raw = grade.get("outcome") if isinstance(grade, dict) else None
+        verdict_valid = (isinstance(raw, str) and raw in OUTCOMES
+                         and all(grade.get(k) == packets[ident][k] for k in ("packet_id", "target_condition")))
+        citations_resolve, citation_error = None, None
+        if ident in grades:
+            try:
+                validate_citations(packets[ident], grade)
+                citations_resolve = True
+            except (ValueError, TypeError, KeyError) as exc:
+                citations_resolve, citation_error = False, str(exc)
+        row.update(raw_outcome=raw, verdict_valid=verdict_valid,
+                   grade_valid=row["observed"] in OUTCOMES,
+                   citations_resolve=citations_resolve, citation_error=citation_error,
+                   raw_matches_author_label=raw == row["expected"] if verdict_valid else None)
+        raw_matrix[row["expected"]][raw if verdict_valid else "missing" if ident not in grades else "invalid"] += 1
+    result.update(score_version=2, raw_matrix=raw_matrix,
+                  raw_matches=sum(r["raw_matches_author_label"] is True for r in results),
+                  raw_defect_counts={"rejected": raw_matrix["fail"]["fail"],
+                                     "escaped": raw_matrix["fail"]["pass"],
+                                     "unresolved": raw_matrix["fail"]["inconclusive"],
+                                     "unavailable": raw_matrix["fail"]["missing"] + raw_matrix["fail"]["invalid"]})
+    result["limits"].append("Raw pass on a planted defect is an escape; raw inconclusive is unresolved. Neither establishes rejection. Citation-invalid verdicts remain visible but cannot establish an admissible rejection. Counts are not rates.")
+    return result
 
 
 def run(suite, output, cli, budget, total_budget, timeout):
@@ -200,6 +236,7 @@ def main():
     subs = parser.add_subparsers(dest="action", required=True)
     scoring = subs.add_parser("score")
     scoring.add_argument("answers", type=Path)
+    scoring.add_argument("--legacy-score", action="store_true", help="Reproduce the original score format without raw-verdict columns")
     running = subs.add_parser("run")
     running.add_argument("--output", type=Path, required=True)
     running.add_argument("--budget-per-packet", type=host.positive, default=0.5)
@@ -211,7 +248,7 @@ def main():
     args = parser.parse_args()
     try:
         if args.action == "score":
-            result = score(args.suite, read(args.answers))
+            result = score(args.suite, read(args.answers), legacy=args.legacy_score)
             print(json.dumps(result, indent=2))
             return {"agreement": 0, "disagreement": 3, "incomplete": 4}[result["status"]]
         cli = shutil.which(args.cli)

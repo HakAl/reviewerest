@@ -12,6 +12,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "evals"))
 import grade_reviews as grader
+import compare_grader_runs as comparison
 
 SUITE = ROOT / "evals/grader-v1"
 
@@ -32,11 +33,63 @@ def answers():
 
 class GraderEvalTests(unittest.TestCase):
     def test_published_scores_reproduce_without_raw_captures(self):
-        actual = grader.score(SUITE, grader.read(SUITE / "answers-01.json"))
+        actual = grader.score(SUITE, grader.read(SUITE / "answers-01.json"), legacy=True)
         self.assertEqual(actual, grader.read(SUITE / "score-01.json"))
         receipt = grader.read(SUITE / "receipt-01.json")
         self.assertEqual(receipt["answers_sha256"], grader.host.digest((SUITE / "answers-01.json").read_bytes()))
         self.assertEqual(receipt["score_sha256"], grader.host.digest((SUITE / "score-01.json").read_bytes()))
+
+    def test_raw_verdict_survives_citation_failure(self):
+        value = answers()
+        value["grades"]["p73"]["citations"][0]["start_line"] = 500
+        result = grader.score(SUITE, value)
+        row = next(r for r in result["results"] if r["packet_id"] == "p73")
+        self.assertEqual(row["raw_outcome"], "fail")
+        self.assertTrue(row["verdict_valid"])
+        self.assertFalse(row["citations_resolve"])
+        self.assertFalse(row["grade_valid"])
+        self.assertEqual(result["raw_matches"], 12)
+        self.assertEqual(result["matches"], 11)
+        self.assertEqual(result["raw_defect_counts"]["rejected"], 5)
+
+    def test_comparison_exposes_flip_despite_invalid_citation(self):
+        first = answers()
+        first["assessor"] = {"model": "fixture-model", "cli_version": "fixture"}
+        second = copy.deepcopy(first)
+        second["grades"]["p73"]["outcome"] = "pass"
+        second["grades"]["p73"]["citations"][0]["start_line"] = 500
+        result = comparison.compare(SUITE, {"first": first, "second": second})
+        self.assertTrue(result["same_recorded_model_and_cli"])
+        self.assertEqual(result["changed_verdict_packets"], 1)
+        row = next(r for r in result["rows"] if r["packet_id"] == "p73")
+        self.assertFalse(row["verdict_stable"])
+        self.assertFalse(row["runs"]["second"]["citations_resolve"])
+        del second["grades"]["p73"]
+        second["assessor"]["model"] = "changed"
+        result = comparison.compare(SUITE, {"first": first, "second": second})
+        self.assertFalse(result["same_recorded_model_and_cli"])
+        self.assertEqual(result["unknown_verdict_packets"], 1)
+
+    def test_inconclusive_defect_is_unresolved_not_raw_escape(self):
+        value = answers()
+        value["grades"]["p73"]["outcome"] = "inconclusive"
+        result = grader.score(SUITE, value)
+        self.assertEqual(result["raw_defect_counts"], {"rejected": 4, "escaped": 0, "unresolved": 1, "unavailable": 0})
+
+    def test_original_authority_quote_denominator_and_miscounts(self):
+        _, _, packets = grader.inputs(SUITE)
+        counts = comparison.citation_counts(packets, grader.read(SUITE / "answers-01.json"))
+        self.assertEqual((counts["quotes"], counts["resolving"]), (41, 39))
+        self.assertEqual((counts["unchecked_authority_quotes"], counts["unchecked_authority_resolving"]), (8, 6))
+        self.assertEqual([q["packet_id"] for q in counts["authority_quotes"] if not q["resolves"]], ["p42", "p57"])
+
+    def test_public_unchanged_reruns_reproduce_both_columns(self):
+        runs = {f"answers-{n}.json": grader.read(SUITE / f"answers-{n}.json") for n in ("01", "02", "03")}
+        result = comparison.compare(SUITE, runs)
+        self.assertEqual(result, grader.read(SUITE / "repeats-01.json"))
+        self.assertEqual(result["stable_verdict_packets"], 11)
+        self.assertEqual(result["changed_verdict_packets"], 1)
+        self.assertEqual([row["packet_id"] for row in result["rows"] if row["verdict_stable"] is False], ["p85"])
 
     def test_labels_cover_supported_bad_and_ambiguous_controls(self):
         result = grader.score(SUITE, answers())

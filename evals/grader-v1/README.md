@@ -23,6 +23,10 @@ The [first run](baseline-01.md) retains nine admissible label matches, two citat
 failures and one label disagreement. All source packets and actual grade objects
 are public, so its scoring can be reproduced without private captures.
 
+[Two unchanged reruns](repeats-01.md) retain the first within-condition variation
+measurement: one packet changes raw verdict, and the line-count error recurs.
+Raw outcomes and citation validity are now compared mechanically and separately.
+
 ## What is frozen and withheld
 
 [manifest.json](manifest.json) pins every packet, the protocol, fixed order and
@@ -86,6 +90,17 @@ release pass; disagreement is not an automatically confirmed model error. Review
 the cited reasoning and adjudicate independently. Quote resolution checks source
 location, not semantic support.
 
+Score version 2 also retains `raw_outcome`, `verdict_valid`, `grade_valid` and
+`citations_resolve` per packet. A citation-invalid answer keeps its raw verdict.
+The raw confusion matrix and raw planted-defect counts are separate from the
+admissible score. Use `--legacy-score` to reproduce the archived score-01.json
+format exactly; the archived answer and score files are unchanged.
+
+For unchanged inputs, `evals/compare_grader_runs.py` compares these columns across
+named answer files and checks recorded model/CLI identity. Input hashes must
+match. Missing verdicts are unknown, not stable. Successful comparison execution
+does not imply stable verdicts or valid citations; inspect the returned counts.
+
 The offline tests include constant-pass and constant-fail controls. These prove
 that scoring can expose those strategies, not that a model grader avoids them.
 The live model responses supply the latter evidence within this limited set.
@@ -98,3 +113,7 @@ held-out cases before tuning. Then repeat matched unchanged and deliberately
 regressed candidates to measure false alarms and detection sensitivity. This
 experiment does not authorize an independent calibration record for the original
 repeated release gate, whose decision remains inconclusive.
+
+See [next-experiments.md](next-experiments.md) for the defect-outcome convention,
+formatting-pair controls, independent paraphrase checks and proposed v2 ownership
+rule. None changes the frozen v1 criteria.
