@@ -1,8 +1,10 @@
 # Adjudication before a skill-effect pilot
 
-Status: initial and phase-two Gemini judgments received for all nine cases.
-Operator acceptance remains pending. No live skill-on/skill-off
-runs or accepted criteria are represented by this package.
+Status: the operator accepted criteria v1 with the severity clarification.
+[Resolved criteria](accepted-criteria-v1.json), the explicit
+[acceptance record](operator-acceptance-01.json) and their
+[frozen manifest](criteria-manifest-v1.json) are now recorded. No live comparison
+or spending is approved. Historical proposals below retain their original status.
 
 The [initial response](initial-01.json) is a public copy with only its reported
 local source path replaced. The [receipt](initial-receipt-01.json) binds that copy
@@ -14,18 +16,23 @@ The [phase-two response](coordinator/phase2-response.json) confirms four defect
 cases and two clean controls in the pilot, with bounded consequences and
 diagnostic severity. It is public byte for byte; its
 [receipt](phase2-receipt-01.json) verifies bindings and selection roles.
-One inconsistency remains: its clean-case wording lets severity alone determine
-a false positive despite accepting diagnostic severity. The
+Its clean-case wording lets severity alone determine a false positive despite
+accepting diagnostic severity. The
 [operator decision proposal](coordinator/operator-decision-01.md) makes the
-recommended resolution explicit. All initial and historical judgments remain
-unchanged, including disagreements. A returned agreement does not by itself
-freeze criteria or establish a skill effect.
+resolution explicit; the operator has now accepted it. Claim meaning determines
+false positives and severity stays diagnostic. The accepted criteria supersede
+that conflicting wording without rewriting the initial or phase-two records or
+attributing the final resolution to Gemini. Acceptance does not establish a
+skill effect.
 
 The [draft run-plan grading requirements](coordinator/run-plan-draft-01.md)
 require a reason per assessed entry and commit to separate per-arm diagnostics
 for misplaced notes and severity mismatches. They cannot be folded into recovery
-or false-positive totals after results are known. The draft is preparation, not
-an accepted criteria version or an executable live-run plan.
+or false-positive totals after results are known. The
+[bounded comparison plan](coordinator/run-plan-01.md) now specifies 36 candidate
+calls, an interleaved schedule, the full-package treatment and proposed limits.
+It still requires a tested matched runner and assessor pipeline, an assessor
+usage boundary and explicit live-run approval before execution.
 
 The question is whether adding the review skill improves finding quality under
 a shared minimal output format. Earlier experiments assessed outputs, graders

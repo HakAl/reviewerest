@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "status": "accepted",
+  "criteria_id": "skill-effect-criteria-v1",
+  "criteria_sha256": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
+  "operator": {
+    "identity": "repository operator via this conversation",
+    "message": "accepted",
+    "recorded_at": "2026-09-12T16:17:06.333895+00:00",
+    "message_timestamp": null
+  },
+  "scope": "Accept scoring criteria with the severity clarification; freeze criteria v1 and prepare a bounded run plan.",
+  "accepted_decision_sha256": "e772fc085327a1fd3b61d6564dd289c31a526aff2af65acd73744c68597b6945",
+  "criteria_accepted": true,
+  "live_run_approved": false,
+  "spending_approved": false
+}

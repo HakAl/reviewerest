@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "criteria_id": "skill-effect-criteria-v1",
+  "files": {
+    "accepted-criteria-v1.json": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
+    "operator-acceptance-01.json": "5acb8cdaf0f01aa1f70d8b5c8b3769ebc5d213194e01797bdda9627461e54f87",
+    "phase1/manifest.json": "302aaeea0fc09b51132c5d53541f1d5b6f3e9f80d43013bea80a49f1ce6e738a",
+    "phase1/shared-output.schema.json": "720d674d7f2b6c92324ab89c52b6e61f0d1cb0a314ae37d2fe464208d5390b79",
+    "coordinator/operator-decision-01.md": "e772fc085327a1fd3b61d6564dd289c31a526aff2af65acd73744c68597b6945",
+    "coordinator/phase2-response.json": "902a427deb35f79b3b9ef272a3479f907dc4319e949fb3bfd3dde49a6556d790",
+    "phase1/cases/r36.json": "44924e993940bf1e513a699e2c57827e9380418de61445e90ed53ed0d9220263",
+    "phase1/cases/r81.json": "65d7e44cc1d55eee5f762a7f07e43ecf6824ec9b61400ad9fbc0d8738bbf7a2b",
+    "phase1/cases/r24.json": "bbb9a3ae0d717a819e078e4575babf735aa803bf92d5db8df0faf565a25f54be",
+    "phase1/cases/r57.json": "6abb566fd5c9758313d5c1196d8dabba4006bc172c9085461f1262a2a9af515d",
+    "phase1/cases/r13.json": "f683d25febe3a66cde998fa5e670c9321e5ee80ef3f33612c16f855455fd379d",
+    "phase1/cases/r62.json": "79eddbc5d35271d179c943517df8ee6a32aae098c0e70d94a8dddb828b8177a4",
+    "phase1/cases/r45.json": "efe8b7cacd83b460f2a10002470a1948769e5cc208d768d5f27a2e95252e6d3d",
+    "phase1/cases/r90.json": "57bf4feb6cfeab610a804357a827e6b9978dc9ab434549ce28748c483a8bd029",
+    "phase1/cases/r28.json": "e9ca1be81244d9a02aa2797f871e033cce349870dce8adb6d365fc80cc4e6495"
+  },
+  "meaning": "Frozen criteria, explicit acceptance and source bindings. Hash integrity does not establish review truth."
+}

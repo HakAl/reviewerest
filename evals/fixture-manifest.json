@@ -123,7 +123,10 @@
     "evals/skill-effect-adjudication-v1/phase1/cases/r24.json": "bbb9a3ae0d717a819e078e4575babf735aa803bf92d5db8df0faf565a25f54be",
     "evals/skill-effect-adjudication-v1/phase1/cases/r13.json": "f683d25febe3a66cde998fa5e670c9321e5ee80ef3f33612c16f855455fd379d",
     "evals/skill-effect-adjudication-v1/phase1/cases/r81.json": "65d7e44cc1d55eee5f762a7f07e43ecf6824ec9b61400ad9fbc0d8738bbf7a2b",
-    "evals/skill-effect-adjudication-v1/phase1/cases/r62.json": "79eddbc5d35271d179c943517df8ee6a32aae098c0e70d94a8dddb828b8177a4"
+    "evals/skill-effect-adjudication-v1/phase1/cases/r62.json": "79eddbc5d35271d179c943517df8ee6a32aae098c0e70d94a8dddb828b8177a4",
+    "evals/skill-effect-adjudication-v1/accepted-criteria-v1.json": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
+    "evals/skill-effect-adjudication-v1/operator-acceptance-01.json": "5acb8cdaf0f01aa1f70d8b5c8b3769ebc5d213194e01797bdda9627461e54f87",
+    "evals/skill-effect-adjudication-v1/criteria-manifest-v1.json": "caef8667b86d6d4cb3628b218189365b93f7fc27f08bb1162e07aecf48fdafb3"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }

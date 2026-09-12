@@ -11,8 +11,11 @@ with its local source path replaced is public. Model identity and absence of
 prior exposure are reported, not host-verified. The returning Gemini adjudicator
 has supplied a phase-two disposition confirming the pilot composition and
 bounding the consequence claims. Its severity-based wording for clean cases
-still conflicts with diagnostic severity; an explicit operator resolution is
-proposed. No criteria have been accepted. The
+conflicted with diagnostic severity; the operator has now accepted the explicit
+resolution and criteria v1 is frozen with an acceptance record. A bounded plan
+specifies 36 candidate calls and separate per-arm diagnostics, but the matched
+runner, assessor pipeline and assessor usage boundary still need completion
+before live-run approval. The
 staged export withholds historical expectations until the initial response is saved.
 No live comparison has run; the skill's contribution remains unmeasured.
 
