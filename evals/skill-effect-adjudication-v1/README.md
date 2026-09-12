@@ -21,6 +21,12 @@ recommended resolution explicit. All initial and historical judgments remain
 unchanged, including disagreements. A returned agreement does not by itself
 freeze criteria or establish a skill effect.
 
+The [draft run-plan grading requirements](coordinator/run-plan-draft-01.md)
+require a reason per assessed entry and commit to separate per-arm diagnostics
+for misplaced notes and severity mismatches. They cannot be folded into recovery
+or false-positive totals after results are known. The draft is preparation, not
+an accepted criteria version or an executable live-run plan.
+
 The question is whether adding the review skill improves finding quality under
 a shared minimal output format. Earlier experiments assessed outputs, graders
 and evidence handling; they did not establish this effect. This packet prepares
