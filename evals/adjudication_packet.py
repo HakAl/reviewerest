@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export only the source-first adjudication packet, without coordinator material."""
+"""Export source-first packets or mechanically validate a returned adjudication."""
 
 import argparse
 import json
@@ -78,12 +78,71 @@ def validate_candidate(value, packet):
                 raise ValueError("Location does not resolve within a supplied source.")
 
 
+def validate_adjudication(record, suite):
+    """Validate submitted structure and evidence; never adjudicate its conclusions."""
+    manifest, packets = phase_one(suite)
+    expected_digest = grader.host.digest((suite / "phase1/manifest.json").read_bytes())
+    if (not isinstance(record, dict) or type(record.get("version")) is not int or record.get("version") != 1 or record.get("status") != "adjudicated"
+            or record.get("phase1_manifest_sha256") != expected_digest):
+        raise ValueError("Completed adjudication must identify the frozen phase-one manifest.")
+    identity = record.get("adjudicator")
+    if not isinstance(identity, dict) or not all(isinstance(identity.get(k), str) and identity[k].strip()
+                                               for k in ("identity", "role", "prior_exposure")):
+        raise ValueError("Adjudicator identity, role and exposure must be recorded.")
+    cases = record.get("cases")
+    if not isinstance(cases, list) or len(cases) != len(packets) or any(not isinstance(c, dict) for c in cases):
+        raise ValueError("Every phase-one case requires one judgment.")
+    ids = [c.get("id") for c in cases]
+    if any(not isinstance(i, str) for i in ids) or len(set(ids)) != len(ids) or set(ids) != set(manifest["case_ids"]):
+        raise ValueError("Adjudication cases differ from phase one.")
+    by_id = {p["id"]: p for p in packets}
+    quotes = 0
+    for case in cases:
+        if case.get("status") != "adjudicated" or type(case.get("clean_within_scope")) is not bool:
+            raise ValueError("Case judgment is unfinished.")
+        for key in ("scope_interpretation", "evidence_sufficiency", "acceptance_notes", "severity_range_and_basis"):
+            if not isinstance(case.get(key), str) or not case[key].strip():
+                raise ValueError("Missing case judgment: " + key)
+        for key in ("legitimate_alternatives", "unsupported_or_out_of_scope_claims", "open_questions"):
+            if not isinstance(case.get(key), list) or any(not isinstance(v, str) for v in case[key]):
+                raise ValueError("Case judgment list is malformed: " + key)
+        packet = by_id[case["id"]]
+        validate_candidate({"findings": case.get("reference_findings")}, packet)
+        if case["clean_within_scope"] and case["reference_findings"]:
+            raise ValueError("Clean reference case also contains defect findings.")
+        if not case["clean_within_scope"] and not case["reference_findings"]:
+            raise ValueError("Defective reference case requires a finding.")
+        sources = {a["source"]: a["text"].splitlines() for a in packet["artifacts"]}
+        evidence = case.get("located_evidence")
+        if not isinstance(evidence, list) or not evidence:
+            raise ValueError("Located evidence is required for each judgment.")
+        for cite in evidence:
+            if not isinstance(cite, dict) or set(cite) != {"source", "start_line", "end_line", "quote"}:
+                raise ValueError("Evidence citation fields differ from the contract.")
+            source, start, end, quote = (cite[k] for k in ("source", "start_line", "end_line", "quote"))
+            if (not isinstance(source, str) or source not in sources or type(start) is not int or type(end) is not int
+                    or not 1 <= start <= end <= len(sources[source]) or not isinstance(quote, str) or not quote.strip()
+                    or quote not in "\n".join(sources[source][start - 1:end])):
+                raise ValueError("Adjudication quote does not resolve to supplied text.")
+            quotes += 1
+    return {"valid": True, "case_count": len(cases), "resolving_evidence_quotes": quotes,
+            "validation_scope": "submitted_case_structure_source_locations_and_quotes",
+            "substantive_truth_verified": False,
+            "limits": ["Identity and prior exposure are recorded declarations, not authenticated host evidence.",
+                       "This does not accept criteria, resolve open questions, or authorize comparison runs."]}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--suite", type=Path, default=SUITE)
-    parser.add_argument("--output", type=Path, required=True)
+    action = parser.add_mutually_exclusive_group(required=True)
+    action.add_argument("--output", type=Path)
+    action.add_argument("--record", type=Path)
     args = parser.parse_args()
     try:
+        if args.record:
+            print(json.dumps(validate_adjudication(grader.read(args.record), args.suite), indent=2))
+            return 0
         export(args.suite, args.output)
         print("Exported source-first packet. This does not perform or certify adjudication.")
         return 0

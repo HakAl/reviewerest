@@ -93,6 +93,51 @@ class AdjudicationPacketTests(unittest.TestCase):
                 packet.validate_candidate(value, case)
             self.assertEqual(value, saved)
 
+    def test_published_adjudication_reproduces_receipt_without_certifying_truth(self):
+        record = packet.grader.read(packet.SUITE / 'initial-01.json')
+        receipt = packet.grader.read(packet.SUITE / 'initial-receipt-01.json')
+        result = packet.validate_adjudication(record, packet.SUITE)
+        self.assertEqual(result, receipt['mechanical_validation'])
+        self.assertEqual(result['case_count'], 9)
+        self.assertEqual(result['resolving_evidence_quotes'], 26)
+        self.assertFalse(result['substantive_truth_verified'])
+        for name, digest in receipt['public_artifact_sha256'].items():
+            self.assertEqual(packet.grader.host.digest((packet.SUITE / name).read_bytes()), digest)
+        record['cases'][0]['reference_findings'][0]['claim'] = 'An unsupported assertion with valid locations.'
+        self.assertTrue(packet.validate_adjudication(record, packet.SUITE)['valid'])
+
+    def test_adjudication_rejects_missing_duplicate_unfinished_and_drifted_records(self):
+        original = packet.grader.read(packet.SUITE / 'initial-01.json')
+        for kind in ('missing', 'duplicate', 'unfinished', 'manifest', 'empty_defect', 'boolean_version'):
+            value = copy.deepcopy(original)
+            if kind == 'missing':
+                value['cases'].pop()
+            elif kind == 'duplicate':
+                value['cases'][1]['id'] = value['cases'][0]['id']
+            elif kind == 'unfinished':
+                value['cases'][0]['status'] = 'unfilled'
+            elif kind == 'manifest':
+                value['phase1_manifest_sha256'] = '0' * 64
+            elif kind == 'empty_defect':
+                value['cases'][0]['reference_findings'] = []
+            else:
+                value['version'] = True
+            with self.subTest(kind=kind), self.assertRaises(ValueError):
+                packet.validate_adjudication(value, packet.SUITE)
+
+    def test_adjudication_rejects_fabricated_and_mislocated_evidence(self):
+        for kind in ('quote', 'line', 'source'):
+            value = packet.grader.read(packet.SUITE / 'initial-01.json')
+            cite = value['cases'][0]['located_evidence'][0]
+            if kind == 'quote':
+                cite['quote'] = 'This sentence is absent from the source.'
+            elif kind == 'line':
+                cite['start_line'] = cite['end_line'] = 2
+            else:
+                cite['source'] = 'absent.md'
+            with self.subTest(kind=kind), self.assertRaisesRegex(ValueError, 'quote does not resolve'):
+                packet.validate_adjudication(value, packet.SUITE)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,8 +4,13 @@ The [skill-effect adjudication packet](../evals/skill-effect-adjudication-v1/REA
 prepares an independent source-first judgment before a matched skill-on/skill-off
 pilot. Six candidate cases exclude the four documented tuning cases and include
 two proposed clean controls; three diagnostic-only cases address historical
-disputes. It contains no completed adjudication or accepted labels. The staged
-export withholds historical expectations until the initial response is saved.
+disputes. An initial Gemini judgment now covers all nine cases; its 26 evidence
+quotations resolve mechanically. It agrees with four defect cases and two clean
+controls in the pilot subset. The original is preserved privately and a copy
+with its local source path replaced is public. Model identity and absence of
+prior exposure are reported, not host-verified. Phase-two clarification of scope,
+consequences and severity remains pending; no criteria have been accepted. The
+staged export withholds historical expectations until the initial response is saved.
 No live comparison has run; the skill's contribution remains unmeasured.
 
 The [semantic assessor challenge](../evals/grader-v1/README.md) tests whether a

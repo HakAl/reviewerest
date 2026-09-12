@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "status": "initial_received_phase2_pending",
+  "phase1_manifest_sha256": "302aaeea0fc09b51132c5d53541f1d5b6f3e9f80d43013bea80a49f1ce6e738a",
+  "original_response": {
+    "bytes": 28014,
+    "sha256": "315ca895cc44be570c544268cbd22206b67435123ffa57431a8d1abfc2b0778e",
+    "retention": "Byte-identical original preserved in ignored private storage."
+  },
+  "public_copy": {
+    "path": "initial-01.json",
+    "byte_identical_to_original": false,
+    "changes": [
+      "Replace adjudicator.sources_accessed with a description omitting the local path.",
+      "Serialize with indentation and ASCII escapes."
+    ],
+    "decoded_value_differences_checked": [
+      "adjudicator.sources_accessed"
+    ],
+    "substantive_values_unchanged": true
+  },
+  "reported_host": {
+    "cli": "Antigravity CLI",
+    "version": "1.2.2",
+    "model": "Gemini 3.8 Flash (High)",
+    "family": "Gemini",
+    "source": "User-supplied host description and adjudicator declaration",
+    "invocation_trace_available": false,
+    "identity_authenticated": false,
+    "source_only_access_verified": false
+  },
+  "mechanical_validation": {
+    "valid": true,
+    "case_count": 9,
+    "resolving_evidence_quotes": 26,
+    "validation_scope": "submitted_case_structure_source_locations_and_quotes",
+    "substantive_truth_verified": false,
+    "limits": [
+      "Identity and prior exposure are recorded declarations, not authenticated host evidence.",
+      "This does not accept criteria, resolve open questions, or authorize comparison runs."
+    ]
+  },
+  "arithmetic_counterexample": {
+    "kind": "Independent pure arithmetic counterexample; supplied artifact code was not executed.",
+    "expression": "sum([1e20]) + 1 == sum([1e20])",
+    "result": true,
+    "expected_sum": 1e+20,
+    "actual_expression": 1e+20,
+    "empty_list_expression": 1,
+    "python": "3.11.15",
+    "recorded_at": "2026-09-12T14:57:48.431365+00:00"
+  },
+  "public_artifact_sha256": {
+    "initial-01.json": "37b2d13236f24891769b489547a71d2e5d6159ac4357092a1b5ffefa421c2af5",
+    "phase1/manifest.json": "302aaeea0fc09b51132c5d53541f1d5b6f3e9f80d43013bea80a49f1ce6e738a"
+  },
+  "operator_accepted_criteria": false,
+  "live_comparison_executed": false,
+  "limits": [
+    "Citation resolution checks source text and bounds, not support for the conclusions.",
+    "The builder checked the submitted record and proposed phase-two clarifications; these are not a second independent adjudication.",
+    "The private original cannot be reproduced from the public copy because its local path is omitted."
+  ]
+}
