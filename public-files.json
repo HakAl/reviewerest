@@ -71,6 +71,8 @@
     "evals/correction-v1/cases/38.json",
     "evals/correction-v1/expectations.json",
     "evals/correction-v1/rubric.json",
+    "evals/effect_assessments.py",
+    "evals/effect_candidates.py",
     "evals/expectations.json",
     "evals/fixture-manifest.json",
     "evals/format_pairs.py",
@@ -199,6 +201,13 @@
     "evals/skill-effect-adjudication-v1/phase1/response-template.json",
     "evals/skill-effect-adjudication-v1/phase1/shared-output.schema.json",
     "evals/skill-effect-adjudication-v1/phase2-receipt-01.json",
+    "evals/skill-effect-v1/README.md",
+    "evals/skill-effect-v1/assessment-schema.json",
+    "evals/skill-effect-v1/assessor-manifest.json",
+    "evals/skill-effect-v1/assessor-protocol.md",
+    "evals/skill-effect-v1/candidate-manifest.json",
+    "evals/skill-effect-v1/candidate-prompt.md",
+    "evals/skill-effect-v1/plan.json",
     "examples/README.md",
     "examples/contract.md",
     "examples/plan.md",
@@ -235,6 +244,7 @@
     "tests/test_repeated_gate.py",
     "tests/test_review_helpers.py",
     "tests/test_review_quality_evals.py",
-    "tests/test_review_records.py"
+    "tests/test_review_records.py",
+    "tests/test_skill_effect.py"
   ]
 }

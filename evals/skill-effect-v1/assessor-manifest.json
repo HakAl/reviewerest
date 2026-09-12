@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "files": {
+    "evals/adjudication_packet.py": "f8a6e2e8b8876f789a0ff28af371fa8a2c6a30af2b4a4afc369567528503838b",
+    "evals/effect_assessments.py": "374c5fa52d06de1f9bc4982fac18d09e87db0cdcb7459a05e21e21f75e45774c",
+    "evals/effect_candidates.py": "f80bd31eec662e7d685a4e340d51ce22d3cc08291d332ae82e6609903c3bf415",
+    "evals/grade_reviews.py": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+    "evals/run_claude.py": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+    "evals/skill-effect-adjudication-v1/accepted-criteria-v1.json": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
+    "evals/skill-effect-adjudication-v1/criteria-manifest-v1.json": "caef8667b86d6d4cb3628b218189365b93f7fc27f08bb1162e07aecf48fdafb3",
+    "evals/skill-effect-v1/assessor-protocol.md": "fb72accd18a82cf1c87dfed0550d966c751e65740c037610e8ae2b8c04db69bb",
+    "evals/skill-effect-v1/plan.json": "e12ed3c7d2ea87a5cc51a1ae7ef6021f23296f55eee78fee8089afda45022274",
+    "evals/skill-effect-v1/assessment-schema.json": "d1802de8954cb37992b3b28f7b88d12caaa3084988b60547c6998ba6677925dc"
+  },
+  "meaning": "Assessment protocol, accepted criteria and code. No live invocation authorized by this file."
+}

@@ -13,9 +13,14 @@ has supplied a phase-two disposition confirming the pilot composition and
 bounding the consequence claims. Its severity-based wording for clean cases
 conflicted with diagnostic severity; the operator has now accepted the explicit
 resolution and criteria v1 is frozen with an acceptance record. A bounded plan
-specifies 36 candidate calls and separate per-arm diagnostics, but the matched
-runner, assessor pipeline and assessor usage boundary still need completion
-before live-run approval. The
+specifies 36 candidate calls and separate per-arm diagnostics. The
+[matched pipeline](../evals/skill-effect-v1/README.md) now implements candidate
+execution, a blinded assessor handoff, Gemini capture/import and offline
+aggregation. Eighteen new offline tests exercise isolation, failure handling and
+diagnostic separation using synthetic events and judgments. Live host compatibility
+and substantive review quality remain unmeasured. Separate usage approvals are
+required: Claude's nominal per-call limits do not guarantee billing, and Gemini
+has call/time limits without a verified dollar cap. The
 staged export withholds historical expectations until the initial response is saved.
 No live comparison has run; the skill's contribution remains unmeasured.
 

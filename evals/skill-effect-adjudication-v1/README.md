@@ -31,8 +31,10 @@ for misplaced notes and severity mismatches. They cannot be folded into recovery
 or false-positive totals after results are known. The
 [bounded comparison plan](coordinator/run-plan-01.md) now specifies 36 candidate
 calls, an interleaved schedule, the full-package treatment and proposed limits.
-It still requires a tested matched runner and assessor pipeline, an assessor
-usage boundary and explicit live-run approval before execution.
+The [matched pipeline](../skill-effect-v1/README.md) is now implemented and tested
+offline. Its candidate and assessor usage boundaries require separate explicit
+approvals; live host compatibility has not yet been measured. The earlier plan
+files preserve the preparation state that preceded implementation.
 
 The question is whether adding the review skill improves finding quality under
 a shared minimal output format. Earlier experiments assessed outputs, graders

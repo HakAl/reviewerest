@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skill-effect per-entry assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assessment_id",
+    "packet_sha256",
+    "assessor",
+    "entries",
+    "required_defects",
+    "case_reason",
+    "case_citations",
+    "criteria_dispute"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "packet_sha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model",
+        "family",
+        "prior_exposure"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prior_exposure": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "entry_id",
+          "classification",
+          "reason",
+          "citations",
+          "recovered_defects",
+          "unsupported_assertion",
+          "unsupported_defect_claim",
+          "out_of_scope",
+          "misplaced_note",
+          "severity_assessment",
+          "severity_reason",
+          "duplicate_of"
+        ],
+        "properties": {
+          "entry_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "enum": [
+              "supported_defect",
+              "secondary_observation",
+              "neutral",
+              "unsupported",
+              "out_of_scope",
+              "mixed",
+              "unresolved"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source",
+                "start_line",
+                "end_line",
+                "quote"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start_line": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "end_line": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "minItems": 1
+          },
+          "recovered_defects": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "unsupported_assertion": {
+            "type": "boolean"
+          },
+          "unsupported_defect_claim": {
+            "type": "boolean"
+          },
+          "out_of_scope": {
+            "type": "boolean"
+          },
+          "misplaced_note": {
+            "type": "boolean"
+          },
+          "severity_assessment": {
+            "enum": [
+              "mismatch",
+              "not_mismatch",
+              "unresolved"
+            ]
+          },
+          "severity_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duplicate_of": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "required_defects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "defect_id",
+          "outcome",
+          "reason"
+        ],
+        "properties": {
+          "defect_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome": {
+            "enum": [
+              "recovered",
+              "missed",
+              "unresolved"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "case_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source",
+          "start_line",
+          "end_line",
+          "quote"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "criteria_dispute": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

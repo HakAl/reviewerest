@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "files": {
+    "evals/adjudication_packet.py": "f8a6e2e8b8876f789a0ff28af371fa8a2c6a30af2b4a4afc369567528503838b",
+    "evals/effect_candidates.py": "f80bd31eec662e7d685a4e340d51ce22d3cc08291d332ae82e6609903c3bf415",
+    "evals/grade_reviews.py": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+    "evals/run_claude.py": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+    "evals/skill-effect-adjudication-v1/operator-acceptance-01.json": "5acb8cdaf0f01aa1f70d8b5c8b3769ebc5d213194e01797bdda9627461e54f87",
+    "evals/skill-effect-adjudication-v1/phase1/cases/r24.json": "bbb9a3ae0d717a819e078e4575babf735aa803bf92d5db8df0faf565a25f54be",
+    "evals/skill-effect-adjudication-v1/phase1/cases/r28.json": "e9ca1be81244d9a02aa2797f871e033cce349870dce8adb6d365fc80cc4e6495",
+    "evals/skill-effect-adjudication-v1/phase1/cases/r36.json": "44924e993940bf1e513a699e2c57827e9380418de61445e90ed53ed0d9220263",
+    "evals/skill-effect-adjudication-v1/phase1/cases/r45.json": "efe8b7cacd83b460f2a10002470a1948769e5cc208d768d5f27a2e95252e6d3d",
+    "evals/skill-effect-adjudication-v1/phase1/cases/r57.json": "6abb566fd5c9758313d5c1196d8dabba4006bc172c9085461f1262a2a9af515d",
+    "evals/skill-effect-adjudication-v1/phase1/cases/r62.json": "79eddbc5d35271d179c943517df8ee6a32aae098c0e70d94a8dddb828b8177a4",
+    "evals/skill-effect-adjudication-v1/phase1/shared-output.schema.json": "720d674d7f2b6c92324ab89c52b6e61f0d1cb0a314ae37d2fe464208d5390b79",
+    "evals/skill-effect-v1/candidate-prompt.md": "2e7d97d4d0ca45a8cf21a7a848978c6fd10f799fbf881c73eaffba44d1c91928",
+    "evals/skill-effect-v1/plan.json": "e12ed3c7d2ea87a5cc51a1ae7ef6021f23296f55eee78fee8089afda45022274",
+    "review/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "review/NOTICE": "d627d8423cd290f85c8613af9475d3ecbbc38044c3d30129b4a2613dafe21fdb",
+    "review/SKILL.md": "3a0be83ff1cfeee9452d8c84df76ff4f4dd9257b27ad09e186cf1a0143a7a9bb",
+    "review/agents/openai.yaml": "4c593a16e82c506538c2946202a3ecce3a47daeb752ec17bbc402bd6a5118d33",
+    "review/references/interaction-evidence.md": "141779219f481c51012432be6bfe148a6e7def8198dba913e9e5f42a22d6fdaf",
+    "review/references/migrations.md": "b0f5cd7b273dc773ed3be9cf47e170b456f0ea97c87d03d11493fdc08675d1cc",
+    "review/references/report-contract.md": "5e37d1f501092699ca24857a711275ecc379d5e5e5e932b1f4932c799616c1b2",
+    "review/references/security-boundaries.md": "b28364e9fa34bf2d579c16183945670df34bc9d068aa2d5494ea5343031420f4",
+    "review/scripts/frame_artifact.py": "b9d78c461b8b068f00d6759e94b09c4312926d01c8f54616419b0ea1174891a5",
+    "review/scripts/resolve_base.py": "bcd8ed3da9fc490483d4f3bc72aeb6235b44ee581f13b8a373da91303933d0df",
+    "review/scripts/validate_record.py": "781447bcb3f8fb8821c8d0115006a1e63ea362d316c8d56e9f5541fab8cd06d4"
+  },
+  "meaning": "Candidate-only dependencies and inputs; no accepted labels or assessor materials."
+}
