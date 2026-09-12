@@ -1,0 +1,498 @@
+{
+  "version": 1,
+  "kind": "Edited receipt summary. Private raw captures checked locally; public hashes do not authenticate model execution.",
+  "frozen_commit": "a26de0d59f85c88205fb825c99a35d04dedb7739",
+  "source_sha256": {
+    "numbered_evidence.py": "674fbf4c8427abb65e52033207cd8e09c556bf1b145273e42043e1d894655a01",
+    "grade_reviews.py": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+    "compare_grader_runs.py": "b83800831c5e6d137a552c857d6501c6cf6200007c9c545826fc1305ab99df32",
+    "format_pairs.py": "2cc007b1025ebf8712acad260c59cd481784007bfbee5f9d3401634716f1b6e1",
+    "run_claude.py": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+    "long_evidence.py": "d0e66f3d39f94d918607467da736034ed938587ace28aa82fe91a02413512702"
+  },
+  "input_manifest_sha256": "e21f6e9cd8856e726d1101e57f6835b0d1f7616bfaad3d237166814099977ca5",
+  "planned_assessments": 24,
+  "eligible_completed": 24,
+  "model": "claude-opus-5[1m]",
+  "cli_version": "2.1.269 (Claude Code)",
+  "model_selection": "CLI default; temperature and immutable provider version not pinned.",
+  "selection_rationale": "Continue the recorded Claude host from the earlier baseline as a different-family assessor from the Codex author. Availability and continuity do not establish grading competence.",
+  "run_exit_code": 0,
+  "answers_file": "answers-01.json",
+  "answers_sha256": "c42639572675f36589508041abfde56d76bc06b256527caf3a9d429e6d6e7164",
+  "comparison_file": "comparison-01.json",
+  "comparison_sha256": "d90e77f56db5a4225d64d2896e06bf14a7a4b3db89afdce3300f570c3e6ba7af",
+  "total_cost_estimate_usd": 3.284492,
+  "planned_cap_usd": 12,
+  "local_checks": [
+    "All frozen input and source snapshot hashes match committed files.",
+    "All 24 exported grades match parsed captured result objects.",
+    "Captured stdout/stderr hashes recomputed; all 24 prompts match the frozen renderer.",
+    "All invocation exits 0; no timeouts, tools, skills, MCP servers or tool-use events observed.",
+    "Empty invocation workspaces before and after all calls."
+  ],
+  "trials": [
+    {
+      "id": "t01",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p61",
+      "started_at": "2026-09-12T10:47:40.441642+00:00",
+      "elapsed_seconds": 24.834,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "ab435a86a84fe8943449f69b553f96e0d2ea16f3c6a0e9e8ff39a1462df7d9a7",
+      "stdout_sha256": "737435516eb2e3ae8e2f0e9ca9e8c823dbb540af6eda01221d589981ebb57b2c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1440355,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t02",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p61",
+      "started_at": "2026-09-12T10:48:05.277651+00:00",
+      "elapsed_seconds": 16.417,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "a138d86b1c4f98749564afd3b461117c9c2eaf8b1add42ce388dc388d5ee879c",
+      "stdout_sha256": "dd4d01abaead1438c3b6b1752762ffc3c24057009bacb8a5c8aff1798146db9a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1294565,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t03",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p26",
+      "started_at": "2026-09-12T10:48:21.696719+00:00",
+      "elapsed_seconds": 12.587,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "36463728f3341a2f9d5f422fa78af81fce66a3adc7fdbbdabc2e83926d918083",
+      "stdout_sha256": "6d49b2cb8027095b161b07ed48e762e27e28bc8dc107af4aea453988dc805cbf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1208765,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t04",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p26",
+      "started_at": "2026-09-12T10:48:34.286008+00:00",
+      "elapsed_seconds": 26.848,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "56e0f4c4c1b49829d563fc419224bdd0d7eea9855e601f22bcd1f6bd2a99ed71",
+      "stdout_sha256": "7e39a7dd1fee6ac8f7f40bf6f7564b1524b05aa5331ee2a02f8f1af9b8ccbcec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.15545049999999996,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t05",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p83",
+      "started_at": "2026-09-12T10:49:01.135507+00:00",
+      "elapsed_seconds": 30.104,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "6e0a441a5e3cc4b25507d2b7b2b4eab1d580673fd6973623eff63e03930c3fda",
+      "stdout_sha256": "23249b5737ce6a0d822b6c24508152070472f93dc53ba980523008a0024a42fe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1582355,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t06",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p83",
+      "started_at": "2026-09-12T10:49:31.241623+00:00",
+      "elapsed_seconds": 14.874,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "8b3847de69b9815ec1e1f71319e7d37bf5c89fc691d82a03e73a0d8ac5889587",
+      "stdout_sha256": "7a6dbf56efc399720c187600fb08590d1b63ff2d29745ff0024a0cede7a89ad3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.12222150000000001,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t07",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p94",
+      "started_at": "2026-09-12T10:49:46.116608+00:00",
+      "elapsed_seconds": 12.432,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "43a33d355a7b2563776a13d9602493f0350c6ec02fa1319663463b5143894314",
+      "stdout_sha256": "97dd61729b3e67fc867c59bd9ba8d40c682ca068ee5596899ed401166a5417ef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1184495,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t08",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p94",
+      "started_at": "2026-09-12T10:49:58.550840+00:00",
+      "elapsed_seconds": 28.4,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "1d982adaaeebf926b2abce546c4db2d466ecadf70b795fa48c9fcd1f0f38ab41",
+      "stdout_sha256": "a317d44f5c25e666ee58565be9945ce129c21938d6bf851161c1ab50b9123d01",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.15572350000000001,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t09",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p26",
+      "started_at": "2026-09-12T10:50:26.952996+00:00",
+      "elapsed_seconds": 26.045,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "56e0f4c4c1b49829d563fc419224bdd0d7eea9855e601f22bcd1f6bd2a99ed71",
+      "stdout_sha256": "857f9fcb06770152cb10b136eb2eec065cb6882da6830a939ca11a758b5bdec7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1521405,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t10",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p26",
+      "started_at": "2026-09-12T10:50:53.000834+00:00",
+      "elapsed_seconds": 12.384,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "36463728f3341a2f9d5f422fa78af81fce66a3adc7fdbbdabc2e83926d918083",
+      "stdout_sha256": "c86bdb9bcd778d2385a1dd8fc06351e9c82d9092f190e68871190b3bf17495a7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1179965,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t11",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p83",
+      "started_at": "2026-09-12T10:51:05.387000+00:00",
+      "elapsed_seconds": 14.177,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "8b3847de69b9815ec1e1f71319e7d37bf5c89fc691d82a03e73a0d8ac5889587",
+      "stdout_sha256": "26a8afdee8eb52b948b5a9e9f3075a12e7cd8456871c9f4df66f3fcb1bda969d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.12324650000000001,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t12",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p83",
+      "started_at": "2026-09-12T10:51:19.566885+00:00",
+      "elapsed_seconds": 31.095,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "6e0a441a5e3cc4b25507d2b7b2b4eab1d580673fd6973623eff63e03930c3fda",
+      "stdout_sha256": "e607d9482ea8200ef88f5b1497de64e6692e685769ce8e4879923346097deef5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.16245549999999997,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t13",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p94",
+      "started_at": "2026-09-12T10:51:50.664139+00:00",
+      "elapsed_seconds": 28.301,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "1d982adaaeebf926b2abce546c4db2d466ecadf70b795fa48c9fcd1f0f38ab41",
+      "stdout_sha256": "7ec84e5dd9efd80fb39774e27412f666d0a3590a701694e04ab43268dda30e26",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1520035,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t14",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p94",
+      "started_at": "2026-09-12T10:52:18.967318+00:00",
+      "elapsed_seconds": 13.45,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "43a33d355a7b2563776a13d9602493f0350c6ec02fa1319663463b5143894314",
+      "stdout_sha256": "57a57f0a963e4900ec29f2fb5ea4a4fa04047e12d8ae2eeea66fcb3eae93a9d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1214495,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t15",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p61",
+      "started_at": "2026-09-12T10:52:32.419400+00:00",
+      "elapsed_seconds": 13.635,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "a138d86b1c4f98749564afd3b461117c9c2eaf8b1add42ce388dc388d5ee879c",
+      "stdout_sha256": "4c61af547c4776a6f030ae6f03cfed7038c27573424c67b03ca02a8f768d0cbe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1200715,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t16",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p61",
+      "started_at": "2026-09-12T10:52:46.056466+00:00",
+      "elapsed_seconds": 19.919,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "ab435a86a84fe8943449f69b553f96e0d2ea16f3c6a0e9e8ff39a1462df7d9a7",
+      "stdout_sha256": "05d9ff9bce641f4b5dab6941bb1dbbe2013cd12bb3cd2e9b870e596ad6203100",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1333705,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t17",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p83",
+      "started_at": "2026-09-12T10:53:05.977276+00:00",
+      "elapsed_seconds": 33.025,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "6e0a441a5e3cc4b25507d2b7b2b4eab1d580673fd6973623eff63e03930c3fda",
+      "stdout_sha256": "4cc8e4442ff363010c181721d0d1680b214a15cdd9647006528b78bcc8ef6319",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.16621550000000002,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t18",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p83",
+      "started_at": "2026-09-12T10:53:39.004356+00:00",
+      "elapsed_seconds": 13.815,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "8b3847de69b9815ec1e1f71319e7d37bf5c89fc691d82a03e73a0d8ac5889587",
+      "stdout_sha256": "3a1b4bf155ffe3cee58ab6d64fcff1b50d8d81adb155bc847ce7b15417bc334b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.12140150000000001,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t19",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p94",
+      "started_at": "2026-09-12T10:53:52.821934+00:00",
+      "elapsed_seconds": 14.498,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "43a33d355a7b2563776a13d9602493f0350c6ec02fa1319663463b5143894314",
+      "stdout_sha256": "d94ab4d414aec4e48ae9728160c825468e80f0ed2b6e75d56bbf656387c9f4f9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1236795,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t20",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p94",
+      "started_at": "2026-09-12T10:54:07.322341+00:00",
+      "elapsed_seconds": 24.375,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "1d982adaaeebf926b2abce546c4db2d466ecadf70b795fa48c9fcd1f0f38ab41",
+      "stdout_sha256": "349ac7bd6f5c5ea228bc8fd2e34da26e16d21f08aa12830729ca8b1bc34acf53",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.14509350000000001,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t21",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p61",
+      "started_at": "2026-09-12T10:54:31.699699+00:00",
+      "elapsed_seconds": 23.342,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "ab435a86a84fe8943449f69b553f96e0d2ea16f3c6a0e9e8ff39a1462df7d9a7",
+      "stdout_sha256": "0043c7870b1b92d67d1b3d363263a4cc624ccedd8d9f8305e2f5237a16cbf4b6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1435205,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t22",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p61",
+      "started_at": "2026-09-12T10:54:55.044590+00:00",
+      "elapsed_seconds": 13.268,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "a138d86b1c4f98749564afd3b461117c9c2eaf8b1add42ce388dc388d5ee879c",
+      "stdout_sha256": "962c4cfc9f7d68abba5b2ac6af7f0f8367f6af7c328a1c01294846d5354de3fb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.11930150000000002,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t23",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p26",
+      "started_at": "2026-09-12T10:55:08.316541+00:00",
+      "elapsed_seconds": 17.487,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "36463728f3341a2f9d5f422fa78af81fce66a3adc7fdbbdabc2e83926d918083",
+      "stdout_sha256": "b288826d53d301b1a7e698b69799de0d76686dd1e2003533b5c9c09f75d1e66b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1320165,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    },
+    {
+      "id": "t24",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p26",
+      "started_at": "2026-09-12T10:55:25.805831+00:00",
+      "elapsed_seconds": 23.829,
+      "exit_code": 0,
+      "eligible": true,
+      "response_contract_error": null,
+      "prompt_sha256": "56e0f4c4c1b49829d563fc419224bdd0d7eea9855e601f22bcd1f6bd2a99ed71",
+      "stdout_sha256": "3729e666c4e7d62e9c9a8be646e74c917403e4c6bcc87655016295cd735d1893",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cost_estimate_usd": 0.1460805,
+      "reported_usage_models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5[1m]"
+      ]
+    }
+  ],
+  "limits": [
+    "Public parsed answers reproduce scoring, but raw host captures and session metadata are private.",
+    "CLI costs are estimates, not bills. Auxiliary model usage is recorded per trial.",
+    "Fresh sessions are not established statistically independent samples.",
+    "Packet-derived synthetic-policy labels and exact locations do not certify free-form reasoning or general review quality."
+  ]
+}

@@ -28,6 +28,16 @@ def fixture_answers():
 
 
 class LongEvidenceTests(unittest.TestCase):
+    def test_published_comparison_reproduces_and_receipt_hashes_match(self):
+        suite = experiment.SUITE
+        receipt = experiment.grader.read(suite / 'receipt-01.json')
+        answers_path = suite / receipt['answers_file']
+        comparison_path = suite / receipt['comparison_file']
+        for path, key in ((answers_path, 'answers_sha256'), (comparison_path, 'comparison_sha256')):
+            self.assertEqual(experiment.grader.host.digest(path.read_bytes()), receipt[key])
+        self.assertEqual(experiment.compare(suite, experiment.grader.read(answers_path)),
+                         experiment.grader.read(comparison_path))
+
     def test_build_is_byte_reproducible_and_labels_follow_actual_policy(self):
         with tempfile.TemporaryDirectory() as temp:
             suite = Path(temp) / 'suite'

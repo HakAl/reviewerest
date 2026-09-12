@@ -7,6 +7,11 @@ request.json. Distractors differ in one identity field and carry the opposite
 authority status. Repeated key/value lines make it possible to quote real text
 from the wrong record.
 
+The [first 24 assessments](baseline-01.md) all match the readiness labels and
+locate the six required facts exactly. Both presentations pass, so no added
+numbering benefit is demonstrated. Regular ten-line records and the target's
+unique authority status remain limitations. Public answers reproduce offline.
+
 ## Frozen comparison
 
 Each case has a current record that either satisfies all three policy

@@ -1,0 +1,1598 @@
+{
+  "version": 1,
+  "input_manifest_sha256": "e21f6e9cd8856e726d1101e57f6835b0d1f7616bfaad3d237166814099977ca5",
+  "source_sha256": {
+    "numbered_evidence.py": "674fbf4c8427abb65e52033207cd8e09c556bf1b145273e42043e1d894655a01",
+    "grade_reviews.py": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+    "compare_grader_runs.py": "b83800831c5e6d137a552c857d6501c6cf6200007c9c545826fc1305ab99df32",
+    "format_pairs.py": "2cc007b1025ebf8712acad260c59cd481784007bfbee5f9d3401634716f1b6e1",
+    "run_claude.py": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6",
+    "long_evidence.py": "d0e66f3d39f94d918607467da736034ed938587ace28aa82fe91a02413512702"
+  },
+  "trials": {
+    "t01": {
+      "id": "t01",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p61",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p61",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation \"op-p61-17\", candidate_sha256 \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields (lines 34-43); every other record differs in at least one field (different operation, e.g. op-p61-70/76/79/82/85/88/91; different digest, e.g. ca4b8b6a..., 137dd3ed...; or different revision, e.g. rev-12/15/18/21/24/27/30/33), and policy.md states non-matching operations, candidates and revisions supply no readiness evidence. In the matching record, byte_hash_revalidation is \"pass\" and operator_approval is \"approved\", but authority_service is \"not_checked\", not \"verified\". Policy requires all three conditions, so the request is not ready, and review.md's claim that it is ready to proceed contradicts policy and the matching record.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 35,
+            "end_line": 35,
+            "quote": "\"operation\": \"op-p61-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 36,
+            "end_line": 36,
+            "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 37,
+            "end_line": 37,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 38,
+            "end_line": 38,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 39,
+            "end_line": 39,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 40,
+            "end_line": 40,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t02": {
+      "id": "t02",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p61",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p61",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json identifies operation \"op-p61-17\", candidate_sha256 \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields (lines 34-43); other records differ in operation (op-p61-70, -76, -79, -82, -85, -88, -91), candidate digest, or revision (rev-12, -15, -18, -21, -24, -27, -30, -33) and therefore supply no evidence for this request. The matching record shows byte_hash_revalidation \"pass\" and operator_approval \"approved\", but authority_service is \"not_checked\", not \"verified\", so policy's conjunctive readiness condition is not met. review.md asserts the request is ready to proceed, which contradicts the policy applied to the matching record. No unresolved interpretation: the claim's meaning is clear and the identity match is unique.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 35,
+            "end_line": 35,
+            "quote": "\"operation\": \"op-p61-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 36,
+            "end_line": 36,
+            "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 37,
+            "end_line": 37,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 38,
+            "end_line": 38,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 39,
+            "end_line": 39,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 40,
+            "end_line": 40,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t03": {
+      "id": "t03",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p26",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p26",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p26-17\", candidate_sha256 \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (lines 124-133); every other record differs in at least one field (different operation, different digest, or different revision) and therefore supplies no readiness evidence. That matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies all three conditions policy.md requires for readiness. review.md claims the request is ready to proceed, which agrees with policy and the matching record. No unresolved interpretation: the claim's scope and the identity match are unambiguous.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 125,
+            "end_line": 125,
+            "quote": "\"operation\": \"op-p26-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 126,
+            "end_line": 126,
+            "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 127,
+            "end_line": 127,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 128,
+            "end_line": 128,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 129,
+            "end_line": 129,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 130,
+            "end_line": 130,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t04": {
+      "id": "t04",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p26",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p26",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "Exactly one ledger record matches all three identity fields in request.json (operation op-p26-17, candidate_sha256 ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a, evidence_revision rev-03): the record at readiness-ledger.json lines 124-133. Other records share only some identity fields (same operation with different digests or revisions, or the same digest/revision under operations op-p26-70, -73, -76, -79, -85, -88, -91) and, per policy.md, supply no readiness evidence for this request. The matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\", and operator_approval \"approved\", which satisfies all three of policy.md's conjunctive conditions, so the request is ready. review.md claims the request is ready to proceed under the stated policy, which agrees with the policy and the exact matching record. No unresolved interpretation.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json. Other operations, candidates and revisions supply no readiness evidence for this request."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 125,
+            "end_line": 125,
+            "quote": "\"operation\": \"op-p26-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 126,
+            "end_line": 126,
+            "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 127,
+            "end_line": 127,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 128,
+            "end_line": 128,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 129,
+            "end_line": 129,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 130,
+            "end_line": 130,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t05": {
+      "id": "t05",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p83",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p83",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation op-p83-17, candidate_sha256 fdc19971...af32 and evidence_revision rev-03. Exactly one ledger record matches all three identity fields together (the record at lines 204-213); every other record differs in at least one identity field (different operation such as op-p83-70/73/76/79/82/85/88/91, a different candidate digest, or a different revision such as rev-12/15/18/21/24/27/33) and therefore supplies no readiness evidence. In the matching record byte_hash_revalidation is pass and operator_approval is approved, but authority_service is not_checked, so the policy conjunction requiring authority_service verified is not satisfied and the request is not ready. review.md states the request is not ready and holds the decision because authority verification is not recorded, which agrees with the policy and the exact matching record; 'not recorded' is a fair reading of the recorded not_checked status, and no alternative reading changes the readiness outcome.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 205,
+            "end_line": 205,
+            "quote": "\"operation\": \"op-p83-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 206,
+            "end_line": 206,
+            "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 207,
+            "end_line": 207,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 208,
+            "end_line": 208,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 209,
+            "end_line": 209,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 210,
+            "end_line": 210,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t06": {
+      "id": "t06",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p83",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p83",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "Exactly one ledger record matches all three identity fields in request.json (operation op-p83-17, candidate_sha256 fdc19971...af32, evidence_revision rev-03): the record at lines 204-213. Other records match at most two of the three fields (differing operation, digest, or revision) and supply no readiness evidence. In the matching record, byte_hash_revalidation is pass and operator_approval is approved, but authority_service is not_checked rather than verified, so policy.md's three-part conjunction for readiness is not satisfied and the request is not ready. review.md states the request is not ready and attributes the hold to authority verification not being recorded, which agrees with both the policy and the exact matching record. No interpretation ambiguity remained.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 205,
+            "end_line": 205,
+            "quote": "\"operation\": \"op-p83-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 206,
+            "end_line": 206,
+            "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 207,
+            "end_line": 207,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 208,
+            "end_line": 208,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 209,
+            "end_line": 209,
+            "quote": "\"authority_service\": \"not_checked\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 210,
+            "end_line": 210,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    },
+    "t07": {
+      "id": "t07",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p94",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p94",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation op-p94-17, candidate_sha256 622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57, evidence_revision rev-03. Exactly one ledger record matches all three identity fields (readiness-ledger.json lines 84-93); other records differ in at least one identity field (different operation, different digest, or different revision) and supply no evidence per policy. That matching record shows byte_hash_revalidation pass, authority_service verified, and operator_approval approved, which satisfies every condition policy.md requires for readiness. review.md claims the request is not ready because authority verification is not recorded; that contradicts the matching record's verified authority_service, so the claim fails. The near-miss records with authority_service not_checked are not the matching identity and cannot support the claim.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 85,
+            "end_line": 85,
+            "quote": "\"operation\": \"op-p94-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 86,
+            "end_line": 86,
+            "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 87,
+            "end_line": 87,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 88,
+            "end_line": 88,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 89,
+            "end_line": 89,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 90,
+            "end_line": 90,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t08": {
+      "id": "t08",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p94",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p94",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation \"op-p94-17\", candidate_sha256 \"622c7c95...cf57\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields (the ninth record, lines 84-93); every other record differs in at least one identity field and therefore supplies no evidence. That matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies all three conditions policy.md requires for readiness. review.md claims the request is not ready because authority verification is not recorded; that contradicts the matching record, whose authority_service is verified. The \"not_checked\" values appear only in non-matching records. No interpretive ambiguity remains, so the claim is graded fail.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 85,
+            "end_line": 85,
+            "quote": "\"operation\": \"op-p94-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 86,
+            "end_line": 86,
+            "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 87,
+            "end_line": 87,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 88,
+            "end_line": 88,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 89,
+            "end_line": 89,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 90,
+            "end_line": 90,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t09": {
+      "id": "t09",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p26",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p26",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p26-17\", candidate_sha256 \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields simultaneously (readiness-ledger.json lines 124-133); every other op-p26-17 record differs in candidate digest or revision, and every other rev-03/ac0be46... record differs in operation, so none of them supplies readiness evidence for this request. The matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies all three conditions policy.md requires for readiness. review.md claims the request is ready to proceed, which agrees with policy applied to the matching record. No unresolved interpretation.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 125,
+            "end_line": 125,
+            "quote": "\"operation\": \"op-p26-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 126,
+            "end_line": 126,
+            "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 127,
+            "end_line": 127,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 128,
+            "end_line": 128,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 129,
+            "end_line": 129,
+            "quote": "\"authority_service\": \"verified\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 130,
+            "end_line": 130,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    },
+    "t10": {
+      "id": "t10",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p26",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p26",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p26-17\", candidate_sha256 \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (the record at lines 124-133); other records match at most two of the three (differing operation, digest or revision) and supply no evidence per policy. That matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies every conjunct of the policy's readiness condition. review.md claims the request is ready to proceed, which agrees with policy and the matching record. No unresolved interpretation.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 125,
+            "end_line": 125,
+            "quote": "\"operation\": \"op-p26-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 126,
+            "end_line": 126,
+            "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 127,
+            "end_line": 127,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 128,
+            "end_line": 128,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 129,
+            "end_line": 129,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 130,
+            "end_line": 130,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t11": {
+      "id": "t11",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p83",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p83",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p83-17\", candidate_sha256 \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (readiness-ledger.json lines 204-213); every other record differs in at least one identity field (different operation, different digest, or different revision) and therefore supplies no readiness evidence under policy.md. In the matching record byte_hash_revalidation is \"pass\" and operator_approval is \"approved\", but authority_service is \"not_checked\" rather than \"verified\", so the policy's conjunctive readiness condition is not satisfied and the request is not ready. review.md claims the request is not ready and attributes the hold to authority verification not being recorded, which agrees with both the policy and the exact matching record. No unresolved interpretation.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json. Other operations, candidates and revisions supply no readiness evidence for this request."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 205,
+            "end_line": 205,
+            "quote": "\"operation\": \"op-p83-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 206,
+            "end_line": 206,
+            "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 207,
+            "end_line": 207,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 208,
+            "end_line": 208,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 209,
+            "end_line": 209,
+            "quote": "\"authority_service\": \"not_checked\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 210,
+            "end_line": 210,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    },
+    "t12": {
+      "id": "t12",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p83",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p83",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p83-17\", candidate_sha256 \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields (readiness-ledger.json lines 204-213); other records differ in at least one identity field (different operation, different candidate digest, or a different revision such as rev-12/rev-15/rev-18/rev-21/rev-24/rev-27/rev-33) and therefore supply no evidence for this request. In the matching record byte_hash_revalidation is \"pass\" and operator_approval is \"approved\", but authority_service is \"not_checked\", not \"verified\". Policy requires all three conditions, so the request is not ready. review.md claims the request is not ready and attributes the hold to authority verification not being recorded as done, which agrees with both the policy and the matching record; \"not recorded\" is a fair reading of the recorded \"not_checked\" status, leaving no unresolved interpretation.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 205,
+            "end_line": 205,
+            "quote": "\"operation\": \"op-p83-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 206,
+            "end_line": 206,
+            "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 207,
+            "end_line": 207,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 208,
+            "end_line": 208,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 209,
+            "end_line": 209,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 210,
+            "end_line": 210,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t13": {
+      "id": "t13",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p94",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p94",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "Exactly one ledger record matches all three identity fields in request.json (operation op-p94-17, candidate_sha256 622c7c95...90cf57, evidence_revision rev-03): the record at readiness-ledger.json lines 84-93. That record shows byte_hash_revalidation \"pass\", authority_service \"verified\", and operator_approval \"approved\", which satisfies every condition policy.md requires for readiness. Other records that share two of the three identity fields (e.g. op-p94-17 with rev-12/rev-15/other digests, or op-p94-70/73/76 with rev-03) show authority_service \"not_checked\", but policy.md states those supply no readiness evidence for this request. review.md asserts the request is not ready and that authority verification is not recorded, which directly contradicts the matching record and the policy applied to it. No interpretation ambiguity remains.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 85,
+            "end_line": 85,
+            "quote": "\"operation\": \"op-p94-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 86,
+            "end_line": 86,
+            "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 87,
+            "end_line": 87,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 88,
+            "end_line": 88,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 89,
+            "end_line": 89,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 90,
+            "end_line": 90,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t14": {
+      "id": "t14",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p94",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p94",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "The only ledger record matching all three identity fields in request.json (operation \"op-p94-17\", candidate_sha256 \"622c7c95...cf57\", evidence_revision \"rev-03\") is the record at readiness-ledger.json lines 84-93. That record shows byte_hash_revalidation \"pass\", authority_service \"verified\", and operator_approval \"approved\", which satisfies every condition policy.md requires for readiness. review.md asserts the request is not ready because authority verification is not recorded; this contradicts the matching record's explicit \"verified\" authority_service. Other records carrying \"not_checked\" differ in operation, candidate digest, or evidence revision and, per policy.md, supply no readiness evidence for this request. The claim's meaning is unambiguous, so the result is fail rather than inconclusive.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 85,
+            "end_line": 85,
+            "quote": "\"operation\": \"op-p94-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 86,
+            "end_line": 86,
+            "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 87,
+            "end_line": 87,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 88,
+            "end_line": 88,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 89,
+            "end_line": 89,
+            "quote": "\"authority_service\": \"verified\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 90,
+            "end_line": 90,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    },
+    "t15": {
+      "id": "t15",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p61",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p61",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation \"op-p61-17\", candidate_sha256 \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (readiness-ledger.json lines 34-43); other records differ in at least one identity field (different operation, e.g. op-p61-70/76/79/82/85/88/91; different candidate digest; or different revision, e.g. rev-12/15/18/21/24/27/30/33) and therefore supply no readiness evidence. In the matching record, byte_hash_revalidation is \"pass\" and operator_approval is \"approved\", but authority_service is \"not_checked\", not \"verified\". Policy requires all three conditions, so the request is not ready. review.md asserts the request is ready to proceed under the stated policy, which contradicts the policy applied to the exact matching record. No interpretation ambiguity remains.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 35,
+            "end_line": 35,
+            "quote": "\"operation\": \"op-p61-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 36,
+            "end_line": 36,
+            "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 37,
+            "end_line": 37,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 38,
+            "end_line": 38,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 39,
+            "end_line": 39,
+            "quote": "\"authority_service\": \"not_checked\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 40,
+            "end_line": 40,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    },
+    "t16": {
+      "id": "t16",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p61",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p61",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation \"op-p61-17\", candidate_sha256 \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (readiness-ledger.json lines 34-43); every other record differs in at least one identity field (different operation such as op-p61-70/76/79/82/85/88/91, different candidate digest, or different revision such as rev-12/15/18/21/24/27/30/33) and therefore supplies no readiness evidence. In the matching record, byte_hash_revalidation is \"pass\" and operator_approval is \"approved\", but authority_service is \"not_checked\", not \"verified\". Policy requires all three conditions, so the request is not ready, and review.md's claim that it is ready to proceed contradicts policy applied to the matching record.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 35,
+            "end_line": 35,
+            "quote": "\"operation\": \"op-p61-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 36,
+            "end_line": 36,
+            "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 37,
+            "end_line": 37,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 38,
+            "end_line": 38,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 39,
+            "end_line": 39,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 40,
+            "end_line": 40,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t17": {
+      "id": "t17",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p83",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p83",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json identifies operation \"op-p83-17\", candidate_sha256 \"fdc19971...af32\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (lines 204-213); every other record differs in at least one identity field and therefore supplies no evidence. That matching record shows byte_hash_revalidation \"pass\" and operator_approval \"approved\", but authority_service \"not_checked\", which fails the policy requirement that authority_service be \"verified\". Policy makes readiness conjunctive, so the request is not ready. review.md claims the request is not ready and attributes this to authority verification not being recorded; that conclusion agrees with policy and the matching record. The wording \"not recorded\" is a minor paraphrase of the recorded value \"not_checked\", but it points at the same field and the same failing condition, so it does not contradict the record and the claim's meaning is resolvable.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 205,
+            "end_line": 205,
+            "quote": "\"operation\": \"op-p83-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 206,
+            "end_line": 206,
+            "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 207,
+            "end_line": 207,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 208,
+            "end_line": 208,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 209,
+            "end_line": 209,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 210,
+            "end_line": 210,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t18": {
+      "id": "t18",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p83",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p83",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation op-p83-17, candidate_sha256 fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32 and evidence_revision rev-03. Exactly one ledger record matches all three identity fields together (readiness-ledger.json lines 204-213); every other record differs in at least one identity field and therefore supplies no readiness evidence. That matching record shows byte_hash_revalidation \"pass\" and operator_approval \"approved\", but authority_service \"not_checked\" rather than \"verified\", so policy.md's conjunctive readiness condition is not satisfied and the request is not ready. review.md states the request is not ready and attributes the hold to authority verification not being recorded, which agrees with both the policy and the matching record. No unresolved interpretation.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 205,
+            "end_line": 205,
+            "quote": "\"operation\": \"op-p83-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 206,
+            "end_line": 206,
+            "quote": "\"candidate_sha256\": \"fdc19971cd83be68157af9caf58d62420d9d11e2a0933b3d16825f23c8e1af32\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 207,
+            "end_line": 207,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 208,
+            "end_line": 208,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 209,
+            "end_line": 209,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 210,
+            "end_line": 210,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t19": {
+      "id": "t19",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p94",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p94",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation op-p94-17, candidate_sha256 622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57 and evidence_revision rev-03. Exactly one ledger record matches all three identity fields (readiness-ledger.json lines 84-93); the other records differ in at least one identity field (different operation, different candidate digest, or a different revision such as rev-12/rev-15/rev-21/rev-24/rev-27/rev-30/rev-33) and therefore supply no evidence for this request. The matching record shows byte_hash_revalidation 'pass', authority_service 'verified' and operator_approval 'approved', satisfying all three policy conditions, so the request is ready. review.md asserts the request is not ready and that authority verification is not recorded, which contradicts the matching record and policy; the 'not_checked' authority_service values appear only in non-matching records. The claim's meaning is unambiguous, so the grade is fail rather than inconclusive.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 85,
+            "end_line": 85,
+            "quote": "\"operation\": \"op-p94-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 86,
+            "end_line": 86,
+            "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 87,
+            "end_line": 87,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 88,
+            "end_line": 88,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 89,
+            "end_line": 89,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 90,
+            "end_line": 90,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t20": {
+      "id": "t20",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p94",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p94",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation op-p94-17, candidate_sha256 622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57 and evidence_revision rev-03. Exactly one ledger record matches all three identity fields (lines 84-93); the other records differ in at least one identity field (different operation, different candidate digest, or a different revision such as rev-12, rev-15, rev-21, rev-24, rev-27, rev-30, rev-33) and therefore supply no readiness evidence per policy.md. The matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies every condition policy.md requires for readiness. review.md claims the request is not ready and that authority verification is not recorded; that asserts the opposite of the matching record's authority_service value, so the claim contradicts policy and the exact matching record. No interpretive ambiguity remains: the claim's meaning is clear and directly checkable against the single applicable record.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is not ready under the stated policy; hold the decision because authority verification is not recorded."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 85,
+            "end_line": 85,
+            "quote": "\"operation\": \"op-p94-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 86,
+            "end_line": 86,
+            "quote": "\"candidate_sha256\": \"622c7c951bf8264a8531c10416b0b7e11b6efef67e1657c3481d5dada090cf57\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 87,
+            "end_line": 87,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 88,
+            "end_line": 88,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 89,
+            "end_line": 89,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 90,
+            "end_line": 90,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t21": {
+      "id": "t21",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p61",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p61",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json specifies operation \"op-p61-17\", candidate_sha256 \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields simultaneously (the fourth record, lines 34-43); every other record differs in at least one field (a different operation such as op-p61-70/76/79/82/85/88/91, a different candidate digest, or a different revision such as rev-12/15/18/21/24/27/30/33), and policy.md states those supply no readiness evidence for this request. In the matching record, byte_hash_revalidation is \"pass\" and operator_approval is \"approved\", but authority_service is \"not_checked\", not \"verified\". Policy requires all three conditions, so the request is not ready. review.md claims the request is ready to proceed under the stated policy, which contradicts policy applied to the exact matching record.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 35,
+            "end_line": 35,
+            "quote": "\"operation\": \"op-p61-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 36,
+            "end_line": 36,
+            "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 37,
+            "end_line": 37,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 38,
+            "end_line": 38,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 39,
+            "end_line": 39,
+            "quote": "\"authority_service\": \"not_checked\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 40,
+            "end_line": 40,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t22": {
+      "id": "t22",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p61",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p61",
+        "target_condition": "readiness",
+        "outcome": "fail",
+        "reason": "request.json identifies operation \"op-p61-17\", candidate_sha256 \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields (readiness-ledger.json lines 34-43). Other records differ in at least one identity field (different operation such as op-p61-70/76/79/82/85/88/91, different candidate digest, or different revision such as rev-12/15/18/21/24/27/30/33) and so supply no readiness evidence. The matching record shows byte_hash_revalidation \"pass\" and operator_approval \"approved\", but authority_service \"not_checked\", not \"verified\". Policy requires all three conditions, so the request is not ready. review.md asserts the request is ready to proceed, which contradicts policy applied to the matching record. No interpretive ambiguity remains.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 35,
+            "end_line": 35,
+            "quote": "\"operation\": \"op-p61-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 36,
+            "end_line": 36,
+            "quote": "\"candidate_sha256\": \"1d0a0d10e0ed1c078d5047b18102cf89bf6e457fe1c54434a571cd15bfc54748\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 37,
+            "end_line": 37,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 38,
+            "end_line": 38,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 39,
+            "end_line": 39,
+            "quote": "\"authority_service\": \"not_checked\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 40,
+            "end_line": 40,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    },
+    "t23": {
+      "id": "t23",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p26",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p26",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p26-17\", candidate_sha256 \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\" and evidence_revision \"rev-03\". Exactly one ledger record matches all three identity fields together (lines 124-133); every other record differs in at least one identity field (a different operation, a different candidate digest, or a different evidence revision) and, per policy.md, supplies no readiness evidence. That matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies all three conditions policy.md requires for readiness. review.md claims the request is ready to proceed, which agrees with the policy and the matching record. No interpretation issues were unresolved.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 125,
+            "end_line": 125,
+            "quote": "\"operation\": \"op-p26-17\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 126,
+            "end_line": 126,
+            "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 127,
+            "end_line": 127,
+            "quote": "\"evidence_revision\": \"rev-03\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 128,
+            "end_line": 128,
+            "quote": "\"byte_hash_revalidation\": \"pass\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 129,
+            "end_line": 129,
+            "quote": "\"authority_service\": \"verified\""
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 130,
+            "end_line": 130,
+            "quote": "\"operator_approval\": \"approved\""
+          }
+        ]
+      },
+      "error": null
+    },
+    "t24": {
+      "id": "t24",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p26",
+      "eligible": true,
+      "model": "claude-opus-5[1m]",
+      "cli_version": "2.1.269 (Claude Code)",
+      "grade": {
+        "packet_id": "p26",
+        "target_condition": "readiness",
+        "outcome": "pass",
+        "reason": "request.json specifies operation \"op-p26-17\", candidate_sha256 \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\" and evidence_revision \"rev-03\". Exactly one record in the complete readiness-ledger.json inventory matches all three identity fields together (the 13th record, lines 124-133); every other record differs in at least one identity field (a different operation such as op-p26-70/73/76/79/85/88/91, a different candidate digest, or a different revision such as rev-12/15/18/21/24/27/30/33) and therefore supplies no readiness evidence. That single matching record shows byte_hash_revalidation \"pass\", authority_service \"verified\" and operator_approval \"approved\", which satisfies all three conditions policy.md requires for readiness. review.md claims the supplied request is ready to proceed under the stated policy, which agrees with policy applied to the exact matching record. No interpretation ambiguity remains.",
+        "citations": [
+          {
+            "source": "review.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "The supplied request is ready to proceed under the stated policy."
+          },
+          {
+            "source": "policy.md",
+            "start_line": 1,
+            "end_line": 1,
+            "quote": "A request is ready exactly when its matching ledger record shows byte_hash_revalidation as pass, authority_service as verified, and operator_approval as approved. Match operation, candidate_sha256 and evidence_revision together against request.json."
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 125,
+            "end_line": 125,
+            "quote": "\"operation\": \"op-p26-17\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 126,
+            "end_line": 126,
+            "quote": "\"candidate_sha256\": \"ac0be46ce48c6a507d1f0b48e327aaadf982d4ce81c73f489a2d33c1d6ab548a\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 127,
+            "end_line": 127,
+            "quote": "\"evidence_revision\": \"rev-03\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 128,
+            "end_line": 128,
+            "quote": "\"byte_hash_revalidation\": \"pass\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 129,
+            "end_line": 129,
+            "quote": "\"authority_service\": \"verified\","
+          },
+          {
+            "source": "readiness-ledger.json",
+            "start_line": 130,
+            "end_line": 130,
+            "quote": "\"operator_approval\": \"approved\","
+          }
+        ]
+      },
+      "error": null
+    }
+  }
+}

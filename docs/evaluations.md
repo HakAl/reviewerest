@@ -30,6 +30,17 @@ in all 24 answers and stable verdicts across all twelve presentation pairs.
 It demonstrates no added numbering benefit on this set. Four authority-quote
 omissions and one valid but broader citation range remain visible.
 
+The [long-ledger experiment](../evals/grader-long-v1/README.md) adds four new
+245-line ledgers with similar records for other operations, candidates and
+revisions. It requires six exact single-line facts from the matching record and
+derives expected locations and readiness labels mechanically from the synthetic
+policy. Negative controls distinguish a resolving quote in the wrong record
+from evidence for the requested operation. Earlier contracts remain unchanged.
+The [first run](../evals/grader-long-v1/baseline-01.md) has 24 matching verdicts
+and 144 exact required fact citations across both presentations. It shows no
+added numbering benefit. Regular record lengths and the target's unique
+authority status limit how difficult these long sources actually are.
+
 The [repeated behavioral gate pilot](../evals/repeated-v1/README.md) freezes two
 authority cases, five conditions and three attempts per case. Its
 [first six-trial run](../evals/repeated-v1/baseline-01.md) passes those conditions
