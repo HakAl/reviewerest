@@ -3,7 +3,9 @@
 The pipeline implements the operator-accepted
 [criteria v1](../skill-effect-adjudication-v1/accepted-criteria-v1.json) and the
 [bounded comparison design](../skill-effect-adjudication-v1/coordinator/run-plan-01.md).
-It has not performed a live comparison. Candidate and assessor stages each
+The [first live attempt](attempt-01.md) stopped after one candidate call on two
+host compatibility checks; no comparison or assessor call completed.
+Candidate and assessor stages each
 require a separate explicit operator authorization bound to their frozen manifest.
 
 The treatment is the full installed skill package under a shared minimal output

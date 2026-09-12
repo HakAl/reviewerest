@@ -205,6 +205,8 @@
     "evals/skill-effect-v1/assessment-schema.json",
     "evals/skill-effect-v1/assessor-manifest.json",
     "evals/skill-effect-v1/assessor-protocol.md",
+    "evals/skill-effect-v1/attempt-01.json",
+    "evals/skill-effect-v1/attempt-01.md",
     "evals/skill-effect-v1/candidate-manifest.json",
     "evals/skill-effect-v1/candidate-prompt.md",
     "evals/skill-effect-v1/plan.json",

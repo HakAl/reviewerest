@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "status": "stopped_host_contract_failure",
+  "frozen_commit": "63e62f71e8448aa37d8c3c181e66e7a3a4d7f668",
+  "candidate_manifest_sha256": "551d54f87d768f14612bec903669caefe6166c5e263fe27dddb29f5d4b1bd801",
+  "planned_candidate_calls": 36,
+  "attempted_candidate_calls": 1,
+  "eligible_candidate_reviews": 0,
+  "assessor_calls": 0,
+  "trial": {
+    "trial_id": "t001",
+    "case_id": "r36",
+    "repeat": 1,
+    "arm": "skill_on"
+  },
+  "cli_exit_code": 0,
+  "elapsed_seconds": 26.306,
+  "recorded_cost_usd": 0.21555549999999998,
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1070,
+      "outputTokens": 14,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.00114,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5[1m]": {
+      "inputTokens": 8,
+      "outputTokens": 1670,
+      "cacheReadInputTokens": 36471,
+      "cacheCreationInputTokens": 15439,
+      "webSearchRequests": 0,
+      "costUSD": 0.2144155,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 677,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "runtime_errors": [
+    "Missing usage or unexpected model usage; auxiliary models are not pre-approved.",
+    "Exact skill body absent from successful loading evidence."
+  ],
+  "format_error": null,
+  "location_error": null,
+  "workspace_bytes_unchanged": true,
+  "skill_loading_observation": {
+    "successful_exact_skill_call": true,
+    "skill_tool_result_text": "Launching skill: reviewerest-eval:review",
+    "exact_body_found": true,
+    "body_location": "NDJSON event 6, message.content[0].text",
+    "event_type": "user",
+    "synthetic": true,
+    "body_sha256": "f524775d237ed0a366b64db18204c1650077c9c0d9a4a8ca315bca539ca45247",
+    "interpretation": "The frozen adapter requires the body inside the successful tool result; the host emits it in a separate following synthetic message."
+  },
+  "private_capture_sha256": {
+    "stdout.bin": "1f96df511c63d772ee83ed1fb121d2a93f11dbfa589e55f182796ddcd43c5a65",
+    "stderr.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "trial.json": "1a6bab0393ac8b8cc74a606ec5bff52e2bad98f58962cded7a79cf851e890ad9"
+  },
+  "limits": [
+    "This is an edited diagnostic receipt, not a public raw host trace. Private capture hashes do not enable independent reproduction without those captures.",
+    "No independent semantic assessment ran. No treatment effect can be estimated.",
+    "Model usage and cost are host-reported, not independently authenticated billing or provider identity.",
+    "Original runner, plan, criteria, manifests and failed attempt are unchanged. No retry was made."
+  ],
+  "substantive_truth_verified": false
+}
