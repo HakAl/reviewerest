@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "planned_assessments": 24,
+  "schedule": [
+    {
+      "id": "t01",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p42"
+    },
+    {
+      "id": "t02",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p42"
+    },
+    {
+      "id": "t03",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p14"
+    },
+    {
+      "id": "t04",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p14"
+    },
+    {
+      "id": "t05",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p68"
+    },
+    {
+      "id": "t06",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p68"
+    },
+    {
+      "id": "t07",
+      "round": 1,
+      "arm": "numbered",
+      "packet_id": "p57"
+    },
+    {
+      "id": "t08",
+      "round": 1,
+      "arm": "plain",
+      "packet_id": "p57"
+    },
+    {
+      "id": "t09",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p14"
+    },
+    {
+      "id": "t10",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p14"
+    },
+    {
+      "id": "t11",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p68"
+    },
+    {
+      "id": "t12",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p68"
+    },
+    {
+      "id": "t13",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p57"
+    },
+    {
+      "id": "t14",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p57"
+    },
+    {
+      "id": "t15",
+      "round": 2,
+      "arm": "plain",
+      "packet_id": "p42"
+    },
+    {
+      "id": "t16",
+      "round": 2,
+      "arm": "numbered",
+      "packet_id": "p42"
+    },
+    {
+      "id": "t17",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p68"
+    },
+    {
+      "id": "t18",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p68"
+    },
+    {
+      "id": "t19",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p57"
+    },
+    {
+      "id": "t20",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p57"
+    },
+    {
+      "id": "t21",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p42"
+    },
+    {
+      "id": "t22",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p42"
+    },
+    {
+      "id": "t23",
+      "round": 3,
+      "arm": "numbered",
+      "packet_id": "p14"
+    },
+    {
+      "id": "t24",
+      "round": 3,
+      "arm": "plain",
+      "packet_id": "p14"
+    }
+  ],
+  "manipulation": "Add explicit 1-based source line numbers to a matched row display. Each display row contains one JSON-encoded original source line including its ending. All source packets, protocol text, and display instructions are unchanged between arms.",
+  "budget": {
+    "per_call_usd": 0.5,
+    "total_cap_usd": 12,
+    "timeout_seconds": 120
+  },
+  "limits": [
+    "Two short author-labeled review cases, two field orders, three repeats per presentation; counts are not general error rates.",
+    "Both arms use a new row display. The plain arm is a concurrent control, not byte-identical to the earlier escaped-packet prompt.",
+    "Numbering adds tokens and changes presentation; this tests the usefulness of supplying line numbers, not a terminal-wrapping cause.",
+    "Case order rotates; presentation order alternates. The schedule is fixed, not randomized. Fresh sessions do not establish statistical independence.",
+    "Temperature and immutable provider model version are not pinned; compare recorded model and CLI identity.",
+    "Authority quote omission is separate from successful location. Exact quote resolution does not establish semantic support.",
+    "Labels are inherited, not independently calibrated. This does not supply a calibrated release pass."
+  ]
+}
