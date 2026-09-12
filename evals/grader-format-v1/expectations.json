@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "label_origin": "Inherited frozen author labels from grader-v1. Parsed JSON values and all review text are unchanged; this does not independently validate the base labels.",
+  "cases": {
+    "p42": {
+      "outcome": "pass",
+      "rationale": "Alternative hold wording preserves each prerequisite and the exact binding."
+    },
+    "p14": {
+      "outcome": "pass",
+      "rationale": "Alternative hold wording preserves each prerequisite and the exact binding."
+    },
+    "p57": {
+      "outcome": "fail",
+      "rationale": "Asserts executed harm without a signing implementation or execution evidence."
+    },
+    "p68": {
+      "outcome": "fail",
+      "rationale": "Asserts executed harm without a signing implementation or execution evidence."
+    }
+  }
+}

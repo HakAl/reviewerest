@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "base": "p42",
+      "original": "p42",
+      "moved": "p14"
+    },
+    {
+      "base": "p57",
+      "original": "p57",
+      "moved": "p68"
+    }
+  ],
+  "repetitions": 2,
+  "planned_assessments": 8,
+  "manipulation": "Move the unchanged scope value from the first key to the last key in readiness.json. Preserve JSON values, all other artifacts, protocol, target condition, and review text. Variant packet ID changes to keep the runner identities unique.",
+  "limits": [
+    "Movement also changes logical line positions and provider/scope comma placement. This does not isolate an 80-column wrapping mechanism.",
+    "Two repetitions per arm do not establish a reliable effect estimate.",
+    "Original-first and moved-first order are split across the two base packets; order is not randomized or reversed between rounds."
+  ],
+  "model_settings": {
+    "model_selection": "CLI default; compare recorded model and CLI across all eight assessments.",
+    "temperature": "Not pinned by the runner and not established by the receipts.",
+    "sessions": "Fresh sessions, not established statistically independent samples."
+  },
+  "budget": {
+    "per_packet_usd": 0.5,
+    "per_batch_usd": 2,
+    "combined_cap_usd": 4,
+    "timeout_seconds": 120
+  }
+}

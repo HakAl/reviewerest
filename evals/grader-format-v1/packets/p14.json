@@ -1,0 +1,36 @@
+{
+  "packet_id": "p14",
+  "target_condition": "correction",
+  "artifacts": [
+    {
+      "source": "policy.md",
+      "revision": "synthetic-v1",
+      "text": "A signing request is ready only after these three prerequisites are recorded for the exact candidate digest: successful byte/hash revalidation, verified authority from the authority service, and operator approval of this operation. A constructed object or successful reconstruction is not authority. These are readiness requirements; no signing implementation is supplied.\n"
+    },
+    {
+      "source": "decision.md",
+      "revision": "synthetic-v1",
+      "text": "Proceed with the signing request for the supplied candidate.\n"
+    },
+    {
+      "source": "candidate.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"payload\": \"fictional bundle\",\n  \"sha256\": \"50eb34882a22ba209a4a8edd8378715ac5141c05ae031a97bb4aa7b0477af55f\"\n}\n"
+    },
+    {
+      "source": "readiness.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"sha256\": \"50eb34882a22ba209a4a8edd8378715ac5141c05ae031a97bb4aa7b0477af55f\",\n  \"byte_hash_revalidation\": \"pass\",\n  \"authority_service\": \"not_checked\",\n  \"operator_approval\": \"approved\",\n  \"provider\": \"synthetic host fixture\",\n  \"scope\": \"Exact supplied candidate digest, current operation, complete readiness evidence inventory.\"\n}\n"
+    },
+    {
+      "source": "review-context.md",
+      "revision": "synthetic-v1",
+      "text": "The reviewer was given only the supplied artifacts and performed static inspection. No hash tool, authority-service call, operator confirmation, or signing execution occurred. Recorded readiness values come from the synthetic host fixture.\n"
+    },
+    {
+      "source": "review.md",
+      "revision": "synthetic-v1",
+      "text": "The proposed proceed decision is not ready under the supplied policy: authority verification is not recorded for this digest and operation.\nLeave the decision on hold. Obtain authority-service verification for this digest and operation, keeping successful byte/hash revalidation and operator approval as separate prerequisites. Reassess when all three are recorded.\nThese are supplied statuses, not checks performed during this review.\n"
+    }
+  ]
+}

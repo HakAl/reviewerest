@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "packet_ids": [
+    "p42",
+    "p14",
+    "p68",
+    "p57"
+  ],
+  "automatic_retries": false,
+  "selection": "Adjacent original/moved pairs; original first for p42, moved first for p57. The same order repeats in a second fresh batch. Pair mappings and conditions are not supplied to the assessor."
+}

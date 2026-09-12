@@ -79,7 +79,16 @@
     "evals/grader-v1/packets/p42.json": "f59ff53bf19a7b54f745ef29a742c5a1b6beedf928a4785deed2e173a694a469",
     "evals/grader-v1/packets/p96.json": "ec179478e69b729bec5bc7a4edbb06a31e4a19375bdc60d2a3fc8bfd3dc897e4",
     "evals/grader-v1/packets/p22.json": "d955c6dd6fff008c11aa3e3928adc9cddd1cb6b89a38902ee7f16d875546dc23",
-    "evals/grader-v1/packets/p18.json": "ca817cdab7b20e15de874e42027347ba80835160663d65f29a47223ee5b28e63"
+    "evals/grader-v1/packets/p18.json": "ca817cdab7b20e15de874e42027347ba80835160663d65f29a47223ee5b28e63",
+    "evals/grader-format-v1/expectations.json": "2fd7114af0b2f40f5444231a273e7d64f3a499193dd568783fdb7d83b06134b9",
+    "evals/grader-format-v1/plan.json": "19b5233c8e181dbc56fd1e20462a1ed8041d7524296b58ae608d8900e75cef55",
+    "evals/grader-format-v1/pairing.json": "43a73b9b829a94728d5a785e93950d51825adf098ae5cfcacb8ae0b241d87366",
+    "evals/grader-format-v1/manifest.json": "d949872d70081cddd48975ec339352fe1dc56ab53cdb1f8cb418ddfb3570deb6",
+    "evals/grader-format-v1/protocol.json": "edf90ca570a14073e416091feee6a7e79b40fac005dbf09911d572955ccf6edb",
+    "evals/grader-format-v1/packets/p57.json": "2d78687b225df6830bfb8e5680c26ccc9a9980e914867b368207cf0a8e149023",
+    "evals/grader-format-v1/packets/p68.json": "c74cdd4e8da66122d869e6c39d48f06e9a89abe9e8c1ed8389065d077185c8b6",
+    "evals/grader-format-v1/packets/p42.json": "f59ff53bf19a7b54f745ef29a742c5a1b6beedf928a4785deed2e173a694a469",
+    "evals/grader-format-v1/packets/p14.json": "6a592fea3e4854284b99051eb2dfd216ff31a5ba2f2a8e55293bfbf2e81197e2"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }
