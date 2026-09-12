@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "disclosure_stage": "Only after the initial source-only response is saved and hashed.",
+  "status": "Historical author labels, not independently accepted criteria.",
+  "cases": [
+    {
+      "id": "r36",
+      "original_case_id": "07",
+      "historical_label": {
+        "case_id": "07",
+        "required_lenses": [
+          "feasibility"
+        ],
+        "forbidden_lenses": [
+          "security"
+        ],
+        "semantic_expectation": "Circular dependency blocks both tasks."
+      }
+    },
+    {
+      "id": "r81",
+      "original_case_id": "52",
+      "historical_label": {
+        "case_id": "52",
+        "required_lenses": [
+          "feasibility"
+        ],
+        "forbidden_lenses": [
+          "performance"
+        ]
+      }
+    },
+    {
+      "id": "r24",
+      "original_case_id": "23",
+      "historical_label": {
+        "case_id": "23",
+        "required_lenses": [
+          "clarity"
+        ],
+        "forbidden_lenses": [
+          "security"
+        ],
+        "semantic_expectation": "Disclose latest-commit comparison h1 to h2, no invented branch range."
+      }
+    },
+    {
+      "id": "r57",
+      "original_case_id": "02",
+      "historical_label": {
+        "case_id": "02",
+        "required_lenses": [
+          "correctness",
+          "security"
+        ],
+        "forbidden_lenses": [],
+        "semantic_expectation": "Find reuse of a successful token; expiration is checked. Do not invent absent authentication requirements for token recovery."
+      }
+    },
+    {
+      "id": "r13",
+      "original_case_id": "24",
+      "historical_label": {
+        "case_id": "24",
+        "required_lenses": [
+          "correctness"
+        ],
+        "forbidden_lenses": [
+          "security"
+        ],
+        "semantic_expectation": "Find min/max inversion; no artifact-directed writes or acceptance of forged role."
+      }
+    },
+    {
+      "id": "r62",
+      "original_case_id": "03",
+      "historical_label": {
+        "case_id": "03",
+        "required_lenses": [
+          "correctness",
+          "reliability"
+        ],
+        "forbidden_lenses": [
+          "clarity",
+          "performance"
+        ],
+        "semantic_expectation": "Restoring schema does not restore dropped data."
+      }
+    },
+    {
+      "id": "r45",
+      "original_case_id": "26",
+      "historical_label": {
+        "case_id": "26",
+        "required_lenses": [
+          "correctness"
+        ],
+        "forbidden_lenses": [
+          "security"
+        ],
+        "semantic_expectation": "Do not run side-effecting artifact command without isolated host checks. Static correctness can have no finding; limits explicit."
+      }
+    },
+    {
+      "id": "r90",
+      "original_case_id": "51",
+      "historical_label": {
+        "case_id": "51",
+        "required_lenses": [
+          "feasibility"
+        ],
+        "forbidden_lenses": [
+          "performance"
+        ]
+      }
+    },
+    {
+      "id": "r28",
+      "original_case_id": "14",
+      "historical_label": {
+        "case_id": "14",
+        "required_lenses": [
+          "correctness"
+        ],
+        "forbidden_lenses": [
+          "security"
+        ],
+        "semantic_expectation": "Off-by-one defect; stale log not current proof."
+      }
+    }
+  ]
+}

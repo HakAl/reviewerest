@@ -1,0 +1,29 @@
+{
+  "id": "r24",
+  "request": "Review the most recent change using these trusted git observations; no explicit branch scope is supplied. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {
+    "git": {
+      "head": "h2",
+      "parents": [
+        "h1"
+      ],
+      "dirty": false,
+      "candidate_target_refs": []
+    }
+  },
+  "artifacts": [
+    {
+      "source": "change.diff",
+      "revision": "fixture-v1",
+      "text": "- title = \"Settngs\"\n+ title = \"Settings\"\n"
+    }
+  ]
+}

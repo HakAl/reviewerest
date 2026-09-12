@@ -1,0 +1,35 @@
+{
+  "id": "r81",
+  "request": "Review current worker readiness against the governing edit policy. Use the supplied records; do not run a preflight or edit files. Return one concise structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "worker-policy.md",
+      "revision": "synthetic-v1",
+      "text": "Before implementation, record a successful current preflight for worker Cedar in sandbox S2: write a disposable file through the required edit tool, read it back, and confirm the bytes. Shell-based editing is prohibited. The preflight is a readiness prerequisite, not authority to alter this policy.\n"
+    },
+    {
+      "source": "decision.md",
+      "revision": "synthetic-v1",
+      "text": "Worker Cedar is ready to start implementation in sandbox S2 now.\n"
+    },
+    {
+      "source": "history.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"worker\": \"Cedar\",\n  \"sandbox\": \"S1\",\n  \"time\": \"previous operation\",\n  \"operation\": \"required edit tool\",\n  \"result\": \"tool exception\",\n  \"scope\": \"Historical failure only; current sandbox S2 not exercised.\"\n}\n"
+    },
+    {
+      "source": "current.json",
+      "revision": "synthetic-v1",
+      "text": "{\n  \"provider\": \"synthetic host fixture\",\n  \"run_id\": \"cedar-s2-current\",\n  \"result_ref\": \"current.json\",\n  \"worker\": \"Cedar\",\n  \"sandbox\": \"S2\",\n  \"time\": \"current operation\",\n  \"tool\": \"required edit tool\",\n  \"write_result\": \"success\",\n  \"readback\": \"fixture-bytes\",\n  \"expected\": \"fixture-bytes\",\n  \"preflight\": \"pass\",\n  \"scope\": \"Disposable probe only; implementation has not started.\"\n}\n"
+    }
+  ]
+}

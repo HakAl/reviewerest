@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "status": "unfilled",
+  "initial_response_sha256": null,
+  "phase1_manifest_sha256": null,
+  "adjudicator_identity": null,
+  "disclosure_time": null,
+  "case_dispositions": [
+    {
+      "id": "r36",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r81",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r24",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r57",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r13",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r62",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r45",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r90",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    },
+    {
+      "id": "r28",
+      "status": "unfilled",
+      "agreed_criteria": null,
+      "changes_from_initial_judgment": null,
+      "reason": null,
+      "unresolved_questions": null,
+      "pilot_eligibility": null
+    }
+  ],
+  "operator_acceptance": {
+    "identity": null,
+    "recorded_at": null,
+    "accepted": false
+  },
+  "accepted_criteria_version": null,
+  "live_run_plan_approved": false
+}

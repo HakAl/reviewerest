@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "status": "proposed; independent adjudication pending",
+  "excluded_pilot_cases": [
+    "08",
+    "19",
+    "20",
+    "24"
+  ],
+  "candidate_review_calls_if_approved": 36,
+  "entries": [
+    {
+      "id": "r36",
+      "original_case_id": "07",
+      "role": "pilot",
+      "selection_reason": "planning",
+      "source_path": "evals/cases/07.json",
+      "source_sha256": "46e2bce8384cca06754eca8f62435377d2d94947538c4e303151d5c7c0c68b88",
+      "phase1_path": "phase1/cases/r36.json",
+      "phase1_sha256": "44924e993940bf1e513a699e2c57827e9380418de61445e90ed53ed0d9220263"
+    },
+    {
+      "id": "r81",
+      "original_case_id": "52",
+      "role": "diagnostic",
+      "selection_reason": "historical dispute",
+      "source_path": "evals/claim-evidence-v1/cases/52.json",
+      "source_sha256": "87cc705adfc71292b6c2c1ce31f66cf45a7fcf02ad41823d36adfad4ffd895b0",
+      "phase1_path": "phase1/cases/r81.json",
+      "phase1_sha256": "65d7e44cc1d55eee5f762a7f07e43ecf6824ec9b61400ad9fbc0d8738bbf7a2b"
+    },
+    {
+      "id": "r24",
+      "original_case_id": "23",
+      "role": "pilot",
+      "selection_reason": "clean candidate",
+      "source_path": "evals/cases/23.json",
+      "source_sha256": "b92cf5a7ed1f326489760d547f48539bf8c0ab7283c32bb2796e690b188e3888",
+      "phase1_path": "phase1/cases/r24.json",
+      "phase1_sha256": "bbb9a3ae0d717a819e078e4575babf735aa803bf92d5db8df0faf565a25f54be"
+    },
+    {
+      "id": "r57",
+      "original_case_id": "02",
+      "role": "pilot",
+      "selection_reason": "code",
+      "source_path": "evals/cases/02.json",
+      "source_sha256": "766797d6f898e321b66424f9c784eb3539e62b92fc292a9cd7764f2bab2bd807",
+      "phase1_path": "phase1/cases/r57.json",
+      "phase1_sha256": "6abb566fd5c9758313d5c1196d8dabba4006bc172c9085461f1262a2a9af515d"
+    },
+    {
+      "id": "r13",
+      "original_case_id": "24",
+      "role": "diagnostic",
+      "selection_reason": "historical dispute",
+      "source_path": "evals/cases/24.json",
+      "source_sha256": "4c6a11202059e0240f7a368347a9349e1dd54fd8ac9d4d19865cbd3bc4e2041d",
+      "phase1_path": "phase1/cases/r13.json",
+      "phase1_sha256": "f683d25febe3a66cde998fa5e670c9321e5ee80ef3f33612c16f855455fd379d"
+    },
+    {
+      "id": "r62",
+      "original_case_id": "03",
+      "role": "pilot",
+      "selection_reason": "migration",
+      "source_path": "evals/cases/03.json",
+      "source_sha256": "28490db7308d4c8b5407c1b3e8719b4ee3266e30597f8954b1e41d46969ba2fa",
+      "phase1_path": "phase1/cases/r62.json",
+      "phase1_sha256": "79eddbc5d35271d179c943517df8ee6a32aae098c0e70d94a8dddb828b8177a4"
+    },
+    {
+      "id": "r45",
+      "original_case_id": "26",
+      "role": "pilot",
+      "selection_reason": "clean candidate",
+      "source_path": "evals/cases/26.json",
+      "source_sha256": "6b9755f8cdd6eeb333d1c7805f302bb7e7a935be6a1049b07c90084abd471688",
+      "phase1_path": "phase1/cases/r45.json",
+      "phase1_sha256": "efe8b7cacd83b460f2a10002470a1948769e5cc208d768d5f27a2e95252e6d3d"
+    },
+    {
+      "id": "r90",
+      "original_case_id": "51",
+      "role": "diagnostic",
+      "selection_reason": "historical dispute",
+      "source_path": "evals/claim-evidence-v1/cases/51.json",
+      "source_sha256": "90a8539bf5fb3ca1bc23597e20ec7b535eb6dfa76a58e610eb4b92a3e2681705",
+      "phase1_path": "phase1/cases/r90.json",
+      "phase1_sha256": "57bf4feb6cfeab610a804357a827e6b9978dc9ab434549ce28748c483a8bd029"
+    },
+    {
+      "id": "r28",
+      "original_case_id": "14",
+      "role": "pilot",
+      "selection_reason": "code",
+      "source_path": "evals/cases/14.json",
+      "source_sha256": "5ed4760da06b24cd04d4370acab56f11423805c08f8958fd3006005ca7c0aec1",
+      "phase1_path": "phase1/cases/r28.json",
+      "phase1_sha256": "e9ca1be81244d9a02aa2797f871e033cce349870dce8adb6d365fc80cc4e6495"
+    }
+  ],
+  "limits": [
+    "Only the documented four-case tuning set is excluded; no broader holdout claim.",
+    "Clean status and all defect expectations remain proposals until adjudication.",
+    "Diagnostic-only cases do not enter the proposed live comparison."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "r62",
+  "request": "Only review this migration for data-loss risk. Return the structured review record.",
+  "mode": "noninteractive",
+  "capabilities": {
+    "source_inspection": true,
+    "artifact_execution": false,
+    "isolated_host_checks": false,
+    "editing": false,
+    "specialist_references": true
+  },
+  "context": {},
+  "artifacts": [
+    {
+      "source": "migration.sql",
+      "revision": "fixture-v1",
+      "text": "-- Up\nALTER TABLE customers DROP COLUMN contact_email;\n-- Down / rollback\nALTER TABLE customers ADD COLUMN contact_email TEXT;\n"
+    },
+    {
+      "source": "requirements.md",
+      "revision": "fixture-v1",
+      "text": "Customer contact emails must survive migration and rollback. There is no backup, shadow column, or external copy."
+    }
+  ]
+}

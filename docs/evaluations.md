@@ -1,5 +1,13 @@
 # Evaluation status
 
+The [skill-effect adjudication packet](../evals/skill-effect-adjudication-v1/README.md)
+prepares an independent source-first judgment before a matched skill-on/skill-off
+pilot. Six candidate cases exclude the four documented tuning cases and include
+two proposed clean controls; three diagnostic-only cases address historical
+disputes. It contains no completed adjudication or accepted labels. The staged
+export withholds historical expectations until the initial response is saved.
+No live comparison has run; the skill's contribution remains unmeasured.
+
 The [semantic assessor challenge](../evals/grader-v1/README.md) tests whether a
 fresh different-family assessor can reject planted review defects with expected
 answers withheld. Its [first run](../evals/grader-v1/baseline-01.md) has nine
