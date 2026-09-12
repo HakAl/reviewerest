@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "kind": "Edited receipt summary. Private raw captures checked locally; public hashes alone do not authenticate model execution.",
+  "frozen_commit": "2e83ad9950099ccbbc10666b6b8ffe899b28ef46",
+  "source_sha256": {
+    "format_pairs.py": "2cc007b1025ebf8712acad260c59cd481784007bfbee5f9d3401634716f1b6e1",
+    "grade_reviews.py": "d959054ffa89c20ea51319bf8e36a3271b117466dad08c078818d1a4674b8004",
+    "compare_grader_runs.py": "b83800831c5e6d137a552c857d6501c6cf6200007c9c545826fc1305ab99df32",
+    "run_claude.py": "7b32e09b3375599a7957bbb52f8e860b8391b3ccb407072395becb0a716719b6"
+  },
+  "input_manifest_sha256": "d949872d70081cddd48975ec339352fe1dc56ab53cdb1f8cb418ddfb3570deb6",
+  "planned_assessments": 8,
+  "eligible_completed": 8,
+  "orchestrator_exit_code": 4,
+  "assessor": {
+    "model": "claude-opus-5[1m]",
+    "cli_version": "2.1.269 (Claude Code)",
+    "prior_exposure": "Fresh session per packet; expected labels, builder grades, authorship and other packets withheld.",
+    "selection_rationale": "Claude is a different model family from the Codex fixture author and available for this bounded pilot. Prior grading competence is unestablished; this experiment measures it."
+  },
+  "temperature": "Not pinned; CLI default model selection. Recorded alias is not an immutable provider version.",
+  "local_checks": [
+    "Frozen inputs and source snapshots match committed bytes.",
+    "Every exported grade equals the parsed captured result.",
+    "All captured stdout/stderr hashes recomputed.",
+    "All eight invocation exits 0, no timeout, empty workspace before and after.",
+    "No tools, skills or MCP servers in init; no tool-use events observed.",
+    "All prompts equal protocol plus one packet; original prompts equal the grader-v1 prompt construction."
+  ],
+  "budget_cap_usd": 4,
+  "total_cost_estimate_usd": 0.338813,
+  "runs": [
+    {
+      "run": 1,
+      "answers_file": "answers-01.json",
+      "answers_sha256": "96d95e12fc3060e4e1fa3c5516385a4801ae8dd7b9c07ac55565070dff360499",
+      "runner_exit_code": 4,
+      "cost_estimate_usd": 0.167964,
+      "trials": [
+        {
+          "packet_id": "p42",
+          "started_at": "2026-09-12T09:34:07.746534+00:00",
+          "elapsed_seconds": 10.532,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": null,
+          "prompt_sha256": "8de2e523211ca23ac4ce807e70f66992c157f9f8b7fc5e1a050f50e33ed0d31d",
+          "prompt_matches_grader_v1_original": true,
+          "stdout_sha256": "763950c1d438db5cbd3a89c4ae6a42dc774bacc859ec75864f1ed7008f21a685",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0435465,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        },
+        {
+          "packet_id": "p14",
+          "started_at": "2026-09-12T09:34:18.280552+00:00",
+          "elapsed_seconds": 9.152,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": null,
+          "prompt_sha256": "d7d70f01576f5760fd3a2b248acd8c653b04e6c25a542745f23f8738bbc12cac",
+          "prompt_matches_grader_v1_original": null,
+          "stdout_sha256": "1b83c8e9971b066d8998d0cb198cf4e1740e9d34a81227e7320b7a6b22388193",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0425615,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        },
+        {
+          "packet_id": "p68",
+          "started_at": "2026-09-12T09:34:27.434819+00:00",
+          "elapsed_seconds": 8.769,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": null,
+          "prompt_sha256": "a30b9353e547a2cfe9703f02d05ad6920b4dd758c073827f558229a6e3abe10f",
+          "prompt_matches_grader_v1_original": null,
+          "stdout_sha256": "fcd15e407912f4df71fe8acd3853c047a129ae81685de7f10c78d0f4e42b2fa6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0402955,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        },
+        {
+          "packet_id": "p57",
+          "started_at": "2026-09-12T09:34:36.205528+00:00",
+          "elapsed_seconds": 9.103,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": "Citation does not resolve to exact supplied text.",
+          "prompt_sha256": "c61410a8e0f071533cc916c5e2d174f8e3e6feeeeec56b69afae4ac9d6759b16",
+          "prompt_matches_grader_v1_original": true,
+          "stdout_sha256": "7746a4a3785a94d8f0c1d65a0bb5191b2fe82e987c92693f27ece86c2e1ed233",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0415605,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "answers_file": "answers-02.json",
+      "answers_sha256": "fc034f6a245a0658af55cdbb01e0b0c00ddae93e9386599d42e2f811bc794c2f",
+      "runner_exit_code": 4,
+      "cost_estimate_usd": 0.170849,
+      "trials": [
+        {
+          "packet_id": "p42",
+          "started_at": "2026-09-12T09:34:45.334583+00:00",
+          "elapsed_seconds": 8.993,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": "Citation does not resolve to exact supplied text.",
+          "prompt_sha256": "8de2e523211ca23ac4ce807e70f66992c157f9f8b7fc5e1a050f50e33ed0d31d",
+          "prompt_matches_grader_v1_original": true,
+          "stdout_sha256": "0b94151ac504794ccfaa027638d8528963c5a769b5ed864333e60f830583c819",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0431115,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        },
+        {
+          "packet_id": "p14",
+          "started_at": "2026-09-12T09:34:54.329394+00:00",
+          "elapsed_seconds": 10.043,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": null,
+          "prompt_sha256": "d7d70f01576f5760fd3a2b248acd8c653b04e6c25a542745f23f8738bbc12cac",
+          "prompt_matches_grader_v1_original": null,
+          "stdout_sha256": "b02c83bc8f8eb109e543bc4fa970fc8deac8406d1206610d82eeac66c7ed738e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0436715,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        },
+        {
+          "packet_id": "p68",
+          "started_at": "2026-09-12T09:35:04.374429+00:00",
+          "elapsed_seconds": 10.212,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": null,
+          "prompt_sha256": "a30b9353e547a2cfe9703f02d05ad6920b4dd758c073827f558229a6e3abe10f",
+          "prompt_matches_grader_v1_original": null,
+          "stdout_sha256": "e5e9a9731c1264c3b876f4523ba6f1de32dda010da126c16e7429b559e88e155",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0423855,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        },
+        {
+          "packet_id": "p57",
+          "started_at": "2026-09-12T09:35:14.587995+00:00",
+          "elapsed_seconds": 9.716,
+          "exit_code": 0,
+          "eligible": true,
+          "response_contract_error": "Citation does not resolve to exact supplied text.",
+          "prompt_sha256": "c61410a8e0f071533cc916c5e2d174f8e3e6feeeeec56b69afae4ac9d6759b16",
+          "prompt_matches_grader_v1_original": true,
+          "stdout_sha256": "115984015df9719e5e406b360b2490923292d4344c75218f35de82eb17540a0e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "cost_estimate_usd": 0.0416805,
+          "reported_usage_models": [
+            "claude-haiku-4-5-20251001",
+            "claude-opus-5[1m]"
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison_file": "comparison-01.json",
+  "comparison_sha256": "e9bd88ecadfe04fba1180a39ff1da7280397926014a73f13253612d3623e0dc1",
+  "limits": [
+    "CLI cost estimates are not bills. Auxiliary model usage is recorded per trial.",
+    "Fresh sessions do not establish statistical independence.",
+    "Public parsed answers reproduce scoring; private raw captures and local session metadata are not published.",
+    "Labels remain author-written; no calibrated release pass or causal wrapping conclusion follows."
+  ]
+}

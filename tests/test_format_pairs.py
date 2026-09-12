@@ -32,6 +32,18 @@ def fixture_answers():
 
 
 class FormatPairTests(unittest.TestCase):
+    def test_published_comparison_reproduces_and_receipt_hashes_match(self):
+        suite = experiment.SUITE
+        receipt = experiment.grader.read(suite / "receipt-01.json")
+        runs = {}
+        for run in receipt["runs"]:
+            path = suite / run["answers_file"]
+            self.assertEqual(experiment.grader.host.digest(path.read_bytes()), run["answers_sha256"])
+            runs[path.name] = experiment.grader.read(path)
+        path = suite / receipt["comparison_file"]
+        self.assertEqual(experiment.grader.host.digest(path.read_bytes()), receipt["comparison_sha256"])
+        self.assertEqual(experiment.compare(suite, runs), experiment.grader.read(path))
+
     def test_only_scope_position_changes_with_identical_json_values(self):
         design, packets = experiment.validate_design(experiment.SUITE)
         self.assertEqual(design["planned_assessments"], 8)

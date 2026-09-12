@@ -5,6 +5,11 @@ twice each: eight assessments. It follows the
 [unchanged-run measurement](../grader-v1/repeats-01.md), which found raw-verdict
 variation on p85 and recurring +1 citation offsets on readiness.json.
 
+The [first eight assessments](baseline-01.md) retain three citation-invalid
+original-layout answers and none in the moved layout, with raw verdicts stable
+across pairs and repeats. One moved answer omits the authority quote. Public
+answers and the comparison reproduce offline; no wrapping cause is established.
+
 ## Frozen manipulation
 
 Original packets p42 and p57 are byte-identical to grader-v1. Variants p14 and p68

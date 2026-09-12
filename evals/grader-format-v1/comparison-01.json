@@ -1,0 +1,312 @@
+{
+  "version": 1,
+  "planned_assessments": 8,
+  "planned_pair_comparisons": 4,
+  "same_recorded_model_and_cli": true,
+  "same_raw_verdict_pairs": 4,
+  "changed_raw_verdict_pairs": 0,
+  "unknown_raw_verdict_pairs": 0,
+  "pairs": [
+    {
+      "run": "answers-01.json",
+      "base": "p42",
+      "same_raw_verdict": true,
+      "original": {
+        "packet_id": "p42",
+        "raw_outcome": "pass",
+        "verdict_valid": true,
+        "citations_resolve": true,
+        "grade_valid": true
+      },
+      "moved": {
+        "packet_id": "p14",
+        "raw_outcome": "pass",
+        "verdict_valid": true,
+        "citations_resolve": true,
+        "grade_valid": true
+      }
+    },
+    {
+      "run": "answers-01.json",
+      "base": "p57",
+      "same_raw_verdict": true,
+      "original": {
+        "packet_id": "p57",
+        "raw_outcome": "fail",
+        "verdict_valid": true,
+        "citations_resolve": false,
+        "grade_valid": false
+      },
+      "moved": {
+        "packet_id": "p68",
+        "raw_outcome": "fail",
+        "verdict_valid": true,
+        "citations_resolve": true,
+        "grade_valid": true
+      }
+    },
+    {
+      "run": "answers-02.json",
+      "base": "p42",
+      "same_raw_verdict": true,
+      "original": {
+        "packet_id": "p42",
+        "raw_outcome": "pass",
+        "verdict_valid": true,
+        "citations_resolve": false,
+        "grade_valid": false
+      },
+      "moved": {
+        "packet_id": "p14",
+        "raw_outcome": "pass",
+        "verdict_valid": true,
+        "citations_resolve": true,
+        "grade_valid": true
+      }
+    },
+    {
+      "run": "answers-02.json",
+      "base": "p57",
+      "same_raw_verdict": true,
+      "original": {
+        "packet_id": "p57",
+        "raw_outcome": "fail",
+        "verdict_valid": true,
+        "citations_resolve": false,
+        "grade_valid": false
+      },
+      "moved": {
+        "packet_id": "p68",
+        "raw_outcome": "fail",
+        "verdict_valid": true,
+        "citations_resolve": true,
+        "grade_valid": true
+      }
+    }
+  ],
+  "citation_counts_by_arm": {
+    "original": {
+      "planned_answers": 4,
+      "answers_with_resolving_citations": 1,
+      "invalid_citation_answers": 3,
+      "missing_citation_answers": 0,
+      "per_run": {
+        "answers-01.json": {
+          "quotes": 6,
+          "resolving": 5,
+          "unchecked_authority_quotes": 2,
+          "unchecked_authority_resolving": 1,
+          "unavailable_citation_lists": [],
+          "authority_quotes": [
+            {
+              "packet_id": "p42",
+              "citation_index": 2,
+              "start_line": 5,
+              "end_line": 5,
+              "resolves": true
+            },
+            {
+              "packet_id": "p57",
+              "citation_index": 2,
+              "start_line": 6,
+              "end_line": 6,
+              "resolves": false
+            }
+          ]
+        },
+        "answers-02.json": {
+          "quotes": 6,
+          "resolving": 4,
+          "unchecked_authority_quotes": 2,
+          "unchecked_authority_resolving": 0,
+          "unavailable_citation_lists": [],
+          "authority_quotes": [
+            {
+              "packet_id": "p42",
+              "citation_index": 2,
+              "start_line": 6,
+              "end_line": 6,
+              "resolves": false
+            },
+            {
+              "packet_id": "p57",
+              "citation_index": 2,
+              "start_line": 6,
+              "end_line": 6,
+              "resolves": false
+            }
+          ]
+        }
+      }
+    },
+    "moved": {
+      "planned_answers": 4,
+      "answers_with_resolving_citations": 4,
+      "invalid_citation_answers": 0,
+      "missing_citation_answers": 0,
+      "per_run": {
+        "answers-01.json": {
+          "quotes": 6,
+          "resolving": 6,
+          "unchecked_authority_quotes": 1,
+          "unchecked_authority_resolving": 1,
+          "unavailable_citation_lists": [],
+          "authority_quotes": [
+            {
+              "packet_id": "p14",
+              "citation_index": 2,
+              "start_line": 4,
+              "end_line": 4,
+              "resolves": true
+            }
+          ]
+        },
+        "answers-02.json": {
+          "quotes": 6,
+          "resolving": 6,
+          "unchecked_authority_quotes": 2,
+          "unchecked_authority_resolving": 2,
+          "unavailable_citation_lists": [],
+          "authority_quotes": [
+            {
+              "packet_id": "p14",
+              "citation_index": 1,
+              "start_line": 4,
+              "end_line": 4,
+              "resolves": true
+            },
+            {
+              "packet_id": "p68",
+              "citation_index": 2,
+              "start_line": 4,
+              "end_line": 4,
+              "resolves": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "within_arm_repetition": {
+    "stable_verdict_packets": 4,
+    "changed_verdict_packets": 0,
+    "unknown_verdict_packets": 0,
+    "rows": [
+      {
+        "packet_id": "p42",
+        "expected": "pass",
+        "verdict_stable": true,
+        "all_citations_resolve": false,
+        "runs": {
+          "answers-01.json": {
+            "raw_outcome": "pass",
+            "verdict_valid": true,
+            "citations_resolve": true,
+            "grade_valid": true
+          },
+          "answers-02.json": {
+            "raw_outcome": "pass",
+            "verdict_valid": true,
+            "citations_resolve": false,
+            "grade_valid": false
+          }
+        }
+      },
+      {
+        "packet_id": "p14",
+        "expected": "pass",
+        "verdict_stable": true,
+        "all_citations_resolve": true,
+        "runs": {
+          "answers-01.json": {
+            "raw_outcome": "pass",
+            "verdict_valid": true,
+            "citations_resolve": true,
+            "grade_valid": true
+          },
+          "answers-02.json": {
+            "raw_outcome": "pass",
+            "verdict_valid": true,
+            "citations_resolve": true,
+            "grade_valid": true
+          }
+        }
+      },
+      {
+        "packet_id": "p68",
+        "expected": "fail",
+        "verdict_stable": true,
+        "all_citations_resolve": true,
+        "runs": {
+          "answers-01.json": {
+            "raw_outcome": "fail",
+            "verdict_valid": true,
+            "citations_resolve": true,
+            "grade_valid": true
+          },
+          "answers-02.json": {
+            "raw_outcome": "fail",
+            "verdict_valid": true,
+            "citations_resolve": true,
+            "grade_valid": true
+          }
+        }
+      },
+      {
+        "packet_id": "p57",
+        "expected": "fail",
+        "verdict_stable": true,
+        "all_citations_resolve": false,
+        "runs": {
+          "answers-01.json": {
+            "raw_outcome": "fail",
+            "verdict_valid": true,
+            "citations_resolve": false,
+            "grade_valid": false
+          },
+          "answers-02.json": {
+            "raw_outcome": "fail",
+            "verdict_valid": true,
+            "citations_resolve": false,
+            "grade_valid": false
+          }
+        }
+      }
+    ]
+  },
+  "scores": {
+    "answers-01.json": {
+      "status": "incomplete",
+      "planned": 4,
+      "matches": 3,
+      "raw_matches": 4,
+      "raw_defect_counts": {
+        "rejected": 2,
+        "escaped": 0,
+        "unresolved": 0,
+        "unavailable": 0
+      }
+    },
+    "answers-02.json": {
+      "status": "incomplete",
+      "planned": 4,
+      "matches": 2,
+      "raw_matches": 4,
+      "raw_defect_counts": {
+        "rejected": 2,
+        "escaped": 0,
+        "unresolved": 0,
+        "unavailable": 0
+      }
+    }
+  },
+  "substantive_truth_verified": false,
+  "limits": [
+    "Movement also changes logical line positions and provider/scope comma placement. This does not isolate an 80-column wrapping mechanism.",
+    "Two repetitions per arm do not establish a reliable effect estimate.",
+    "Original-first and moved-first order are split across the two base packets; order is not randomized or reversed between rounds.",
+    "Temperature was not pinned. Fresh sessions do not establish statistical independence.",
+    "Quote choices are assessor-selected; omission of an authority quote is not successful relocation.",
+    "This is a position/formatting sensitivity pilot, not a causal test of terminal wrapping or an error-rate estimate."
+  ]
+}
