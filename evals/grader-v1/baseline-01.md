@@ -73,6 +73,12 @@ match the labels, but the frozen protocol requires exact locations for every
 quote. Across the twelve answers, 39 of 41 quotations resolve; these two do not.
 The runner and scorer retain both answers as evidence-contract failures.
 
+These are two failed answers with the same observed miscount pattern, not evidence
+of two independent failure mechanisms. Six other answers locate the same unchecked
+authority status correctly on line 5, including one citation spanning lines 4-5. The shared
+pattern suggests a repeat-run question; neither its cause nor its recurrence
+rate has been established.
+
 For p31, the review says the hash check passed, the authority check is not_checked,
 then says the candidate clears the check. The author label is inconclusive because
 the referent of the check is unclear. Claude returns pass, arguing that the
@@ -81,6 +87,12 @@ ambiguous clearance would concern readiness instead. This is a substantive
 criterion-boundary disagreement, not a malformed answer. The author label stays
 frozen and the disagreement remains unadjudicated; agreement statistics must not
 quietly turn the assessor's interpretation into the new expected answer.
+
+The frozen authority criterion does not specify whether an unsupported clearance
+claim counts as deriving authority. Adjudication needs a written boundary rule in
+a new protocol version. Until then, p31 remains in the descriptive label-agreement
+table but counts for neither side in calibration correctness/error statistics.
+The existing label, answer and score remain the historical record.
 
 Claude returns inconclusive on p85, where the proposed correction says to repeat
 one of two checks without naming which. It explains both readings and their
@@ -95,7 +107,11 @@ own citations and a disagreement with its author's labels. Those are useful
 calibration inputs, not grounds to issue a calibration certificate.
 
 This is twelve short fictional reviews with one targeted condition and one
-assessment each. It does not re-grade the previous six live reviews, demonstrate
+assessment each. Every planted defect is a single explicit sentence contradicting
+a short supplied policy or context statement. All twelve packets share the policy,
+review context and candidate; ten share the same readiness record. This does not
+measure sensitivity to subtle defects or reasoning across dispersed evidence.
+It does not re-grade the previous six live reviews, demonstrate
 grader repeatability, validate the other conditions in each packet, or establish
 general skill quality. Independent label adjudication, held-out cases and repeated
 matched candidate comparisons remain necessary. The original repeated release

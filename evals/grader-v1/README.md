@@ -14,6 +14,11 @@ of a sound control, a correction that substitutes reconstruction for authority,
 and unresolved referents. This is a controlled challenge set, not a sample of
 natural full-length reviews or a report-version-3 conformance test.
 
+Each planted defect is a single explicit sentence contradicting a short supplied
+policy or context statement. All twelve packets share the policy, review context
+and candidate; ten also share the same readiness record. This run does not measure
+sensitivity to subtle defects, dispersed evidence or varied domains.
+
 The [first run](baseline-01.md) retains nine admissible label matches, two citation
 failures and one label disagreement. All source packets and actual grade objects
 are public, so its scoring can be reproduced without private captures.
