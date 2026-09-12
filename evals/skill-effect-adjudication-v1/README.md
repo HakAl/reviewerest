@@ -1,7 +1,7 @@
 # Adjudication before a skill-effect pilot
 
-Status: initial Gemini adjudication received for all nine cases. Phase-two
-disposition and operator acceptance remain pending. No live skill-on/skill-off
+Status: initial and phase-two Gemini judgments received for all nine cases.
+Operator acceptance remains pending. No live skill-on/skill-off
 runs or accepted criteria are represented by this package.
 
 The [initial response](initial-01.json) is a public copy with only its reported
@@ -10,12 +10,16 @@ and the private byte-identical original to the frozen manifest. All 26 located
 evidence quotations resolve. Model identity and source-only access are reported,
 not authenticated by a host trace. These checks do not verify the judgments.
 
-The initial judgment supports four defect cases and two clean cases in the
-proposed six-case pilot. Its severity ranges, some consequence claims, and
-scope boundaries need clarification. The next handoff is the
-[phase-two proposal](coordinator/phase2-proposal-01.md), for the returning
-adjudicator to consider after historical disclosure. It preserves the initial
-judgment and labels as written, including disagreements.
+The [phase-two response](coordinator/phase2-response.json) confirms four defect
+cases and two clean controls in the pilot, with bounded consequences and
+diagnostic severity. It is public byte for byte; its
+[receipt](phase2-receipt-01.json) verifies bindings and selection roles.
+One inconsistency remains: its clean-case wording lets severity alone determine
+a false positive despite accepting diagnostic severity. The
+[operator decision proposal](coordinator/operator-decision-01.md) makes the
+recommended resolution explicit. All initial and historical judgments remain
+unchanged, including disagreements. A returned agreement does not by itself
+freeze criteria or establish a skill effect.
 
 The question is whether adding the review skill improves finding quality under
 a shared minimal output format. Earlier experiments assessed outputs, graders
@@ -41,6 +45,7 @@ criteria before candidate outputs exist.
 ```sh
 python3 evals/adjudication_packet.py --output .scratch/skill-effect-adjudication-phase1
 python3 evals/adjudication_packet.py --record evals/skill-effect-adjudication-v1/initial-01.json
+python3 evals/adjudication_packet.py --disposition evals/skill-effect-adjudication-v1/coordinator/phase2-response.json
 ```
 
 The exporter copies a fixed allowlist and checks its manifest hashes. It never

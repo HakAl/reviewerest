@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "status": "phase2_received_operator_decision_pending",
+  "response": {
+    "path": "coordinator/phase2-response.json",
+    "bytes": 19777,
+    "sha256": "902a427deb35f79b3b9ef272a3479f907dc4319e949fb3bfd3dde49a6556d790",
+    "public_copy_byte_identical_to_received_file": true,
+    "private_byte_identical_archive_preserved": true
+  },
+  "initial_response_sha256": "315ca895cc44be570c544268cbd22206b67435123ffa57431a8d1abfc2b0778e",
+  "phase1_manifest_sha256": "302aaeea0fc09b51132c5d53541f1d5b6f3e9f80d43013bea80a49f1ce6e738a",
+  "reported_disclosure_time": "2026-09-12T15:05:10Z",
+  "reported_adjudicator": {
+    "model": "Gemini 3.8 Flash (High)",
+    "family": "Gemini",
+    "host_trace_available": false,
+    "identity_and_exposure_authenticated": false
+  },
+  "mechanical_validation": {
+    "valid": true,
+    "case_count": 9,
+    "recorded_eligibility_counts": {
+      "eligible_defect": 4,
+      "eligible_clean": 2,
+      "excluded_diagnostic": 3,
+      "unresolved": 0
+    },
+    "validation_scope": "proposed_disposition_bindings_case_coverage_and_selection_roles",
+    "substantive_truth_verified": false,
+    "semantic_consistency_verified": false,
+    "operator_acceptance_verified": false,
+    "limits": [
+      "Identity, exposure and disclosure time are recorded declarations.",
+      "Rule agreement and case-criteria prose require substantive review.",
+      "Passing this check does not freeze criteria or authorize a run."
+    ]
+  },
+  "builder_review": {
+    "semantic_consistency": "One unresolved severity/false-positive boundary.",
+    "locations": [
+      "proposed_rules_evaluation.rule3_clean_cases.reason",
+      "case_dispositions[id=r81].agreed_criteria.severity_role"
+    ],
+    "proposed_resolution": "Classify false positives from substantive assertions, independently of severity tokens; record misplaced neutral entries and severity inconsistencies separately.",
+    "decision_document": "coordinator/operator-decision-01.md",
+    "operator_accepted": false
+  },
+  "live_comparison_executed": false,
+  "limits": [
+    "The helper verifies bindings, case coverage and selection roles, not semantic consistency or truth.",
+    "Phase two follows disclosure of historical labels and builder feedback; it is not another blinded source-first judgment.",
+    "The operator decision proposal is builder-authored and has not been independently accepted."
+  ]
+}

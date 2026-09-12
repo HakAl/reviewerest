@@ -8,8 +8,11 @@ disputes. An initial Gemini judgment now covers all nine cases; its 26 evidence
 quotations resolve mechanically. It agrees with four defect cases and two clean
 controls in the pilot subset. The original is preserved privately and a copy
 with its local source path replaced is public. Model identity and absence of
-prior exposure are reported, not host-verified. Phase-two clarification of scope,
-consequences and severity remains pending; no criteria have been accepted. The
+prior exposure are reported, not host-verified. The returning Gemini adjudicator
+has supplied a phase-two disposition confirming the pilot composition and
+bounding the consequence claims. Its severity-based wording for clean cases
+still conflicts with diagnostic severity; an explicit operator resolution is
+proposed. No criteria have been accepted. The
 staged export withholds historical expectations until the initial response is saved.
 No live comparison has run; the skill's contribution remains unmeasured.
 

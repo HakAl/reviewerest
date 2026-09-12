@@ -138,6 +138,44 @@ class AdjudicationPacketTests(unittest.TestCase):
             with self.subTest(kind=kind), self.assertRaisesRegex(ValueError, 'quote does not resolve'):
                 packet.validate_adjudication(value, packet.SUITE)
 
+    def test_phase_two_receipt_reproduces_without_certifying_semantic_agreement(self):
+        record = packet.grader.read(packet.SUITE / 'coordinator/phase2-response.json')
+        receipt = packet.grader.read(packet.SUITE / 'phase2-receipt-01.json')
+        result = packet.validate_disposition(record, packet.SUITE)
+        self.assertEqual(result, receipt['mechanical_validation'])
+        self.assertEqual(result['recorded_eligibility_counts'],
+                         {'eligible_defect': 4, 'eligible_clean': 2, 'excluded_diagnostic': 3, 'unresolved': 0})
+        self.assertFalse(result['semantic_consistency_verified'])
+        self.assertFalse(result['operator_acceptance_verified'])
+        self.assertEqual(packet.grader.host.digest((packet.SUITE / 'coordinator/phase2-response.json').read_bytes()),
+                         receipt['response']['sha256'])
+        record['case_dispositions'][0]['agreed_criteria']['required_core_defect'] = 'Unsupported claim.'
+        self.assertTrue(packet.validate_disposition(record, packet.SUITE)['valid'])
+
+    def test_phase_two_cannot_change_bindings_roles_or_promote_itself_to_approval(self):
+        for kind in ('initial', 'phase_one', 'duplicate', 'missing', 'role', 'nature', 'approval', 'run', 'criteria'):
+            value = packet.grader.read(packet.SUITE / 'coordinator/phase2-response.json')
+            if kind == 'initial':
+                value['initial_response_sha256'] = '0' * 64
+            elif kind == 'phase_one':
+                value['phase1_manifest_sha256'] = '0' * 64
+            elif kind == 'duplicate':
+                value['case_dispositions'][1]['id'] = value['case_dispositions'][0]['id']
+            elif kind == 'missing':
+                value['case_dispositions'].pop()
+            elif kind == 'role':
+                value['case_dispositions'][1]['pilot_eligibility'] = 'eligible_clean'
+            elif kind == 'nature':
+                value['case_dispositions'][0]['pilot_eligibility'] = 'eligible_clean'
+            elif kind == 'approval':
+                value['operator_acceptance']['accepted'] = True
+            elif kind == 'run':
+                value['live_run_plan_approved'] = True
+            else:
+                value['accepted_criteria_version'] = 'claimed-v1'
+            with self.subTest(kind=kind), self.assertRaises(ValueError):
+                packet.validate_disposition(value, packet.SUITE)
+
 
 if __name__ == '__main__':
     unittest.main()

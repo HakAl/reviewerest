@@ -132,14 +132,73 @@ def validate_adjudication(record, suite):
                        "This does not accept criteria, resolve open questions, or authorize comparison runs."]}
 
 
+def validate_disposition(record, suite):
+    """Check a proposed phase-two record's bindings and coverage, not agreement."""
+    manifest, _ = phase_one(suite)
+    receipt = grader.read(suite / "initial-receipt-01.json")
+    if (not isinstance(record, dict) or type(record.get("version")) is not int or record["version"] != 1
+            or record.get("status") != "proposed_disposition"
+            or record.get("initial_response_sha256") != receipt["original_response"]["sha256"]
+            or record.get("phase1_manifest_sha256") != grader.host.digest((suite / "phase1/manifest.json").read_bytes())):
+        raise ValueError("Proposed disposition must bind the preserved initial response and frozen phase one.")
+    identity = record.get("adjudicator_identity")
+    if not isinstance(identity, dict) or not all(isinstance(identity.get(k), str) and identity[k].strip()
+                                               for k in ("identity", "role", "model", "family", "prior_exposure")):
+        raise ValueError("Returning adjudicator identity and exposure must be recorded.")
+    if not isinstance(record.get("disclosure_time"), str) or not record["disclosure_time"].strip():
+        raise ValueError("Reported disclosure time is required.")
+    if (record.get("operator_acceptance") != {"identity": None, "recorded_at": None, "accepted": False}
+            or record.get("accepted_criteria_version") is not None or record.get("live_run_plan_approved") is not False):
+        raise ValueError("This proposed-disposition checker cannot certify operator acceptance or run approval.")
+    cases = record.get("case_dispositions")
+    if not isinstance(cases, list) or len(cases) != len(manifest["case_ids"]) or any(not isinstance(c, dict) for c in cases):
+        raise ValueError("Every phase-one case requires one disposition.")
+    ids = [c.get("id") for c in cases]
+    if any(not isinstance(i, str) for i in ids) or len(set(ids)) != len(ids) or set(ids) != set(manifest["case_ids"]):
+        raise ValueError("Disposition cases differ from phase one.")
+    roles = {e["id"]: e["role"] for e in grader.read(suite / "coordinator/selection.json")["entries"]}
+    counts = {"eligible_defect": 0, "eligible_clean": 0, "excluded_diagnostic": 0, "unresolved": 0}
+    for case in cases:
+        eligibility = case.get("pilot_eligibility")
+        if not isinstance(eligibility, str) or eligibility not in counts:
+            raise ValueError("Unknown pilot eligibility.")
+        if ((roles[case["id"]] == "diagnostic" and eligibility not in ("excluded_diagnostic", "unresolved"))
+                or (roles[case["id"]] == "pilot" and eligibility == "excluded_diagnostic")):
+            raise ValueError("Disposition changes a frozen pilot/diagnostic role.")
+        for key in ("status", "changes_from_initial_judgment", "reason"):
+            if not isinstance(case.get(key), str) or not case[key].strip():
+                raise ValueError("Missing disposition explanation: " + key)
+        questions = case.get("unresolved_questions")
+        if not isinstance(questions, list) or any(not isinstance(q, str) for q in questions):
+            raise ValueError("Unresolved questions must be a list of text.")
+        criteria = case.get("agreed_criteria")
+        if eligibility != "unresolved":
+            if not isinstance(criteria, dict) or criteria.get("case_nature") not in ("clean", "defect"):
+                raise ValueError("Proposed case criteria are missing.")
+            if eligibility.startswith("eligible_") and eligibility != "eligible_" + criteria["case_nature"]:
+                raise ValueError("Eligibility and proposed case nature disagree.")
+        counts[eligibility] += 1
+    return {"valid": True, "case_count": len(cases), "recorded_eligibility_counts": counts,
+            "validation_scope": "proposed_disposition_bindings_case_coverage_and_selection_roles",
+            "substantive_truth_verified": False, "semantic_consistency_verified": False,
+            "operator_acceptance_verified": False,
+            "limits": ["Identity, exposure and disclosure time are recorded declarations.",
+                       "Rule agreement and case-criteria prose require substantive review.",
+                       "Passing this check does not freeze criteria or authorize a run."]}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--suite", type=Path, default=SUITE)
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--output", type=Path)
     action.add_argument("--record", type=Path)
+    action.add_argument("--disposition", type=Path)
     args = parser.parse_args()
     try:
+        if args.disposition:
+            print(json.dumps(validate_disposition(grader.read(args.disposition), args.suite), indent=2))
+            return 0
         if args.record:
             print(json.dumps(validate_adjudication(grader.read(args.record), args.suite), indent=2))
             return 0
