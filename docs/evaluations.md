@@ -17,12 +17,18 @@ specifies 36 candidate calls and separate per-arm diagnostics. The
 [matched pipeline](../evals/skill-effect-v1/README.md) now implements candidate
 execution, a blinded assessor handoff, Gemini capture/import and offline
 aggregation. Eighteen new offline tests exercise isolation, failure handling and
-diagnostic separation using synthetic events and judgments. Live host compatibility
-and substantive review quality remain unmeasured. Separate usage approvals are
+diagnostic separation using synthetic events and judgments. The first live attempt
+stopped on host compatibility checks after one candidate call. Separate usage approvals are
 required: Claude's nominal per-call limits do not guarantee billing, and Gemini
 has call/time limits without a verified dollar cap. The
 staged export withholds historical expectations until the initial response is saved.
-No live comparison has run; the skill's contribution remains unmeasured.
+A separate operator-relayed native-Agent pair has since run: persisted child
+transcripts support exact skill delivery to treatment and absence from control,
+and both arms received the same task on the same reported Fable model. Its
+free-form outputs remain exploratory and have no independent semantic grades.
+The [native-Agent protocol](../evals/native-agents-v1/README.md) now freezes a
+prospective six-case repeated comparison with a common output schema. No trial
+under that new protocol has run; a repeatable skill benefit is not established.
 
 The [semantic assessor challenge](../evals/grader-v1/README.md) tests whether a
 fresh different-family assessor can reject planted review defects with expected

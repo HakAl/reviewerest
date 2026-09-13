@@ -1,0 +1,47 @@
+{
+  "review-a": {
+    "description": "Review the supplied artifact under the explicit task constraints.",
+    "prompt": "You are a reviewer. Review only what the prompt asks for and report your findings in your reply.",
+    "tools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "disallowedTools": [
+      "Skill",
+      "Agent",
+      "Task",
+      "Bash",
+      "Write",
+      "Edit"
+    ],
+    "model": "claude-fable-5-1",
+    "effort": "high",
+    "permissionMode": "dontAsk",
+    "maxTurns": 12,
+    "skills": [
+      "review"
+    ]
+  },
+  "review-b": {
+    "description": "Review the supplied artifact under the explicit task constraints.",
+    "prompt": "You are a reviewer. Review only what the prompt asks for and report your findings in your reply.",
+    "tools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "disallowedTools": [
+      "Skill",
+      "Agent",
+      "Task",
+      "Bash",
+      "Write",
+      "Edit"
+    ],
+    "model": "claude-fable-5-1",
+    "effort": "high",
+    "permissionMode": "dontAsk",
+    "maxTurns": 12
+  }
+}

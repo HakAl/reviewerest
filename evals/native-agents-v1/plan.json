@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "protocol_id": "native-agents-v1",
+  "status": "method_frozen_execution_plan_pending",
+  "criteria_id": "skill-effect-criteria-v1",
+  "criteria_path": "evals/skill-effect-adjudication-v1/accepted-criteria-v1.json",
+  "criteria_sha256": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
+  "runtime": "Claude Code",
+  "runtime_version": "2.1.269",
+  "candidate_model": "claude-fable-5-1",
+  "effort": "high",
+  "case_ids": [
+    "r36",
+    "r57",
+    "r62",
+    "r28",
+    "r24",
+    "r45"
+  ],
+  "packet_paths": {
+    "r36": "evals/skill-effect-adjudication-v1/phase1/cases/r36.json",
+    "r57": "evals/skill-effect-adjudication-v1/phase1/cases/r57.json",
+    "r62": "evals/skill-effect-adjudication-v1/phase1/cases/r62.json",
+    "r28": "evals/skill-effect-adjudication-v1/phase1/cases/r28.json",
+    "r24": "evals/skill-effect-adjudication-v1/phase1/cases/r24.json",
+    "r45": "evals/skill-effect-adjudication-v1/phase1/cases/r45.json"
+  },
+  "schedule": [
+    {
+      "trial_id": "t001",
+      "case_id": "r36",
+      "repeat": 1,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t002",
+      "case_id": "r36",
+      "repeat": 1,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t003",
+      "case_id": "r57",
+      "repeat": 1,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t004",
+      "case_id": "r57",
+      "repeat": 1,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t005",
+      "case_id": "r62",
+      "repeat": 1,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t006",
+      "case_id": "r62",
+      "repeat": 1,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t007",
+      "case_id": "r28",
+      "repeat": 1,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t008",
+      "case_id": "r28",
+      "repeat": 1,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t009",
+      "case_id": "r24",
+      "repeat": 1,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t010",
+      "case_id": "r24",
+      "repeat": 1,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t011",
+      "case_id": "r45",
+      "repeat": 1,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t012",
+      "case_id": "r45",
+      "repeat": 1,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t013",
+      "case_id": "r62",
+      "repeat": 2,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t014",
+      "case_id": "r62",
+      "repeat": 2,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t015",
+      "case_id": "r28",
+      "repeat": 2,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t016",
+      "case_id": "r28",
+      "repeat": 2,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t017",
+      "case_id": "r24",
+      "repeat": 2,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t018",
+      "case_id": "r24",
+      "repeat": 2,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t019",
+      "case_id": "r45",
+      "repeat": 2,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t020",
+      "case_id": "r45",
+      "repeat": 2,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t021",
+      "case_id": "r36",
+      "repeat": 2,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t022",
+      "case_id": "r36",
+      "repeat": 2,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t023",
+      "case_id": "r57",
+      "repeat": 2,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t024",
+      "case_id": "r57",
+      "repeat": 2,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t025",
+      "case_id": "r24",
+      "repeat": 3,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t026",
+      "case_id": "r24",
+      "repeat": 3,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t027",
+      "case_id": "r45",
+      "repeat": 3,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t028",
+      "case_id": "r45",
+      "repeat": 3,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t029",
+      "case_id": "r36",
+      "repeat": 3,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t030",
+      "case_id": "r36",
+      "repeat": 3,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t031",
+      "case_id": "r57",
+      "repeat": 3,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t032",
+      "case_id": "r57",
+      "repeat": 3,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t033",
+      "case_id": "r62",
+      "repeat": 3,
+      "arm": "skill_on"
+    },
+    {
+      "trial_id": "t034",
+      "case_id": "r62",
+      "repeat": 3,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t035",
+      "case_id": "r28",
+      "repeat": 3,
+      "arm": "skill_off"
+    },
+    {
+      "trial_id": "t036",
+      "case_id": "r28",
+      "repeat": 3,
+      "arm": "skill_on"
+    }
+  ],
+  "agent_types": {
+    "skill_on": "review-a",
+    "skill_off": "review-b"
+  },
+  "candidate_instruction_path": "evals/native-agents-v1/candidate-prompt.md",
+  "output_schema_path": "evals/skill-effect-adjudication-v1/phase1/shared-output.schema.json",
+  "prospective_assessor_protocol": "evals/skill-effect-v1/assessor-protocol.md",
+  "assessor_family": "Gemini",
+  "retries": 0,
+  "resume_or_fork": false,
+  "sequential": true,
+  "historical_pair_included": false,
+  "live_usage_approved": false,
+  "pending_execution_receipt": [
+    "operator-approved call/time/usage limits",
+    "coordinator and assessor exact models",
+    "launch/capture/checker source hashes",
+    "controlled workspace and ambient-context inspection",
+    "native delivery and control admission preflight"
+  ]
+}

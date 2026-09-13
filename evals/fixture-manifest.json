@@ -133,7 +133,13 @@
     "evals/skill-effect-v1/assessment-schema.json": "d1802de8954cb37992b3b28f7b88d12caaa3084988b60547c6998ba6677925dc",
     "evals/skill-effect-v1/candidate-manifest.json": "551d54f87d768f14612bec903669caefe6166c5e263fe27dddb29f5d4b1bd801",
     "evals/skill-effect-v1/assessor-manifest.json": "efe44c98e1d7e3ea3bb655851e751d118809a21c1e9d7110813076025ab7cd9d",
-    "evals/skill-effect-v1/attempt-01.json": "38f109935b795be6443e566abfeeb361722a505c1604eae1dc5e91cec61a4ef8"
+    "evals/skill-effect-v1/attempt-01.json": "38f109935b795be6443e566abfeeb361722a505c1604eae1dc5e91cec61a4ef8",
+    "evals/native-agents-v1/plan.json": "9371fb51d7d11a00e2167518be00c6b7cca894c6604ada430168d45ce04a2eac",
+    "evals/native-agents-v1/exploratory-assessor.md": "9745dd7d39559d4db125dabf1c1a2f28cc52a9c7748f14685fefdfef384d2925",
+    "evals/native-agents-v1/agents.json": "61a283ce64ee7cd0678da3bbdd606e85be4603af5fa2c4b30380a93ce682f2b9",
+    "evals/native-agents-v1/manifest.json": "ce5871bd66f1f574aa090a4ae56711658466ffd860a8807d285bf97a5983e63d",
+    "evals/native-agents-v1/candidate-prompt.md": "b6e3908a2b44a1dc4db46e9c10e7c8852b6390415ba063b758a92a27dfa164d1",
+    "evals/native-agents-v1/protocol.md": "9faf0d1fd5b76981310297cea9015cef25cf44bd65cfec2c9f2e43018cfa7ae2"
   },
   "labels": "Author-written synthetic cases. Frozen development regressions, not independent ground truth."
 }
