@@ -2,11 +2,11 @@
   "version": 1,
   "protocol_id": "native-agents-v1",
   "files": {
-    "evals/native-agents-v1/agents.json": "61a283ce64ee7cd0678da3bbdd606e85be4603af5fa2c4b30380a93ce682f2b9",
+    "evals/native-agents-v1/agents.json": "b73ec037a5ec8cec4020485424476a0e212a1c3eccacc5ad5dffd043fb9028a9",
     "evals/native-agents-v1/candidate-prompt.md": "b6e3908a2b44a1dc4db46e9c10e7c8852b6390415ba063b758a92a27dfa164d1",
     "evals/native-agents-v1/exploratory-assessor.md": "9745dd7d39559d4db125dabf1c1a2f28cc52a9c7748f14685fefdfef384d2925",
-    "evals/native-agents-v1/plan.json": "9371fb51d7d11a00e2167518be00c6b7cca894c6604ada430168d45ce04a2eac",
-    "evals/native-agents-v1/protocol.md": "9faf0d1fd5b76981310297cea9015cef25cf44bd65cfec2c9f2e43018cfa7ae2",
+    "evals/native-agents-v1/plan.json": "7bb2d5c92b5ba1e39fd69100624f7fda6b99cd4e8a80ab286805b7808ab10c39",
+    "evals/native-agents-v1/protocol.md": "c542ba19fcc1b230f38b7c677d825306b4d738892644bee706508637a6ab2411",
     "evals/skill-effect-adjudication-v1/accepted-criteria-v1.json": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
     "evals/skill-effect-adjudication-v1/operator-acceptance-01.json": "5acb8cdaf0f01aa1f70d8b5c8b3769ebc5d213194e01797bdda9627461e54f87",
     "evals/skill-effect-adjudication-v1/phase1/cases/r24.json": "bbb9a3ae0d717a819e078e4575babf735aa803bf92d5db8df0faf565a25f54be",
@@ -30,5 +30,7 @@
     "review/scripts/resolve_base.py": "bcd8ed3da9fc490483d4f3bc72aeb6235b44ee581f13b8a373da91303933d0df",
     "review/scripts/validate_record.py": "781447bcb3f8fb8821c8d0115006a1e63ea362d316c8d56e9f5541fab8cd06d4"
   },
-  "meaning": "Prospective content freeze only; no execution or quality claim. Keep this coordinator manifest and accepted criteria out of candidate contexts."
+  "meaning": "Prospective content freeze only; no execution or quality claim. Keep this coordinator manifest and accepted criteria out of candidate contexts.",
+  "revision": 2,
+  "supersedes_manifest_sha256": "ce5871bd66f1f574aa090a4ae56711658466ffd860a8807d285bf97a5983e63d"
 }

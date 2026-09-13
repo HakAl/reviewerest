@@ -7,10 +7,12 @@ under this protocol has run. The earlier Opus runner and its stopped attempt
 remain separate historical experiments.
 
 The [protocol](protocol.md) and [plan](plan.json) keep the accepted semantic
-criteria and six development cases. The requested model is now explicitly
-claude-fable-5-1. Both arms must return the same four-field JSON record. This is
+criteria and six development cases. The operator-selected prospective model is explicitly
+claude-opus-5[1m] for both reviewers and the coordinator. Both arms must return the same four-field JSON record. This is
 an intentional change from the exploratory pair's free-form Markdown reports;
-that pair is not one of the planned 36 trials.
+that pair is not one of the planned 36 trials. Plan revision 2 supersedes the
+unexecuted Fable selection; its previous manifest digest and Git history retain
+that pre-run change.
 
 The [manifest](manifest.json) pins the protocol, plan, candidate instructions,
 both Agent definitions, accepted criteria, source packets, output schema and

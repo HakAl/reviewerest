@@ -7,7 +7,7 @@
   "criteria_sha256": "e1d580bce903fbd83e600ac278fafc659fe1102c1c6b6de234fdb266786f449c",
   "runtime": "Claude Code",
   "runtime_version": "2.1.269",
-  "candidate_model": "claude-fable-5-1",
+  "candidate_model": "claude-opus-5[1m]",
   "effort": "high",
   "case_ids": [
     "r36",
@@ -258,9 +258,13 @@
   "live_usage_approved": false,
   "pending_execution_receipt": [
     "operator-approved call/time/usage limits",
-    "coordinator and assessor exact models",
+    "assessor exact model and observed coordinator/candidate model identities",
     "launch/capture/checker source hashes",
     "controlled workspace and ambient-context inspection",
     "native delivery and control admission preflight"
-  ]
+  ],
+  "revision": 2,
+  "coordinator_model": "claude-opus-5[1m]",
+  "revision_note": "Operator selected Opus before any prospective trial. Supersedes the Fable method freeze; historical Fable pair remains unchanged.",
+  "supersedes_manifest_sha256": "ce5871bd66f1f574aa090a4ae56711658466ffd860a8807d285bf97a5983e63d"
 }

@@ -6,9 +6,10 @@ This measures supplied guidance, not automatic skill selection or discovery.
 
 ## Frozen treatment and control
 
-Use Claude Code 2.1.269, requesting claude-fable-5-1 explicitly for each child,
+Use Claude Code 2.1.269, requesting claude-opus-5[1m] explicitly for each child,
 with high effort and no persistent Agent memory. Do not inherit an unspecified
-parent model. The two definitions have the same reviewer prompt, Read/Glob/Grep
+parent model. The coordinator also uses claude-opus-5[1m]; do not let an
+interactive session silently substitute Fable. The two definitions have the same reviewer prompt, Read/Glob/Grep
 tools, denied dynamic Skill and Agent tools, permission mode and turn limit.
 Only treatment declares skills: [review]. The different registration names are
 coordination identifiers and must not enter the assessment packet.

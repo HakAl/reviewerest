@@ -15,7 +15,7 @@
       "Write",
       "Edit"
     ],
-    "model": "claude-fable-5-1",
+    "model": "claude-opus-5[1m]",
     "effort": "high",
     "permissionMode": "dontAsk",
     "maxTurns": 12,
@@ -39,7 +39,7 @@
       "Write",
       "Edit"
     ],
-    "model": "claude-fable-5-1",
+    "model": "claude-opus-5[1m]",
     "effort": "high",
     "permissionMode": "dontAsk",
     "maxTurns": 12
