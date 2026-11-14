@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "skill_version": "1.2.0",
+  "skill_version": "1.4.0",
   "report_version": 3,
   "files": {
-    "review/SKILL.md": "3a0be83ff1cfeee9452d8c84df76ff4f4dd9257b27ad09e186cf1a0143a7a9bb",
+    "review/SKILL.md": "86edc21e521f2e44024998e3a54bc4e805b12abbc6c96063ab73b963911e9af0",
     "review/agents/openai.yaml": "4c593a16e82c506538c2946202a3ecce3a47daeb752ec17bbc402bd6a5118d33",
     "review/references/interaction-evidence.md": "141779219f481c51012432be6bfe148a6e7def8198dba913e9e5f42a22d6fdaf",
     "review/references/migrations.md": "b0f5cd7b273dc773ed3be9cf47e170b456f0ea97c87d03d11493fdc08675d1cc",
-    "review/references/report-contract.md": "5e37d1f501092699ca24857a711275ecc379d5e5e5e932b1f4932c799616c1b2",
+    "review/references/report-contract.md": "0ebb52bfa7ab7bc53ec3526398a918b4719f501e0d526af0bba8e80016915492",
     "review/references/security-boundaries.md": "b28364e9fa34bf2d579c16183945670df34bc9d068aa2d5494ea5343031420f4",
     "review/scripts/frame_artifact.py": "b9d78c461b8b068f00d6759e94b09c4312926d01c8f54616419b0ea1174891a5",
     "review/scripts/resolve_base.py": "bcd8ed3da9fc490483d4f3bc72aeb6235b44ee581f13b8a373da91303933d0df",

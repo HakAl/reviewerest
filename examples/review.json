@@ -3,7 +3,7 @@
   "status": "complete",
   "scope": "Static comparison of the fictional upload plan against its terminal-outcome contract.",
   "provenance": {
-    "skill_version": "1.2.0",
+    "skill_version": "1.4.0",
     "skill_revision": null,
     "run_id": null,
     "reviewer": {

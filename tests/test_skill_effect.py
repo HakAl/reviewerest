@@ -3,6 +3,7 @@
 import copy
 import json
 from pathlib import Path
+import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -24,7 +25,7 @@ def events(arm, record, extra=None):
     data = [{'type': 'system', 'subtype': 'init', 'model': model,
              'tools': ['Read', 'Glob', 'Grep'] + (['Skill'] if arm == 'skill_on' else [])}]
     if arm == 'skill_on':
-        body = (ROOT / 'review/SKILL.md').read_text().split('---', 2)[-1].strip()
+        body = (c.ROOT / 'review/SKILL.md').read_text().split('---', 2)[-1].strip()
         data += [{'type': 'assistant', 'message': {'content': [
             {'type': 'tool_use', 'id': 'load', 'name': 'Skill', 'input': {'skill': c.host.EXPECTED_SKILL}}]}},
                  {'type': 'user', 'message': {'content': [
@@ -90,6 +91,41 @@ def grade(packet, digest, classification='neutral', recovered=False, unsupported
 
 
 class SkillEffectTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Exercise the historical pipeline against its original package without
+        # changing frozen manifests or binding CI to the current skill version.
+        temporary = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(temporary.cleanup)
+        root = Path(temporary.name).resolve()
+        for name in ('evals', 'review'):
+            shutil.copytree(ROOT / name, root / name,
+                            ignore=shutil.ignore_patterns('__pycache__', '*.pyc', 'results'))
+        fixtures = ROOT / 'tests/fixtures/skill-effect-v1'
+        for name in ('review/SKILL.md', 'review/references/report-contract.md'):
+            shutil.copyfile(fixtures / (Path(name).name + '.txt'), root / name)
+        for module in (c, a):
+            for name, value in (('ROOT', root), ('SUITE', root / 'evals/skill-effect-v1')):
+                binding = patch.object(module, name, value)
+                binding.start()
+                cls.addClassCleanup(binding.stop)
+        # workspace's default was bound when the frozen module was imported.
+        binding = patch.object(c.workspace, '__defaults__', (root / 'review',))
+        binding.start()
+        cls.addClassCleanup(binding.stop)
+
+    def test_frozen_snapshot_and_runner_drift_are_still_rejected(self):
+        for name in ('review/SKILL.md', 'evals/effect_candidates.py'):
+            path = c.ROOT / name
+            original = path.read_bytes()
+            try:
+                path.write_bytes(original + b'\nchanged\n')
+                with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'Frozen input changed'):
+                    c.inputs()
+            finally:
+                path.write_bytes(original)
+        c.inputs()
+
     def test_candidate_loader_never_opens_labels_and_control_workspace_has_no_skill(self):
         original_read = c.read
         def guarded(path):
@@ -109,7 +145,9 @@ class SkillEffectTests(unittest.TestCase):
             self.assertEqual({p.name for p in off.iterdir()}, {'case.json', 'output-schema.json'})
             for name in ('case.json', 'output-schema.json'):
                 self.assertEqual((on / name).read_bytes(), (off / name).read_bytes())
-            for name, digest in json.loads((ROOT / 'evals/package-manifest.json').read_text())['files'].items():
+            for name, digest in manifest['files'].items():
+                if not name.startswith('review/'):
+                    continue
                 relative = Path(name).relative_to('review')
                 self.assertEqual(c.sha(on / c.host.SKILL_PATH / relative), digest)
             on_cmd = c.command('cli', on, 'skill_on', plan)
@@ -151,7 +189,7 @@ class SkillEffectTests(unittest.TestCase):
             self.assertEqual(row['stdout_sha256'], c.sha(dest / 'stdout.bin'))
 
     def test_trace_rejects_wrong_model_tool_attempt_missing_body_and_cost(self):
-        body = (ROOT / 'review/SKILL.md').read_text().split('---', 2)[-1].strip()
+        body = (c.ROOT / 'review/SKILL.md').read_text().split('---', 2)[-1].strip()
         raw = events('skill_on', {'findings': []})
         self.assertEqual(c.trace(raw, 'skill_on', 'claude-opus-5[1m]', body)[0], [])
         for kind in ('model', 'tool', 'body', 'cost'):

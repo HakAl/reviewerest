@@ -10,6 +10,8 @@ or a valid fix. Conditional claims name their assumptions and the next check.
 
 **The product lives in [`review/`](review/SKILL.md).**
 
+Current release: [skill 1.4.0](docs/release-1.4.0.md), report format 3.
+
 ## Install
 
 From the root of this repository, run the commands for your host. These install

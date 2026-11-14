@@ -121,6 +121,47 @@ failures are retained separately from the offline CI gate.
 
 ## Development observations
 
+### Skill 1.3.0 and 1.4.0
+
+Skill 1.3.0 adds requirement tracing and a search for counterevidence before
+reporting a candidate finding. A six-review comparison with 1.2.0 on three
+known development cases recovered two of three predefined opportunities with
+each version. Targeted unsupported complaints persisted. This does not establish
+improvement or equivalence.
+
+Skill 1.4.0 adds tracing across boundaries, checking whether verification can
+distinguish a plausible failure from success, and checking each proposed repair
+against the constraints it must preserve. Report format 3 is unchanged.
+A twelve-review comparison with 1.3.0 on six cases recovered four of five
+predefined opportunities with each version. Duplicate entries and unsupported
+corrections each decreased from two to one, while unsupported consequence
+entries increased from three to five. The predefined local improvement rule
+failed. The editor assessed one repetition per case and version without blinding
+or an independent judge; cases included known development material. These
+observations establish no general quality gain.
+
+A later six-review comparison of unchanged 1.4.0 with plain review used three
+frozen development cases: two positive cases and one narrow false-alarm probe.
+Both arms recovered the two predefined positive roots, and neither asserted the
+probe's narrow false alarm. Additional discoveries and problematic repair advice
+occurred in both arms. The assessor sealed masked judgments before revealing
+the arm mapping but also developed the product and knew the cases. One repetition,
+incomplete order balancing and possible recognition of writing style limit this
+comparison. No overall winner or equivalence claim follows.
+
+These are edited summaries of private development records, whose raw evidence
+is not included here. Deterministic CI checks do not reproduce these model runs.
+The [release note](release-1.4.0.md) identifies the shipped package and the scope
+of its offline verification.
+
+The historical skill-effect and native-Agent manifests continue to identify
+skill 1.2.0. Use public commit `23e4451` for their original command-line
+workflows. The [historical test inputs](../tests/fixtures/skill-effect-v1/README.md)
+let offline harness tests keep running against the frozen package while the
+live skill advances. Their results are not behavioral evidence about 1.4.0.
+
+### Earlier development
+
 The development process included a user-supplied Gemini design critique, a
 user-supplied Claude implementation critique, and native Claude Code trials.
 The versions and full contexts of the two supplied critiques were not recorded.

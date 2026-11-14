@@ -11,7 +11,7 @@ Use this shape and populate it from the actual review. The empty example is a sh
   "scope": "One-line review boundary and purpose",
   "target": {"artifact": "path or source ID", "revision": null, "base": null, "assumptions": []},
   "provenance": {
-    "skill_version": "1.2.0",
+    "skill_version": "1.4.0",
     "skill_revision": null,
     "run_id": null,
     "reviewer": {"model": null, "family": null},
